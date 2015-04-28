@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00EDB2730CA602A764A17157"
+               BlueprintIdentifier = "C681299DCA43AA49F1B622AB"
                BuildableName = "Pods_NUSWhispers.framework"
                BlueprintName = "Pods-NUSWhispers"
                ReferencedContainer = "container:Pods.xcodeproj">

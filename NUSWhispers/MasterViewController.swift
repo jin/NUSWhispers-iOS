@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MasterViewController: UITableViewController {
     
@@ -72,8 +73,12 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(sections[indexPath.row])
+        SVProgressHUD.show()
         performSegueWithIdentifier("showDetail", sender: self)
+    }
+
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        SVProgressHUD.dismiss()
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

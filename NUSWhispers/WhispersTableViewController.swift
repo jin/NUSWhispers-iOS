@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class WhispersTableViewController: UITableViewController {
 
@@ -64,6 +65,7 @@ class WhispersTableViewController: UITableViewController {
         req.HTTPBody = nil
         req.HTTPMethod = "GET"
         req.addValue("0", forHTTPHeaderField: "Content-Length")
+        SVProgressHUD.show()
         requestManager!.request(req).responseJSON { (req, resp, json, error) in
             if let e = error {
                 println(e)
@@ -88,6 +90,7 @@ class WhispersTableViewController: UITableViewController {
             }
             whispers = allWhispers
             tableView.reloadData()
+            SVProgressHUD.dismiss()
         }
     }
 
