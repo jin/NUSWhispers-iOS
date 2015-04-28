@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'NUSWhispers' do
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 end
 
 target 'NUSWhispersTests' do

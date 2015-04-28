@@ -10,6 +10,9 @@ import UIKit
 
 class WhispersTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var whisperContentTextView: UITextView!
+    @IBOutlet weak var whisperTagLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

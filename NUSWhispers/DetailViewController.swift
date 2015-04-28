@@ -10,7 +10,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var sectionName: String? {
+    var whispersTableViewController: WhispersTableViewController?
+    var section: Section? = Section.Featured {
+        didSet {
+            sectionName = section!.rawValue as String
+        }
+    }
+
+    private var sectionName: String? {
         didSet {
             // Update the view.
             self.configureView()
@@ -20,7 +27,7 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let name: String = self.sectionName {
-            title = name
+            title = name.capitalizedString
         }
     }
 
@@ -28,12 +35,20 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
-        view.backgroundColor = UIColor(red: 38, green: 124, blue: 191, alpha: 1)
+
+        whispersTableViewController!.section = section
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showWhispers" {
+            whispersTableViewController = segue.destinationViewController as? WhispersTableViewController
+            whispersTableViewController!.section = section!
+        }
     }
 
 

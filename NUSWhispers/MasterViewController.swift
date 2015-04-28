@@ -9,15 +9,9 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
-    enum Section : String {
-        case Featured = "featured"
-        case Popular = "popular"
-        case Latest = "latest"
-    }
-
+    
     var detailViewController: DetailViewController? = nil
-    var sections = [Section.Featured, .Popular, .Latest].map({ $0.rawValue.capitalizedString })
+    var sections = [Section.Featured, .Popular, .Latest]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,9 +44,9 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let sectionName = sections[indexPath.row] as String
+                let section = sections[indexPath.row]
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.sectionName = sectionName
+                controller.section = section
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -72,13 +66,14 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-        let sectionName = sections[indexPath.row] as String
-        cell.textLabel!.text = sectionName
+        let sectionName = sections[indexPath.row].rawValue as String
+        cell.textLabel!.text = sectionName.capitalizedString
         return cell
     }
 
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println(sections[indexPath.row])
+        performSegueWithIdentifier("showDetail", sender: self)
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

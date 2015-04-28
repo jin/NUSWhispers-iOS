@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NUSWhispers-SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-NUSWhispers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1649BB9CAB1D13A78D352291</key>
+		<key>00EDB2730CA602A764A17157</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68796F1DCEB1CEFE0C9A8794</key>
+		<key>327E5289A6BFC13202956997</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>562D21F5BBC896ECAF8CF812</key>
 		<dict>
 			<key>primary</key>
 			<true/>
