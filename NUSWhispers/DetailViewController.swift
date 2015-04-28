@@ -35,8 +35,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
-
-        whispersTableViewController!.section = section
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +45,7 @@ class DetailViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showWhispers" {
             whispersTableViewController = segue.destinationViewController as? WhispersTableViewController
-            whispersTableViewController!.section = section!
+            whispersTableViewController!.section = section
         }
     }
 

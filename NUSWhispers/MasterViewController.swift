@@ -32,7 +32,6 @@ class MasterViewController: UITableViewController {
 
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         tableView!.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.Top)
-        performSegueWithIdentifier("showDetail", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

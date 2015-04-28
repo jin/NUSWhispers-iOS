@@ -11,15 +11,11 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
-class WhispersTableViewController: UITableViewController {
-
-    var requestManager: Alamofire.Manager?
+class WhispersTableViewController: UITableViewController, WhisperRequestManagerDelegate {
 
     var section: Section? = .None {
         willSet {
-            if let manager = requestManager {
-                requestForWhispers(newValue!)
-            }
+            WhisperRequestManager.sharedInstance.requestForWhispers(newValue!)
         }
     }
 
@@ -27,14 +23,18 @@ class WhispersTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        config.timeoutIntervalForRequest = 30
-        self.requestManager = Alamofire.Manager(configuration: config)
+        WhisperRequestManager.sharedInstance.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - WhisperRequestManager delegate methods
+
+    func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers whispers: [Whisper]) {
+        self.whispers = whispers
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -54,44 +54,6 @@ class WhispersTableViewController: UITableViewController {
         cell.whisperContentTextView.text = whispers[indexPath.row].content
         cell.whisperTagLabel.text = "\(whispers[indexPath.row].tag)"
         return cell
-    }
-
-    // MARK: - HTTP
-
-    private func requestForWhispers(section: Section) {
-        let baseURL = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=10"
-        println("sending get req")
-        let req = NSMutableURLRequest(URL: NSURL(string: baseURL)!)
-        req.HTTPBody = nil
-        req.HTTPMethod = "GET"
-        req.addValue("0", forHTTPHeaderField: "Content-Length")
-        SVProgressHUD.show()
-        requestManager!.request(req).responseJSON { (req, resp, json, error) in
-            if let e = error {
-                println(e)
-            } else {
-                self.updateWhisperDataSource(JSON(json!))
-            }
-        }
-    }
-
-    private func updateWhisperDataSource(json: JSON) {
-        let resp = json["data"]["confessions"].array
-        var allWhispers = [Whisper]()
-        if let resp = resp {
-            for whisper in resp {
-                let content = whisper["content"].string
-                let tag = whisper["confession_id"].int
-                if let tag = tag {
-                    if let content = content {
-                        allWhispers.append(Whisper(tag: tag, content: content))
-                    }
-                }
-            }
-            whispers = allWhispers
-            tableView.reloadData()
-            SVProgressHUD.dismiss()
-        }
     }
 
 }
