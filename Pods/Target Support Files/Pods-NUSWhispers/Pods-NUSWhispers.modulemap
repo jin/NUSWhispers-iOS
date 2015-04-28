@@ -1,0 +1,6 @@
+framework module Pods_NUSWhispers {
+  umbrella header "Pods-NUSWhispers-umbrella.h"
+
+  export *
+  module * { export * }
+}

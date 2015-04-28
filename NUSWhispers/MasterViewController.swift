@@ -10,15 +10,14 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
+    enum Section : String {
+        case Featured = "featured"
+        case Popular = "popular"
+        case Latest = "latest"
+    }
+
     var detailViewController: DetailViewController? = nil
-
-    var sections = [
-        "Featured",
-        "Popular",
-        "Latest",
-        "New whisper"
-    ]
-
+    var sections = [Section.Featured, .Popular, .Latest].map({ $0.rawValue.capitalizedString })
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +37,7 @@ class MasterViewController: UITableViewController {
 
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         tableView!.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.Top)
+        performSegueWithIdentifier("showDetail", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +51,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let sectionName = sections[indexPath.row] as String
-                let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.sectionName = sectionName
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
@@ -70,7 +70,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
         let sectionName = sections[indexPath.row] as String
         cell.textLabel!.text = sectionName

@@ -10,8 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
     var sectionName: String? {
         didSet {
             // Update the view.
@@ -22,10 +20,7 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let name: String = self.sectionName {
-            if let label = self.detailDescriptionLabel {
-                label.text = name
-                title = name
-            }
+            title = name
         }
     }
 

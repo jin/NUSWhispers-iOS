@@ -14,6 +14,9 @@
 		3C01AC491AEFAB4500E0C94B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C01AC481AEFAB4500E0C94B /* Images.xcassets */; };
 		3C01AC4C1AEFAB4500E0C94B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C01AC4A1AEFAB4500E0C94B /* LaunchScreen.xib */; };
 		3C01AC581AEFAB4500E0C94B /* NUSWhispersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC571AEFAB4500E0C94B /* NUSWhispersTests.swift */; };
+		3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */; };
+		3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */; };
+		495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DC3537089F5B411CB272EDB /* Pods-NUSWhispers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUSWhispers.release.xcconfig"; path = "Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers.release.xcconfig"; sourceTree = "<group>"; };
+		2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NUSWhispers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C01AC3A1AEFAB4500E0C94B /* NUSWhispers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUSWhispers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C01AC3E1AEFAB4500E0C94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C01AC3F1AEFAB4500E0C94B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		3C01AC511AEFAB4500E0C94B /* NUSWhispersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NUSWhispersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C01AC561AEFAB4500E0C94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C01AC571AEFAB4500E0C94B /* NUSWhispersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSWhispersTests.swift; sourceTree = "<group>"; };
+		3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewController.swift; sourceTree = "<group>"; };
+		3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewCell.swift; sourceTree = "<group>"; };
+		D7E8A66A2F39F73DD84C1385 /* Pods-NUSWhispers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUSWhispers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		351F64D8E76979851792F9A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C01AC311AEFAB4500E0C94B = {
 			isa = PBXGroup;
 			children = (
 				3C01AC3C1AEFAB4500E0C94B /* NUSWhispers */,
 				3C01AC541AEFAB4500E0C94B /* NUSWhispersTests */,
 				3C01AC3B1AEFAB4500E0C94B /* Products */,
+				D54EC7133133028664AA3E82 /* Pods */,
+				351F64D8E76979851792F9A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +105,8 @@
 				3C01AC481AEFAB4500E0C94B /* Images.xcassets */,
 				3C01AC4A1AEFAB4500E0C94B /* LaunchScreen.xib */,
 				3C01AC3D1AEFAB4500E0C94B /* Supporting Files */,
+				3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */,
+				3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */,
 			);
 			path = NUSWhispers;
 			sourceTree = "<group>";
@@ -115,6 +136,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D54EC7133133028664AA3E82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8A66A2F39F73DD84C1385 /* Pods-NUSWhispers.debug.xcconfig */,
+				1DC3537089F5B411CB272EDB /* Pods-NUSWhispers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C01AC5B1AEFAB4500E0C94B /* Build configuration list for PBXNativeTarget "NUSWhispers" */;
 			buildPhases = (
+				FB69C1A4B6B200298357BFC4 /* Check Pods Manifest.lock */,
 				3C01AC361AEFAB4500E0C94B /* Sources */,
 				3C01AC371AEFAB4500E0C94B /* Frameworks */,
 				3C01AC381AEFAB4500E0C94B /* Resources */,
+				ADDE006B92B3DDD43161CCC3 /* Embed Pods Frameworks */,
+				D05551A0EA650A5FE7941207 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,14 +243,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ADDE006B92B3DDD43161CCC3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D05551A0EA650A5FE7941207 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB69C1A4B6B200298357BFC4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C01AC361AEFAB4500E0C94B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */,
 				3C01AC441AEFAB4500E0C94B /* DetailViewController.swift in Sources */,
 				3C01AC421AEFAB4500E0C94B /* MasterViewController.swift in Sources */,
 				3C01AC401AEFAB4500E0C94B /* AppDelegate.swift in Sources */,
+				3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +423,11 @@
 		};
 		3C01AC5C1AEFAB4500E0C94B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7E8A66A2F39F73DD84C1385 /* Pods-NUSWhispers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NUSWhispers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -352,10 +436,11 @@
 		};
 		3C01AC5D1AEFAB4500E0C94B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DC3537089F5B411CB272EDB /* Pods-NUSWhispers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NUSWhispers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,6 +500,7 @@
 				3C01AC5D1AEFAB4500E0C94B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C01AC5E1AEFAB4500E0C94B /* Build configuration list for PBXNativeTarget "NUSWhispersTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +509,7 @@
 				3C01AC601AEFAB4500E0C94B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
