@@ -16,4 +16,17 @@ enum Section : String, Printable {
     var description: String {
         return self.rawValue
     }
+
+    var apiEndpoint: String {
+        switch self {
+        case .Featured:
+            return ""
+        case .Latest:
+            return "recent"
+        case .Popular:
+            return "popular"
+        default:
+            assertionFailure("Invalid section")
+        }
+    }
 }

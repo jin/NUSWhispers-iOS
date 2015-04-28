@@ -58,7 +58,7 @@ class WhispersTableViewController: UITableViewController {
     // MARK: - HTTP
 
     private func requestForWhispers(section: Section) {
-        let baseURL = "http://nuswhispers.com/api/confessions/popular?count=10"
+        let baseURL = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=10"
         println("sending get req")
         let req = NSMutableURLRequest(URL: NSURL(string: baseURL)!)
         req.HTTPBody = nil
@@ -76,17 +76,19 @@ class WhispersTableViewController: UITableViewController {
     private func updateWhisperDataSource(json: JSON) {
         let resp = json["data"]["confessions"].array
         var allWhispers = [Whisper]()
-        for whisper in resp! {
-            let content = whisper["content"].string
-            let tag = whisper["confession_id"].int
-            if let tag = tag {
-                if let content = content {
-                    allWhispers.append(Whisper(tag: tag, content: content))
+        if let resp = resp {
+            for whisper in resp {
+                let content = whisper["content"].string
+                let tag = whisper["confession_id"].int
+                if let tag = tag {
+                    if let content = content {
+                        allWhispers.append(Whisper(tag: tag, content: content))
+                    }
                 }
             }
+            whispers = allWhispers
+            tableView.reloadData()
         }
-        whispers = allWhispers
-        tableView.reloadData()
     }
 
 }
