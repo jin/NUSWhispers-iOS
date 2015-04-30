@@ -11,16 +11,28 @@ import UIKit
 class WhispersTableViewCell: UITableViewCell {
 
     @IBOutlet weak var whisperContentTextView: UITextView!
-    
+    @IBOutlet weak var whisperTagLabel: UILabel!
+    @IBOutlet weak var whisperTimeLabel: UILabel!
+
+    var whisper: Whisper? {
+        didSet {
+            fillCellContents()
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    private func fillCellContents() {
+        if let whisper = whisper {
+            whisperContentTextView.text = whisper.content
+                .stringByTrimmingCharactersInSet(
+                    NSCharacterSet.whitespaceCharacterSet())
+            whisperTagLabel.text = "#\(whisper.tag!)"
+        }
     }
 
+    @IBAction func didTapOnViewInFacebookButton(sender: AnyObject) {
+    }
 }

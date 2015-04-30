@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-QW-Ncw">
-                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <segue destination="WqH-Pz-G7P" kind="embed" identifier="showWhispers" id="4G9-7n-3yN"/>
                                 </connections>
@@ -45,10 +45,10 @@
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BFr-QW-Ncw" secondAttribute="bottom" id="GjT-RI-baY"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BFr-QW-Ncw" secondAttribute="bottom" id="J90-Sz-BoY"/>
                             <constraint firstItem="BFr-QW-Ncw" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="topMargin" id="MOA-kK-acg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BFr-QW-Ncw" secondAttribute="trailing" id="iJL-vO-eIm"/>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="kEH-EH-rHC"/>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="nYs-d8-jvb"/>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="ty2-32-AqD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BFr-QW-Ncw" secondAttribute="trailing" constant="-16" id="iJL-vO-eIm"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" constant="16" id="kEH-EH-rHC"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-16" id="nYs-d8-jvb"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-16" id="ty2-32-AqD"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -63,9 +63,9 @@
             <objects>
                 <tableViewController id="WqH-Pz-G7P" customClass="WhispersTableViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="331" sectionHeaderHeight="22" sectionFooterHeight="22" id="egl-gt-mve">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="331" id="P4t-xo-RHY" customClass="WhispersTableViewCell" customModule="NUSWhispers" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -79,14 +79,18 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kh-no-SRo">
-                                            <rect key="frame" x="421" y="257" width="127" height="30"/>
+                                            <rect key="frame" x="477" y="260" width="103" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" title="View on Facebook">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="didTapOnViewInFacebookButton:" destination="P4t-xo-RHY" eventType="touchUpInside" id="KtA-GC-bYL"/>
+                                            </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-Hl-ecC" userLabel="minorSeparator">
-                                            <rect key="frame" x="20" y="295" width="528" height="1"/>
-                                            <color key="backgroundColor" red="0.93911210317460314" green="0.93911210317460314" blue="0.93911210317460314" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="20" y="295" width="560" height="1"/>
+                                            <color key="backgroundColor" red="0.82599619708994709" green="0.82599619708994709" blue="0.82599619708994709" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="DQj-Iq-nFs"/>
                                             </constraints>
@@ -97,9 +101,8 @@
                                             <color key="textColor" red="0.65868882275132279" green="0.65868882275132279" blue="0.65868882275132279" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75D-59-Zxy" userLabel="whisperContentTextView">
-                                            <rect key="frame" x="28" y="65" width="520" height="184"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75D-59-Zxy" userLabel="whisperContentTextView">
+                                            <rect key="frame" x="23" y="65" width="557" height="187"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -112,7 +115,7 @@
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="top" secondItem="fdj-Hl-ecC" secondAttribute="bottom" constant="10" id="IOO-KE-lCy"/>
                                         <constraint firstItem="5Kh-no-SRo" firstAttribute="top" secondItem="75D-59-Zxy" secondAttribute="bottom" constant="8" id="LZW-0U-OdO"/>
                                         <constraint firstAttribute="trailing" secondItem="fdj-Hl-ecC" secondAttribute="trailing" constant="20" id="N2K-Qv-la6"/>
-                                        <constraint firstItem="75D-59-Zxy" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="20" id="VWz-di-cqb"/>
+                                        <constraint firstItem="75D-59-Zxy" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="15" id="VWz-di-cqb"/>
                                         <constraint firstItem="cpy-Kw-XKh" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="Wva-as-GaH"/>
                                         <constraint firstAttribute="trailing" secondItem="75D-59-Zxy" secondAttribute="trailing" constant="20" id="cp1-6q-9au"/>
                                         <constraint firstItem="75D-59-Zxy" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="15" id="heO-mQ-CZT"/>
@@ -123,6 +126,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="whisperContentTextView" destination="75D-59-Zxy" id="z0C-Z1-poV"/>
+                                    <outlet property="whisperTagLabel" destination="cpy-Kw-XKh" id="dzY-sF-cwV"/>
+                                    <outlet property="whisperTimeLabel" destination="1ym-6P-mN9" id="AWr-62-oao"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

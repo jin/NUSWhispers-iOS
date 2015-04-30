@@ -17,6 +17,8 @@
 		3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */; };
 		3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */; };
 		3C6F67711AF2295300599CA5 /* pac_man_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3C6F67701AF2295300599CA5 /* pac_man_loading.gif */; };
+		3C6F67741AF23F2F00599CA5 /* card_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6F67721AF23F2F00599CA5 /* card_logo.png */; };
+		3C6F67751AF23F2F00599CA5 /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6F67731AF23F2F00599CA5 /* pattern.png */; };
 		3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A71AEFD35400F2A822 /* AppColors.swift */; };
 		3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */; };
 		3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */; };
@@ -52,6 +54,8 @@
 		3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewController.swift; sourceTree = "<group>"; };
 		3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewCell.swift; sourceTree = "<group>"; };
 		3C6F67701AF2295300599CA5 /* pac_man_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pac_man_loading.gif; sourceTree = "<group>"; };
+		3C6F67721AF23F2F00599CA5 /* card_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_logo.png; sourceTree = "<group>"; };
+		3C6F67731AF23F2F00599CA5 /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern.png; sourceTree = "<group>"; };
 		3C8219A71AEFD35400F2A822 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManager.swift; sourceTree = "<group>"; };
 		3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManagerDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		3C6F676F1AF2294300599CA5 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				3C6F67721AF23F2F00599CA5 /* card_logo.png */,
+				3C6F67731AF23F2F00599CA5 /* pattern.png */,
 				3C6F67701AF2295300599CA5 /* pac_man_loading.gif */,
 			);
 			name = assets;
@@ -256,8 +262,10 @@
 			files = (
 				3C01AC471AEFAB4500E0C94B /* Main.storyboard in Resources */,
 				3C01AC4C1AEFAB4500E0C94B /* LaunchScreen.xib in Resources */,
+				3C6F67751AF23F2F00599CA5 /* pattern.png in Resources */,
 				3C01AC491AEFAB4500E0C94B /* Images.xcassets in Resources */,
 				3C6F67711AF2295300599CA5 /* pac_man_loading.gif in Resources */,
+				3C6F67741AF23F2F00599CA5 /* card_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

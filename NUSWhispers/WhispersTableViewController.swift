@@ -57,8 +57,8 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier",
             forIndexPath: indexPath) as! WhispersTableViewCell
-        cell.whisperContentTextView.text = whispers[indexPath.row].content
-            .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        cell.whisper = whispers[indexPath.row]
+
         return cell
     }
 
