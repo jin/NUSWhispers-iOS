@@ -29,7 +29,14 @@ class WhispersTableViewCell: UITableViewCell {
             whisperContentTextView.text = whisper.content
                 .stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceCharacterSet())
+
             whisperTagLabel.text = "#\(whisper.tag!)"
+
+            let relativeDateFormatter = NSDateFormatter()
+            relativeDateFormatter.doesRelativeDateFormatting = true
+            relativeDateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+            relativeDateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
         }
     }
 

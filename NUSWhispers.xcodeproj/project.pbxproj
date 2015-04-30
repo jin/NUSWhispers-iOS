@@ -59,6 +59,7 @@
 		3C8219A71AEFD35400F2A822 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManager.swift; sourceTree = "<group>"; };
 		3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManagerDelegate.swift; sourceTree = "<group>"; };
+		3CB43E341AF24CC90005127D /* NUSWhispers_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUSWhispers_Bridging_Header.h; sourceTree = "<group>"; };
 		3CCD3AC21AEFC0800014479C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3CCD3AC41AEFC0E80014479C /* Whisper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Whisper.swift; sourceTree = "<group>"; };
 		D7E8A66A2F39F73DD84C1385 /* Pods-NUSWhispers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUSWhispers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 				3C01AC451AEFAB4500E0C94B /* Main.storyboard */,
 				3C01AC481AEFAB4500E0C94B /* Images.xcassets */,
 				3C01AC4A1AEFAB4500E0C94B /* LaunchScreen.xib */,
-				3C01AC3D1AEFAB4500E0C94B /* Supporting Files */,
 				3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */,
 				3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */,
 				3CCD3AC21AEFC0800014479C /* Section.swift */,
@@ -129,6 +129,8 @@
 				3C8219A71AEFD35400F2A822 /* AppColors.swift */,
 				3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */,
 				3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */,
+				3CB43E341AF24CC90005127D /* NUSWhispers_Bridging_Header.h */,
+				3C01AC3D1AEFAB4500E0C94B /* Supporting Files */,
 			);
 			path = NUSWhispers;
 			sourceTree = "<group>";
@@ -470,6 +472,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/NUSWhispers/NUSWhispers_Bridging_Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -483,6 +486,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/NUSWhispers/NUSWhispers_Bridging_Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
