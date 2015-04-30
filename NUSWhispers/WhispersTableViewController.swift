@@ -20,7 +20,6 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     var whispers: [Whisper] = [Whisper]()
-    var cellContentTextViews: [NSIndexPath:UITextView] = [NSIndexPath:UITextView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,17 +46,14 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         return whispers.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! WhispersTableViewCell
-        cell.whisperContentTextView.text = whispers[indexPath.row].content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-//        cell.whisperTagLabel.text = "\(whispers[indexPath.row].tag)"
-
-        cellContentTextViews[indexPath] = cell.whisperContentTextView
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier",
+            forIndexPath: indexPath) as! WhispersTableViewCell
+        cell.whisperContentTextView.text = whispers[indexPath.row].content
+            .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         return cell
     }
 
