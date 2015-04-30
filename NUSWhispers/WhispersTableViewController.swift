@@ -20,9 +20,12 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     var whispers: [Whisper] = [Whisper]()
+    var cellContentTextViews: [NSIndexPath:UITextView] = [NSIndexPath:UITextView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
         WhisperRequestManager.sharedInstance.delegate = self
     }
 
@@ -51,8 +54,10 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! WhispersTableViewCell
-        cell.whisperContentTextView.text = whispers[indexPath.row].content
-        cell.whisperTagLabel.text = "\(whispers[indexPath.row].tag)"
+        cell.whisperContentTextView.text = whispers[indexPath.row].content.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+//        cell.whisperTagLabel.text = "\(whispers[indexPath.row].tag)"
+
+        cellContentTextViews[indexPath] = cell.whisperContentTextView
         return cell
     }
 
