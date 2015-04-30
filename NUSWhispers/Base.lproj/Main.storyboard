@@ -62,18 +62,43 @@
         <scene sceneID="qfO-cV-aRI">
             <objects>
                 <tableViewController id="WqH-Pz-G7P" customClass="WhispersTableViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="167" sectionHeaderHeight="22" sectionFooterHeight="22" id="egl-gt-mve">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="331" sectionHeaderHeight="22" sectionFooterHeight="22" id="egl-gt-mve">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="167" id="P4t-xo-RHY" customClass="WhispersTableViewCell" customModule="NUSWhispers" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="331" id="P4t-xo-RHY" customClass="WhispersTableViewCell" customModule="NUSWhispers" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P4t-xo-RHY" id="Sgv-2J-rMm">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75D-59-Zxy" userLabel="whisperContentTextView">
-                                            <rect key="frame" x="28" y="5" width="520" height="156"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-Kw-XKh">
+                                            <rect key="frame" x="20" y="33" width="32" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.55708498677248675" green="0.55708498677248675" blue="0.55708498677248675" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kh-no-SRo">
+                                            <rect key="frame" x="421" y="257" width="127" height="30"/>
+                                            <state key="normal" title="View on Facebook">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-Hl-ecC" userLabel="minorSeparator">
+                                            <rect key="frame" x="20" y="295" width="528" height="1"/>
+                                            <color key="backgroundColor" red="0.93911210317460314" green="0.93911210317460314" blue="0.93911210317460314" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="DQj-Iq-nFs"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 hours ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ym-6P-mN9">
+                                            <rect key="frame" x="20" y="306" width="74" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.65868882275132279" green="0.65868882275132279" blue="0.65868882275132279" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75D-59-Zxy" userLabel="whisperContentTextView">
+                                            <rect key="frame" x="28" y="65" width="520" height="184"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -81,10 +106,19 @@
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="75D-59-Zxy" firstAttribute="top" secondItem="Sgv-2J-rMm" secondAttribute="top" constant="5" id="64w-De-kfQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="75D-59-Zxy" secondAttribute="bottom" constant="5" id="BO8-jn-7xz"/>
+                                        <constraint firstItem="1ym-6P-mN9" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="9Kc-PX-CRL"/>
+                                        <constraint firstItem="fdj-Hl-ecC" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="E9f-Z8-m87"/>
+                                        <constraint firstItem="cpy-Kw-XKh" firstAttribute="top" secondItem="Sgv-2J-rMm" secondAttribute="top" constant="33" id="HMV-XY-0Tx"/>
+                                        <constraint firstItem="1ym-6P-mN9" firstAttribute="top" secondItem="fdj-Hl-ecC" secondAttribute="bottom" constant="10" id="IOO-KE-lCy"/>
+                                        <constraint firstItem="5Kh-no-SRo" firstAttribute="top" secondItem="75D-59-Zxy" secondAttribute="bottom" constant="8" id="LZW-0U-OdO"/>
+                                        <constraint firstAttribute="trailing" secondItem="fdj-Hl-ecC" secondAttribute="trailing" constant="20" id="N2K-Qv-la6"/>
                                         <constraint firstItem="75D-59-Zxy" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="20" id="VWz-di-cqb"/>
+                                        <constraint firstItem="cpy-Kw-XKh" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="Wva-as-GaH"/>
                                         <constraint firstAttribute="trailing" secondItem="75D-59-Zxy" secondAttribute="trailing" constant="20" id="cp1-6q-9au"/>
+                                        <constraint firstItem="75D-59-Zxy" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="15" id="heO-mQ-CZT"/>
+                                        <constraint firstAttribute="bottom" secondItem="1ym-6P-mN9" secondAttribute="bottom" constant="10" id="q4R-Lw-5A7"/>
+                                        <constraint firstItem="fdj-Hl-ecC" firstAttribute="top" secondItem="5Kh-no-SRo" secondAttribute="bottom" constant="8" id="rFq-12-pdl"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Kh-no-SRo" secondAttribute="trailing" constant="20" id="we7-NN-bS8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -100,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSe-aU-4hF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="14"/>
+            <point key="canvasLocation" x="1528" y="12"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
