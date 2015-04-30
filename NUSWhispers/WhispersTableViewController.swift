@@ -36,6 +36,11 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers whispers: [Whisper]) {
         self.whispers = whispers
+        if whispers.count > 0 {
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        } else {
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        }
         tableView.reloadData()
     }
 
