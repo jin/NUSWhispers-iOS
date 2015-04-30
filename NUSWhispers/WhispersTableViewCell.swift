@@ -41,5 +41,17 @@ class WhispersTableViewCell: UITableViewCell {
     }
 
     @IBAction func didTapOnViewInFacebookButton(sender: AnyObject) {
+        if let facebookPostId = whisper?.facebookId {
+            var url: NSURL? = nil
+            if UIApplication.sharedApplication().canOpenURL(NSURL(string: "fb://")!) {
+                // No URL Scheme for page's post yet
+//                url = NSURL(string: "fb://posts/\(facebookPostId)")
+            } else {
+//                url = NSURL(string: "https://www.facebook.com/nuswhispers/posts/\(facebookPostId)")
+            }
+            url = NSURL(string: "https://www.facebook.com/nuswhispers/posts/\(facebookPostId)")
+            UIApplication.sharedApplication().openURL(url!)
+            println(url)
+        }
     }
 }

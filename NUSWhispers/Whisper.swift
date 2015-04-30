@@ -15,16 +15,18 @@ class Whisper {
     var createdAt: NSDate!
     var updatedAt: NSDate!
     var views: Int!
+    var facebookId: String!
 
     init(json: JSON) {
         self.tag = json["confession_id"].int
         self.content = json["content"].string
+        self.views = json["views"].int
+        self.facebookId = json["facebook_information"]["id"].string
 
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         self.createdAt = dateFormatter.dateFromString(json["created_at"].string!)
         self.updatedAt = dateFormatter.dateFromString(json["status_updated_at"].string!)
 
-        self.views = json["views"].int
     }
 }
