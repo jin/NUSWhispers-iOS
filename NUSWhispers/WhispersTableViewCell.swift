@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import TTTAttributedLabel
 
 class WhispersTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var whisperContentTextView: UITextView!
+    @IBOutlet weak var whisperContentAttributedLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
 
@@ -26,7 +27,7 @@ class WhispersTableViewCell: UITableViewCell {
 
     private func fillCellContents() {
         if let whisper = whisper {
-            whisperContentTextView.text = whisper.content
+            whisperContentAttributedLabel.text = whisper.content
                 .stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceCharacterSet())
 

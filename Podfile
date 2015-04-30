@@ -6,6 +6,7 @@ target 'NUSWhispers' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
+  pod 'TTTAttributedLabel'
 end
 
 target 'NUSWhispersTests' do

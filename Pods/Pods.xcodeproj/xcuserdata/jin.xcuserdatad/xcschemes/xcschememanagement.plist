@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NUSWhispers-TTTAttributedLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-NUSWhispers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4FD0D2D3AE1C604F56FCC6EC</key>
+		<key>1B6DE2D4E74D4BBE5DDA3A96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE1E5E031BBB3936451C1463</key>
+		<key>4F0338851B5BF128DD002931</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B531E4FDA0537194EF2A1821</key>
+		<key>C3168A3371E2E688F71F196D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F034097CED990F3155D07855</key>
+		<key>DDA44970FF735BF20A7F75A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDCDF99A357F4038EB8BED66</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -84,7 +84,7 @@
                                                 <action selector="didTapOnViewInFacebookButton:" destination="P4t-xo-RHY" eventType="touchUpInside" id="KtA-GC-bYL"/>
                                             </connections>
                                         </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-Hl-ecC" userLabel="minorSeparator">
+                                        <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-Hl-ecC" userLabel="minorSeparator">
                                             <rect key="frame" x="20" y="295" width="560" height="1"/>
                                             <color key="backgroundColor" red="0.82599619708994709" green="0.82599619708994709" blue="0.82599619708994709" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -97,32 +97,32 @@
                                             <color key="textColor" red="0.65868882275132279" green="0.65868882275132279" blue="0.65868882275132279" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75D-59-Zxy" userLabel="whisperContentTextView">
-                                            <rect key="frame" x="23" y="65" width="557" height="187"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTN-FZ-Z4x" customClass="TTTAttributedLabel">
+                                            <rect key="frame" x="20" y="65" width="552" height="185"/>
+                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="9Kc-PX-CRL"/>
+                                        <constraint firstItem="yTN-FZ-Z4x" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="12" id="Abb-d7-n5g"/>
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="E9f-Z8-m87"/>
                                         <constraint firstItem="cpy-Kw-XKh" firstAttribute="top" secondItem="Sgv-2J-rMm" secondAttribute="top" constant="33" id="HMV-XY-0Tx"/>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="top" secondItem="fdj-Hl-ecC" secondAttribute="bottom" constant="10" id="IOO-KE-lCy"/>
-                                        <constraint firstItem="5Kh-no-SRo" firstAttribute="top" secondItem="75D-59-Zxy" secondAttribute="bottom" constant="8" id="LZW-0U-OdO"/>
                                         <constraint firstAttribute="trailing" secondItem="fdj-Hl-ecC" secondAttribute="trailing" constant="20" id="N2K-Qv-la6"/>
-                                        <constraint firstItem="75D-59-Zxy" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="15" id="VWz-di-cqb"/>
                                         <constraint firstItem="cpy-Kw-XKh" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="Wva-as-GaH"/>
-                                        <constraint firstAttribute="trailing" secondItem="75D-59-Zxy" secondAttribute="trailing" constant="20" id="cp1-6q-9au"/>
-                                        <constraint firstItem="75D-59-Zxy" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="15" id="heO-mQ-CZT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="yTN-FZ-Z4x" secondAttribute="trailing" constant="20" id="X8c-eU-0Lm"/>
                                         <constraint firstAttribute="bottom" secondItem="1ym-6P-mN9" secondAttribute="bottom" constant="10" id="q4R-Lw-5A7"/>
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="top" secondItem="5Kh-no-SRo" secondAttribute="bottom" constant="8" id="rFq-12-pdl"/>
+                                        <constraint firstItem="yTN-FZ-Z4x" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="15" id="wbp-Mv-BPY"/>
                                         <constraint firstAttribute="trailing" secondItem="5Kh-no-SRo" secondAttribute="trailing" constant="20" id="we7-NN-bS8"/>
+                                        <constraint firstItem="5Kh-no-SRo" firstAttribute="top" secondItem="yTN-FZ-Z4x" secondAttribute="bottom" constant="10" id="wfg-tK-mpQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="whisperContentTextView" destination="75D-59-Zxy" id="z0C-Z1-poV"/>
+                                    <outlet property="whisperContentAttributedLabel" destination="yTN-FZ-Z4x" id="mOF-vO-AiK"/>
                                     <outlet property="whisperTagLabel" destination="cpy-Kw-XKh" id="dzY-sF-cwV"/>
                                     <outlet property="whisperTimeLabel" destination="1ym-6P-mN9" id="AWr-62-oao"/>
                                 </connections>
