@@ -32,8 +32,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-QW-Ncw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-QW-Ncw">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
                                 <connections>
                                     <segue destination="WqH-Pz-G7P" kind="embed" identifier="showWhispers" id="4G9-7n-3yN"/>
                                 </connections>
@@ -43,12 +43,16 @@
                         <constraints>
                             <constraint firstItem="BFr-QW-Ncw" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="topMargin" id="9bi-s2-AI8"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BFr-QW-Ncw" secondAttribute="bottom" id="GjT-RI-baY"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BFr-QW-Ncw" secondAttribute="bottom" id="J90-Sz-BoY"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="topMargin" id="MOA-kK-acg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BFr-QW-Ncw" secondAttribute="trailing" id="iJL-vO-eIm"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="kEH-EH-rHC"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="nYs-d8-jvb"/>
                             <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="ty2-32-AqD"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Featured" id="mOI-FS-AaM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +63,7 @@
             <objects>
                 <tableViewController id="WqH-Pz-G7P" customClass="WhispersTableViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="356" sectionHeaderHeight="22" sectionFooterHeight="22" id="egl-gt-mve">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -75,7 +79,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75D-59-Zxy" userLabel="whisperContentTextView">
-                                            <rect key="frame" x="72" y="13" width="489" height="329"/>
+                                            <rect key="frame" x="72" y="13" width="457" height="329"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -121,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="-856" y="-330"/>
         </scene>
-        <!--Menu-->
+        <!--Master View Controller-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Menu" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Menu" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" userLabel="Master View Controller" customClass="MasterViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
