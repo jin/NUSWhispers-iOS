@@ -41,14 +41,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="topMargin" id="9bi-s2-AI8"/>
-                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BFr-QW-Ncw" secondAttribute="bottom" id="GjT-RI-baY"/>
-                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BFr-QW-Ncw" secondAttribute="bottom" id="J90-Sz-BoY"/>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="topMargin" id="MOA-kK-acg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BFr-QW-Ncw" secondAttribute="trailing" constant="-16" id="iJL-vO-eIm"/>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" constant="16" id="kEH-EH-rHC"/>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-16" id="nYs-d8-jvb"/>
-                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-16" id="ty2-32-AqD"/>
+                            <constraint firstAttribute="trailing" secondItem="BFr-QW-Ncw" secondAttribute="trailing" id="Ywy-me-g4c"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="top" secondItem="svH-Pt-448" secondAttribute="top" id="gqT-mh-1On"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BFr-QW-Ncw" secondAttribute="bottom" id="ovh-rD-Shz"/>
+                            <constraint firstItem="BFr-QW-Ncw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="rwU-b0-eGs"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -67,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="331" id="P4t-xo-RHY" customClass="WhispersTableViewCell" customModule="NUSWhispers" customModuleProvider="target">
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="331" id="P4t-xo-RHY" customClass="WhispersTableViewCell" customModule="NUSWhispers" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P4t-xo-RHY" id="Sgv-2J-rMm">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -163,8 +159,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.14901960780000001" green="0.48627450979999998" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.14901960784313725" green="0.48627450980392156" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.5607843137254902" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -181,9 +177,9 @@
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.14901960784313725" green="0.48627450980392156" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.1803921568627451" green="0.5607843137254902" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
@@ -220,4 +216,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.18039215689999999" green="0.56078431370000004" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

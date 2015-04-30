@@ -47,6 +47,9 @@ class MasterViewController: UITableViewController {
 
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         tableView!.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.Top)
+
+        let titleLogo = UIImage(named: "card_logo")
+        navigationItem.titleView = UIImageView(image: titleLogo)
     }
 
     override func didReceiveMemoryWarning() {

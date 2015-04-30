@@ -10,10 +10,10 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern.png" translatesAutoresizingMaskIntoConstraints="NO" id="5wz-Ff-zhp">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern" translatesAutoresizingMaskIntoConstraints="NO" id="5wz-Ff-zhp">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="NLA-nG-Xj8">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NLA-nG-Xj8">
                     <rect key="frame" x="120" y="120" width="240" height="240"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="2JF-Gn-rja"/>
@@ -36,7 +36,7 @@
         </view>
     </objects>
     <resources>
-        <image name="card_logo.png" width="512" height="512"/>
-        <image name="pattern.png" width="300" height="300"/>
+        <image name="launchscreen_logo" width="256" height="256"/>
+        <image name="pattern" width="300" height="300"/>
     </resources>
 </document>
