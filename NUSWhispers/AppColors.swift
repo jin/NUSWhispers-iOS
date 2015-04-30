@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-struct AppColor {
+struct AppColors {
     static let DarkBlue = UIColor(red: 38, green: 124, blue: 191, alpha: 1)
 }

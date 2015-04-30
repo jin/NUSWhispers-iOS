@@ -16,7 +16,7 @@
 		3C01AC581AEFAB4500E0C94B /* NUSWhispersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC571AEFAB4500E0C94B /* NUSWhispersTests.swift */; };
 		3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */; };
 		3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */; };
-		3C8219A81AEFD35400F2A822 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A71AEFD35400F2A822 /* Colors.swift */; };
+		3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A71AEFD35400F2A822 /* AppColors.swift */; };
 		3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */; };
 		3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */; };
 		3CCD3AC31AEFC0800014479C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC21AEFC0800014479C /* Section.swift */; };
@@ -50,7 +50,7 @@
 		3C01AC571AEFAB4500E0C94B /* NUSWhispersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSWhispersTests.swift; sourceTree = "<group>"; };
 		3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewController.swift; sourceTree = "<group>"; };
 		3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewCell.swift; sourceTree = "<group>"; };
-		3C8219A71AEFD35400F2A822 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3C8219A71AEFD35400F2A822 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManager.swift; sourceTree = "<group>"; };
 		3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManagerDelegate.swift; sourceTree = "<group>"; };
 		3CCD3AC21AEFC0800014479C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 				3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */,
 				3CCD3AC21AEFC0800014479C /* Section.swift */,
 				3CCD3AC41AEFC0E80014479C /* Whisper.swift */,
-				3C8219A71AEFD35400F2A822 /* Colors.swift */,
+				3C8219A71AEFD35400F2A822 /* AppColors.swift */,
 				3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */,
 				3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */,
 			);
@@ -312,7 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */,
-				3C8219A81AEFD35400F2A822 /* Colors.swift in Sources */,
+				3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */,
 				3C01AC441AEFAB4500E0C94B /* DetailViewController.swift in Sources */,
 				3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */,
 				3C01AC421AEFAB4500E0C94B /* MasterViewController.swift in Sources */,
