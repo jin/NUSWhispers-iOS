@@ -50,13 +50,7 @@ class WhisperRequestManager {
         var allWhispers = [Whisper]()
         if let resp = resp {
             for whisper in resp {
-                let content = whisper["content"].string
-                let tag = whisper["confession_id"].int
-                if let tag = tag {
-                    if let content = content {
-                        allWhispers.append(Whisper(tag: tag, content: content))
-                    }
-                }
+                allWhispers.append(Whisper(json: whisper))
             }
             delegate?.whisperRequestManager(self, didReceiveWhispers: allWhispers)
             SVProgressHUD.dismiss()
