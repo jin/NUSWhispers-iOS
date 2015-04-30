@@ -13,6 +13,13 @@ enum Section : String, Printable {
     case Popular = "popular"
     case Latest = "latest"
 
+    case Advice = "advice"
+    case Funny = "funny"
+    case LostAndFound = "lost and found"
+    case Nostalgia = "nostalgia"
+    case Rant = "rant"
+    case Romance = "romance"
+
     var description: String {
         return self.rawValue
     }
@@ -25,6 +32,18 @@ enum Section : String, Printable {
             return "recent"
         case .Popular:
             return "popular"
+        case .Advice:
+            return "category/10"
+        case .Funny:
+            return "category/5"
+        case .LostAndFound:
+            return "category/6"
+        case .Nostalgia:
+            return "category/9"
+        case .Rant:
+            return "category/8"
+        case .Romance:
+            return "category/7"
         default:
             assertionFailure("Invalid section")
         }

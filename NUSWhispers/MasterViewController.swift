@@ -15,17 +15,17 @@ class MasterViewController: UITableViewController {
 
     var sections = [
         Section.Featured,
-        Section.Popular,
-        Section.Latest
+        .Popular,
+        .Latest
     ]
 
     var categories = [
-        Category.Advice,
-        Category.Funny,
-        Category.LostAndFound,
-        Category.Nostalgia,
-        Category.Rant,
-        Category.Romance
+        Section.Advice,
+        .Funny,
+        .LostAndFound,
+        .Nostalgia,
+        .Rant,
+        .Romance
     ]
         
 
@@ -59,7 +59,16 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let section = sections[indexPath.row]
+                var section: Section? = nil
+                switch indexPath.section {
+                case 0:
+                    section = sections[indexPath.row]
+                case 1:
+                    section = categories[indexPath.row]
+                default:
+                    assertionFailure("Invalid section")
+                }
+
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.section = section
             }
