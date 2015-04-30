@@ -47,8 +47,6 @@ class MasterViewController: UITableViewController {
                 let section = sections[indexPath.row]
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.section = section
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -73,7 +71,6 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         SVProgressHUD.show()
-        performSegueWithIdentifier("showDetail", sender: self)
     }
 
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
