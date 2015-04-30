@@ -12,7 +12,22 @@ import SVProgressHUD
 class MasterViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
-    var sections = [Section.Featured, .Popular, .Latest]
+
+    var sections = [
+        Section.Featured,
+        Section.Popular,
+        Section.Latest
+    ]
+
+    var categories = [
+        Category.Advice,
+        Category.Funny,
+        Category.LostAndFound,
+        Category.Nostalgia,
+        Category.Rant,
+        Category.Romance
+    ]
+        
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +42,7 @@ class MasterViewController: UITableViewController {
 
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
+            self.detailViewController = controllers.last!.topViewController as? DetailViewController
         }
 
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
@@ -54,18 +69,27 @@ class MasterViewController: UITableViewController {
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections.count
+        if section == 0 {
+            return sections.count
+        } else {
+            return categories.count
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        if indexPath.section == 0 {
+            let sectionName = sections[indexPath.row].rawValue as String
+            cell.textLabel!.text = sectionName.capitalizedString
+        } else {
+            let categoryName = categories[indexPath.row].rawValue as String
+            cell.textLabel!.text = categoryName.capitalizedString
 
-        let sectionName = sections[indexPath.row].rawValue as String
-        cell.textLabel!.text = sectionName.capitalizedString
+        }
         return cell
     }
 
@@ -79,6 +103,26 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
+    }
+
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 1
+        } else {
+            return 32
+        }
+    }
+
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ""
+    }
+
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Center
+        label.text = self.tableView(tableView, titleForHeaderInSection: section)
+        return label
     }
 
 }
