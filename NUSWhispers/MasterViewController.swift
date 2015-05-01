@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import TTTAttributedLabel
 
 class MasterViewController: UITableViewController {
     
@@ -119,22 +120,49 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 1
+            return 52
         } else {
-            return 32
+            return 22
         }
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
+        switch section {
+        case 0:
+            return "NUSWhispers"
+        case 1:
+            return "CATEGORIES"
+        default:
+            return ""
+        }
     }
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = NSTextAlignment.Center
-        label.text = self.tableView(tableView, titleForHeaderInSection: section)
-        return label
+        switch section {
+        case 0:
+            let label = TTTAttributedLabel()
+            label.font = UIFont(name: "Avenir-Black", size: 24)
+            label.textColor = UIColor.whiteColor()
+            label.textAlignment = NSTextAlignment.Center
+            let text = self.tableView(tableView, titleForHeaderInSection: section)! as NSString
+
+            label.setText(text, afterInheritingLabelAttributesAndConfiguringWithBlock: { (mutString: NSMutableAttributedString!) in
+                let yellowRange = text.rangeOfString("Whispers")
+                mutString.addAttribute(String(kCTForegroundColorAttributeName), value: UIColor.yellowColor(), range: yellowRange)
+                return mutString
+            })
+
+            return label
+        case 1:
+            let label = TTTAttributedLabel()
+            label.font = UIFont(name: "Avenir-Black", size: 12)
+            label.textColor = AppColors.DarkBlue
+            label.textAlignment = NSTextAlignment.Center
+            label.text = self.tableView(tableView, titleForHeaderInSection: section)
+            return label
+        default:
+            return .None
+        }
     }
 
 }

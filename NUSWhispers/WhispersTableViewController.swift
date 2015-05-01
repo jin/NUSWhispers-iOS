@@ -62,4 +62,20 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
+            cell.whisperContentAttributedLabel.numberOfLines = 100
+            cell.setNeedsUpdateConstraints()
+            tableView.layoutIfNeeded()
+        }
+    }
+
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
+            cell.whisperContentAttributedLabel.numberOfLines = 15
+            cell.setNeedsUpdateConstraints()
+            tableView.layoutIfNeeded()
+        }
+    }
+
 }

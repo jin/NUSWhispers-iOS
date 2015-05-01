@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DetailViewController: UIViewController {
 
@@ -37,6 +38,10 @@ class DetailViewController: UIViewController {
         self.configureView()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         navigationItem.leftItemsSupplementBackButton = true
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        SVProgressHUD.dismiss()
     }
 
     override func didReceiveMemoryWarning() {

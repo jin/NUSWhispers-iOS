@@ -69,7 +69,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-Kw-XKh">
-                                            <rect key="frame" x="20" y="33" width="32" height="17"/>
+                                            <rect key="frame" x="20" y="30" width="32" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.55708498677248675" green="0.55708498677248675" blue="0.55708498677248675" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -98,22 +98,26 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTN-FZ-Z4x" customClass="TTTAttributedLabel">
-                                            <rect key="frame" x="20" y="65" width="552" height="185"/>
+                                            <rect key="frame" x="28" y="62" width="544" height="188"/>
                                             <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</mutableString>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="9Kc-PX-CRL"/>
-                                        <constraint firstItem="yTN-FZ-Z4x" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="12" id="Abb-d7-n5g"/>
+                                        <constraint firstItem="yTN-FZ-Z4x" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="20" id="Abb-d7-n5g">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                        </constraint>
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="E9f-Z8-m87"/>
-                                        <constraint firstItem="cpy-Kw-XKh" firstAttribute="top" secondItem="Sgv-2J-rMm" secondAttribute="top" constant="33" id="HMV-XY-0Tx"/>
+                                        <constraint firstItem="cpy-Kw-XKh" firstAttribute="top" secondItem="Sgv-2J-rMm" secondAttribute="top" constant="30" id="HMV-XY-0Tx"/>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="top" secondItem="fdj-Hl-ecC" secondAttribute="bottom" constant="10" id="IOO-KE-lCy"/>
                                         <constraint firstAttribute="trailing" secondItem="fdj-Hl-ecC" secondAttribute="trailing" constant="20" id="N2K-Qv-la6"/>
                                         <constraint firstItem="cpy-Kw-XKh" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="Wva-as-GaH"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="yTN-FZ-Z4x" secondAttribute="trailing" constant="20" id="X8c-eU-0Lm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="yTN-FZ-Z4x" secondAttribute="trailing" constant="20" id="X8c-eU-0Lm">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                        </constraint>
                                         <constraint firstAttribute="bottom" secondItem="1ym-6P-mN9" secondAttribute="bottom" constant="10" id="q4R-Lw-5A7"/>
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="top" secondItem="5Kh-no-SRo" secondAttribute="bottom" constant="8" id="rFq-12-pdl"/>
                                         <constraint firstItem="yTN-FZ-Z4x" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="15" id="wbp-Mv-BPY"/>
@@ -169,10 +173,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
                                             <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -191,7 +195,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="NUSWhispers" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Whispers" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
