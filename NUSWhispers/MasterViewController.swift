@@ -15,18 +15,18 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
 
     var sections = [
-        Section.Featured,
-        .Popular,
-        .Latest
+        (Section.Featured, UIImage(named: "icon_featured")!),
+        (.Popular, UIImage(named: "icon_popular")!),
+        (.Latest, UIImage(named: "icon_latest")!)
     ]
 
     var categories = [
-        Section.Advice,
-        .Funny,
-        .LostAndFound,
-        .Nostalgia,
-        .Rant,
-        .Romance
+        (Section.Advice, UIImage(named: "icon_advice")!),
+        (.Funny, UIImage(named: "icon_funny")!),
+        (.LostAndFound, UIImage(named: "icon_lost_and_found")!),
+        (.Nostalgia, UIImage(named: "icon_nostalgia")!),
+        (.Rant, UIImage(named: "icon_rant")!),
+        (.Romance, UIImage(named: "icon_romance")!)
     ]
         
 
@@ -66,9 +66,9 @@ class MasterViewController: UITableViewController {
                 var section: Section? = nil
                 switch indexPath.section {
                 case 0:
-                    section = sections[indexPath.row]
+                    section = sections[indexPath.row].0
                 case 1:
-                    section = categories[indexPath.row]
+                    section = categories[indexPath.row].0
                 default:
                     assertionFailure("Invalid section")
                 }
@@ -96,12 +96,18 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         if indexPath.section == 0 {
-            let sectionName = sections[indexPath.row].rawValue as String
+            let sectionName = sections[indexPath.row].0.rawValue as String
             cell.textLabel!.text = sectionName.capitalizedString
+            cell.imageView?.image = sections[indexPath.row].1
         } else {
-            let categoryName = categories[indexPath.row].rawValue as String
+            let categoryName = categories[indexPath.row].0.rawValue as String
             cell.textLabel!.text = categoryName.capitalizedString
+            cell.imageView?.image = categories[indexPath.row].1
+        }
 
+        cell.textLabel?.textAlignment = NSTextAlignment.Left
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            cell.indentationWidth = 15
         }
         return cell
     }
