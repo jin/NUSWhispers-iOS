@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import SVPullToRefresh
 
 class WhispersTableViewController: UITableViewController, WhisperRequestManagerDelegate {
 
@@ -20,12 +21,31 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     var whispers: [Whisper] = [Whisper]()
+    var currentOffsetWhileLoadingNewRows: CGPoint = CGPointMake(0, 0)
+    var firstRowHeight: CGFloat {
+        return self.tableView(self.tableView, heightForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         WhisperRequestManager.sharedInstance.delegate = self
+
+        tableView.addPullToRefreshWithActionHandler {
+            if let section = self.section {
+                WhisperRequestManager.sharedInstance.requestForWhispers(section, offset: 0)
+            }
+        }
+
+        tableView.addInfiniteScrollingWithActionHandler {
+            if let section = self.section {
+                WhisperRequestManager.sharedInstance.requestForWhispers(section, offset: self.whispers.count)
+            }
+        }
+
+        tableView.triggerPullToRefresh()
+//        SVProgressHUD.show()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,14 +54,23 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     // MARK: - WhisperRequestManager delegate methods
 
-    func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers whispers: [Whisper]) {
-        self.whispers = whispers
-        if whispers.count > 0 {
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        } else {
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers newWhispers: [Whisper]) {
+        tableView.infiniteScrollingView.stopAnimating()
+        tableView.pullToRefreshView.stopAnimating()
+
+        var indexPaths = [NSIndexPath]()
+        for i in (whispers.count..<(whispers.count + newWhispers.count)) {
+            indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
         }
-        tableView.reloadData()
+
+        whispers.extend(newWhispers)
+
+        tableView.separatorStyle = (whispers.count > 0) ? .SingleLine : .None
+
+        tableView.beginUpdates()
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+        tableView.endUpdates()
+        SVProgressHUD.dismiss()
     }
 
     // MARK: - Table view data source
@@ -64,17 +93,12 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
-            cell.whisperContentAttributedLabel.numberOfLines = 100
-            cell.setNeedsUpdateConstraints()
-            tableView.layoutIfNeeded()
+            let whisper = whispers[indexPath.row]
         }
     }
 
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
-            cell.whisperContentAttributedLabel.numberOfLines = 15
-            cell.setNeedsUpdateConstraints()
-            tableView.layoutIfNeeded()
         }
     }
 

@@ -7,6 +7,7 @@ target 'NUSWhispers' do
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
   pod 'TTTAttributedLabel'
+  pod 'SVPullToRefresh'
 end
 
 target 'NUSWhispersTests' do

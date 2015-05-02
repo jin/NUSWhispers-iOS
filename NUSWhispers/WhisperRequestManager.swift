@@ -29,13 +29,12 @@ class WhisperRequestManager {
         self.requestManager = Alamofire.Manager(configuration: config)
     }
 
-    func requestForWhispers(section: Section) {
-        let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=10"
+    func requestForWhispers(section: Section, offset: Int = 0) {
+        let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=10&offset=\(offset)"
         let req = NSMutableURLRequest(URL: NSURL(string: url)!)
         req.HTTPBody = nil
         req.HTTPMethod = "GET"
         req.addValue("0", forHTTPHeaderField: "Content-Length")
-        SVProgressHUD.show()
         requestManager!.request(req).responseJSON { (req, resp, json, error) in
             if let e = error {
                 println(e)
@@ -53,7 +52,6 @@ class WhisperRequestManager {
                 allWhispers.append(Whisper(json: whisper))
             }
             delegate?.whisperRequestManager(self, didReceiveWhispers: allWhispers)
-            SVProgressHUD.dismiss()
         }
     }
 

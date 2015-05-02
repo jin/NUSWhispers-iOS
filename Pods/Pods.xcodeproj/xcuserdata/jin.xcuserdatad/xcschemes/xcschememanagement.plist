@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NUSWhispers-SVPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-NUSWhispers-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B6DE2D4E74D4BBE5DDA3A96</key>
+		<key>178302634F5A95FAEB98FC25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F0338851B5BF128DD002931</key>
+		<key>2C966D86AC81BBB50BF5FB4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3168A3371E2E688F71F196D</key>
+		<key>6E1294D79D6A55260C126D45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DDA44970FF735BF20A7F75A9</key>
+		<key>BA7DADC0AB20645C06BF277D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDCDF99A357F4038EB8BED66</key>
+		<key>E083D16D3F02CFAE4CB2DA78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2640B78B33C71A91DCF2F53</key>
 		<dict>
 			<key>primary</key>
 			<true/>
