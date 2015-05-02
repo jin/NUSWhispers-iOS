@@ -21,31 +21,36 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     var whispers: [Whisper] = [Whisper]()
-    var currentOffsetWhileLoadingNewRows: CGPoint = CGPointMake(0, 0)
-    var firstRowHeight: CGFloat {
-        return self.tableView(self.tableView, heightForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
+
         WhisperRequestManager.sharedInstance.delegate = self
 
         tableView.addPullToRefreshWithActionHandler {
             if let section = self.section {
-                WhisperRequestManager.sharedInstance.requestForWhispers(section, offset: 0)
+                WhisperRequestManager.sharedInstance.requestForWhispers(
+                    section,
+                    offset: 0)
+            } else {
+                self.tableView.pullToRefreshView.stopAnimating()
             }
         }
 
         tableView.addInfiniteScrollingWithActionHandler {
             if let section = self.section {
-                WhisperRequestManager.sharedInstance.requestForWhispers(section, offset: self.whispers.count)
+                WhisperRequestManager.sharedInstance.requestForWhispers(
+                    section,
+                    offset: self.whispers.count)
+            } else {
+                self.tableView.infiniteScrollingView.stopAnimating()
             }
         }
 
         tableView.triggerPullToRefresh()
-//        SVProgressHUD.show()
     }
 
     override func didReceiveMemoryWarning() {
