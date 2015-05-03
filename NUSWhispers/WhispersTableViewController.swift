@@ -50,7 +50,8 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             }
         }
 
-        tableView.triggerPullToRefresh()
+        tableView.showsPullToRefresh = false
+        SVProgressHUD.show()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +61,8 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     // MARK: - WhisperRequestManager delegate methods
 
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers newWhispers: [Whisper]) {
+        SVProgressHUD.dismiss()
+
         tableView.infiniteScrollingView.stopAnimating()
         tableView.pullToRefreshView.stopAnimating()
 
@@ -75,7 +78,8 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         tableView.beginUpdates()
         tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
         tableView.endUpdates()
-        SVProgressHUD.dismiss()
+
+        tableView.showsPullToRefresh = true
     }
 
     // MARK: - Table view data source
