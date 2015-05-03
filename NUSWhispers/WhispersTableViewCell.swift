@@ -14,6 +14,7 @@ class WhispersTableViewCell: UITableViewCell {
     @IBOutlet weak var whisperContentAttributedLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
+    @IBOutlet weak var whisperCategoryLabel: TTTAttributedLabel!
 
     var whisper: Whisper? {
         didSet {
@@ -33,10 +34,12 @@ class WhispersTableViewCell: UITableViewCell {
 
             whisperTagLabel.text = "#\(whisper.tag!)"
 
+            whisperCategoryLabel.text = whisper.category.lowercaseString
+
             let relativeDateFormatter = NSDateFormatter()
             relativeDateFormatter.doesRelativeDateFormatting = true
-            relativeDateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-            relativeDateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
             whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
         }
     }
