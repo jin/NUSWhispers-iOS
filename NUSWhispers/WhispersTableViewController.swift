@@ -91,8 +91,6 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             indexPaths,
             withRowAnimation: UITableViewRowAnimation.Fade)
         tableView.endUpdates()
-
-        tableView.showsPullToRefresh = true
     }
 
     // MARK: - Table view data source
@@ -124,4 +122,13 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         }
     }
 
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if whispers.count > 0 {
+            tableView.showsPullToRefresh = true
+        }
+    }
+
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        tableView.showsPullToRefresh = false
+    }
 }
