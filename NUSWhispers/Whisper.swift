@@ -27,6 +27,5 @@ class Whisper {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         self.createdAt = dateFormatter.dateFromString(json["created_at"].string!)
         self.updatedAt = dateFormatter.dateFromString(json["status_updated_at"].string!)
-
     }
 }

@@ -63,8 +63,19 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers newWhispers: [Whisper]) {
         SVProgressHUD.dismiss()
 
-        tableView.infiniteScrollingView.stopAnimating()
+        if tableView.pullToRefreshView.state == 2 {
+            // PullToRefresh view is animating
+            if newWhispers.first!.tag == whispers.first!.tag {
+                tableView.pullToRefreshView.stopAnimating()
+                return
+            } else {
+                whispers.removeAll()
+                self.tableView.reloadData()
+            }
+        }
+
         tableView.pullToRefreshView.stopAnimating()
+        tableView.infiniteScrollingView.stopAnimating()
 
         var indexPaths = [NSIndexPath]()
         for i in (whispers.count..<(whispers.count + newWhispers.count)) {
@@ -76,7 +87,9 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         tableView.separatorStyle = (whispers.count > 0) ? .SingleLine : .None
 
         tableView.beginUpdates()
-        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+        tableView.insertRowsAtIndexPaths(
+            indexPaths,
+            withRowAnimation: UITableViewRowAnimation.Fade)
         tableView.endUpdates()
 
         tableView.showsPullToRefresh = true
