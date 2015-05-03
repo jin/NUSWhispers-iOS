@@ -106,6 +106,13 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="romance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo9-a5-Zfw" customClass="TTTAttributedLabel">
+                                            <rect key="frame" x="104" y="304" width="53" height="16"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.31402943121693117" green="0.31402943121693117" blue="0.31402943121693117" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="9Kc-PX-CRL"/>
@@ -115,11 +122,13 @@
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="E9f-Z8-m87"/>
                                         <constraint firstItem="cpy-Kw-XKh" firstAttribute="top" secondItem="Sgv-2J-rMm" secondAttribute="top" constant="30" id="HMV-XY-0Tx"/>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="top" secondItem="fdj-Hl-ecC" secondAttribute="bottom" constant="10" id="IOO-KE-lCy"/>
+                                        <constraint firstItem="jo9-a5-Zfw" firstAttribute="top" secondItem="fdj-Hl-ecC" secondAttribute="bottom" constant="8" id="KhS-A5-FmB"/>
                                         <constraint firstAttribute="trailing" secondItem="fdj-Hl-ecC" secondAttribute="trailing" constant="20" id="N2K-Qv-la6"/>
                                         <constraint firstItem="cpy-Kw-XKh" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="Wva-as-GaH"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="yTN-FZ-Z4x" secondAttribute="trailing" constant="20" id="X8c-eU-0Lm">
                                             <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                         </constraint>
+                                        <constraint firstItem="jo9-a5-Zfw" firstAttribute="leading" secondItem="1ym-6P-mN9" secondAttribute="trailing" constant="10" id="pHf-jd-aIh"/>
                                         <constraint firstAttribute="bottom" secondItem="1ym-6P-mN9" secondAttribute="bottom" constant="10" id="q4R-Lw-5A7"/>
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="top" secondItem="5Kh-no-SRo" secondAttribute="bottom" constant="8" id="rFq-12-pdl"/>
                                         <constraint firstItem="yTN-FZ-Z4x" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="15" id="wbp-Mv-BPY"/>
@@ -128,6 +137,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="whisperCategoryLabel" destination="jo9-a5-Zfw" id="bOD-7d-sgF"/>
                                     <outlet property="whisperContentAttributedLabel" destination="yTN-FZ-Z4x" id="mOF-vO-AiK"/>
                                     <outlet property="whisperTagLabel" destination="cpy-Kw-XKh" id="dzY-sF-cwV"/>
                                     <outlet property="whisperTimeLabel" destination="1ym-6P-mN9" id="AWr-62-oao"/>
