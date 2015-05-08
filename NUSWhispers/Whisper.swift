@@ -24,8 +24,7 @@ class Whisper {
         self.content = json["content"].string
         self.views = json["views"].int
         self.facebookId = json["facebook_information"]["id"].string
-        self.likesCount = json["facebook_information"]["likes"]["summary"]["total_count"].int
-
+        self.likesCount = json["fb_like_count"].int
         if let category = json["categories"].array?.first {
             self.category = category["confession_category"].string
         }
