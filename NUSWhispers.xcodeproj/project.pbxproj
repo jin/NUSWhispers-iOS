@@ -20,6 +20,8 @@
 		3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A71AEFD35400F2A822 /* AppColors.swift */; };
 		3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */; };
 		3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */; };
+		3CC92F861AFD147E005AC93D /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */; };
+		3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */; };
 		3CCD3AC31AEFC0800014479C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC21AEFC0800014479C /* Section.swift */; };
 		3CCD3AC51AEFC0E80014479C /* Whisper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC41AEFC0E80014479C /* Whisper.swift */; };
 		495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -56,6 +58,8 @@
 		3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManager.swift; sourceTree = "<group>"; };
 		3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManagerDelegate.swift; sourceTree = "<group>"; };
 		3CB43E341AF24CC90005127D /* NUSWhispers_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUSWhispers_Bridging_Header.h; sourceTree = "<group>"; };
+		3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
+		3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		3CCD3AC21AEFC0800014479C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3CCD3AC41AEFC0E80014479C /* Whisper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Whisper.swift; sourceTree = "<group>"; };
 		D7E8A66A2F39F73DD84C1385 /* Pods-NUSWhispers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUSWhispers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,21 +115,16 @@
 		3C01AC3C1AEFAB4500E0C94B /* NUSWhispers */ = {
 			isa = PBXGroup;
 			children = (
-				3C6F676F1AF2294300599CA5 /* assets */,
 				3C01AC3F1AEFAB4500E0C94B /* AppDelegate.swift */,
-				3C01AC411AEFAB4500E0C94B /* MasterViewController.swift */,
-				3C01AC431AEFAB4500E0C94B /* DetailViewController.swift */,
+				3C8219A71AEFD35400F2A822 /* AppColors.swift */,
 				3C01AC451AEFAB4500E0C94B /* Main.storyboard */,
 				3C01AC481AEFAB4500E0C94B /* Images.xcassets */,
 				3C01AC4A1AEFAB4500E0C94B /* LaunchScreen.xib */,
-				3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */,
-				3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */,
-				3CCD3AC21AEFC0800014479C /* Section.swift */,
-				3CCD3AC41AEFC0E80014479C /* Whisper.swift */,
-				3C8219A71AEFD35400F2A822 /* AppColors.swift */,
-				3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */,
-				3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */,
 				3CB43E341AF24CC90005127D /* NUSWhispers_Bridging_Header.h */,
+				3CC92F871AFD1491005AC93D /* Views+Controllers */,
+				3CC92F881AFD14B8005AC93D /* Models */,
+				3CC92F891AFD14E2005AC93D /* Network */,
+				3C6F676F1AF2294300599CA5 /* Assets */,
 				3C01AC3D1AEFAB4500E0C94B /* Supporting Files */,
 			);
 			path = NUSWhispers;
@@ -156,12 +155,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3C6F676F1AF2294300599CA5 /* assets */ = {
+		3C6F676F1AF2294300599CA5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				3C6F67701AF2295300599CA5 /* pac_man_loading.gif */,
 			);
-			name = assets;
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		3CC92F871AFD1491005AC93D /* Views+Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C01AC411AEFAB4500E0C94B /* MasterViewController.swift */,
+				3C01AC431AEFAB4500E0C94B /* DetailViewController.swift */,
+				3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */,
+				3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */,
+				3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */,
+				3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */,
+			);
+			name = "Views+Controllers";
+			sourceTree = "<group>";
+		};
+		3CC92F881AFD14B8005AC93D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CCD3AC21AEFC0800014479C /* Section.swift */,
+				3CCD3AC41AEFC0E80014479C /* Whisper.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3CC92F891AFD14E2005AC93D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */,
+				3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		D54EC7133133028664AA3E82 /* Pods */ = {
@@ -325,12 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC92F861AFD147E005AC93D /* CommentsTableViewController.swift in Sources */,
 				3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */,
 				3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */,
 				3C01AC441AEFAB4500E0C94B /* DetailViewController.swift in Sources */,
 				3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */,
 				3C01AC421AEFAB4500E0C94B /* MasterViewController.swift in Sources */,
 				3CCD3AC51AEFC0E80014479C /* Whisper.swift in Sources */,
+				3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */,
 				3CCD3AC31AEFC0800014479C /* Section.swift in Sources */,
 				3C01AC401AEFAB4500E0C94B /* AppDelegate.swift in Sources */,
 				3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */,

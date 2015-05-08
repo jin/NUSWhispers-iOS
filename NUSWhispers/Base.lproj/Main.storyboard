@@ -154,6 +154,32 @@
             </objects>
             <point key="canvasLocation" x="1464" y="129"/>
         </scene>
+        <!--Comments Table View Controller-->
+        <scene sceneID="KfJ-eU-prn">
+            <objects>
+                <tableViewController id="I0H-AQ-WH3" customClass="CommentsTableViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gzW-bX-9dL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PUq-N6-pfJ" customClass="CommentsTableViewCell" customModule="NUSWhispers" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PUq-N6-pfJ" id="SyP-4O-gTs">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I0H-AQ-WH3" id="Qzv-s1-Y4Z"/>
+                            <outlet property="delegate" destination="I0H-AQ-WH3" id="daB-Oz-7Ec"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wS-oy-1kE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464" y="922"/>
+        </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
