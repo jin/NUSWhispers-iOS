@@ -11,6 +11,7 @@ import TTTAttributedLabel
 
 class WhispersTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var whisperLikesCountLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperContentAttributedLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
@@ -41,6 +42,8 @@ class WhispersTableViewCell: UITableViewCell {
             relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
             relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
             whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
+
+            whisperLikesCountLabel.text = "\(whisper.likesCount) likes"
         }
     }
 

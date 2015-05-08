@@ -17,12 +17,14 @@ class Whisper {
     var views: Int!
     var facebookId: String!
     var category: String! = ""
+    var likesCount: Int!
 
     init(json: JSON) {
         self.tag = json["confession_id"].int
         self.content = json["content"].string
         self.views = json["views"].int
         self.facebookId = json["facebook_information"]["id"].string
+        self.likesCount = json["facebook_information"]["likes"]["summary"]["total_count"].int
 
         if let category = json["categories"].array?.first {
             self.category = category["confession_category"].string
