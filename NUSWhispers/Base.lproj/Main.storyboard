@@ -77,7 +77,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kh-no-SRo">
-                                            <rect key="frame" x="477" y="261" width="103" height="27"/>
+                                            <rect key="frame" x="470" y="261" width="103" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" title="View on Facebook">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,7 +142,7 @@
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="top" secondItem="5Kh-no-SRo" secondAttribute="bottom" constant="8" id="rFq-12-pdl"/>
                                         <constraint firstItem="jo9-a5-Zfw" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="27" id="rWb-xF-51N"/>
                                         <constraint firstItem="yTN-FZ-Z4x" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="15" id="wbp-Mv-BPY"/>
-                                        <constraint firstAttribute="trailing" secondItem="5Kh-no-SRo" secondAttribute="trailing" constant="20" id="we7-NN-bS8"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Kh-no-SRo" secondAttribute="trailing" constant="27" id="we7-NN-bS8"/>
                                         <constraint firstItem="5Kh-no-SRo" firstAttribute="top" secondItem="yTN-FZ-Z4x" secondAttribute="bottom" constant="10" id="wfg-tK-mpQ"/>
                                     </constraints>
                                     <variation key="default">
