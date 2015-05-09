@@ -15,6 +15,7 @@ class WhisperRequestManager {
 
     var requestManager: Alamofire.Manager?
     var delegate: WhisperRequestManagerDelegate?
+    let whisperCountPerRequest: Int = 20
 
     class var sharedInstance : WhisperRequestManager {
         struct Singleton {
@@ -30,7 +31,7 @@ class WhisperRequestManager {
     }
 
     func requestForWhispers(section: Section, offset: Int = 0) {
-        let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=10&offset=\(offset)"
+        let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=\(whisperCountPerRequest)&offset=\(offset)"
         let req = NSMutableURLRequest(URL: NSURL(string: url)!)
         req.HTTPBody = nil
         req.HTTPMethod = "GET"
