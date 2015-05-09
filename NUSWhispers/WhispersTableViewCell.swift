@@ -43,7 +43,7 @@ class WhispersTableViewCell: UITableViewCell {
             relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
             whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
 
-            whisperLikesCountLabel.text = "\(whisper.likesCount) likes"
+            whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
         }
     }
 
