@@ -20,6 +20,8 @@ enum Section : String, Printable {
     case Rant = "rant"
     case Romance = "romance"
 
+    case NewConfession = "new confession"
+
     var description: String {
         return self.rawValue
     }
@@ -44,6 +46,8 @@ enum Section : String, Printable {
             return "category/8"
         case .Romance:
             return "category/7"
+        case .NewConfession:
+            return ""
         default:
             assertionFailure("Invalid section")
         }

@@ -22,6 +22,7 @@
 		3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */; };
 		3CC92F861AFD147E005AC93D /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */; };
 		3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */; };
+		3CC92F8D1AFE4938005AC93D /* NewConfessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F8C1AFE4938005AC93D /* NewConfessionViewController.swift */; };
 		3CCD3AC31AEFC0800014479C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC21AEFC0800014479C /* Section.swift */; };
 		3CCD3AC51AEFC0E80014479C /* Whisper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC41AEFC0E80014479C /* Whisper.swift */; };
 		495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -60,6 +61,7 @@
 		3CB43E341AF24CC90005127D /* NUSWhispers_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUSWhispers_Bridging_Header.h; sourceTree = "<group>"; };
 		3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		3CC92F8C1AFE4938005AC93D /* NewConfessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConfessionViewController.swift; sourceTree = "<group>"; };
 		3CCD3AC21AEFC0800014479C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3CCD3AC41AEFC0E80014479C /* Whisper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Whisper.swift; sourceTree = "<group>"; };
 		D7E8A66A2F39F73DD84C1385 /* Pods-NUSWhispers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUSWhispers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */,
 				3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */,
 				3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */,
+				3CC92F8C1AFE4938005AC93D /* NewConfessionViewController.swift */,
 			);
 			name = "Views+Controllers";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC92F8D1AFE4938005AC93D /* NewConfessionViewController.swift in Sources */,
 				3CC92F861AFD147E005AC93D /* CommentsTableViewController.swift in Sources */,
 				3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */,
 				3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */,

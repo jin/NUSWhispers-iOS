@@ -54,6 +54,24 @@
             </objects>
             <point key="canvasLocation" x="677" y="129"/>
         </scene>
+        <!--New Confession View Controller-->
+        <scene sceneID="V4K-S9-jSv">
+            <objects>
+                <viewController id="xBl-ue-jaf" customClass="NewConfessionViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="If4-jq-KlC"/>
+                        <viewControllerLayoutGuide type="bottom" id="HWC-Hs-BRm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fkn-RF-dxE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjF-ia-OWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464" y="-630"/>
+        </scene>
         <!--Whispers Table View Controller-->
         <scene sceneID="qfO-cV-aRI">
             <objects>
@@ -238,9 +256,6 @@
                                     <color key="backgroundColor" red="0.1803921568627451" green="0.5607843137254902" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -250,6 +265,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Whispers" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showWhispers" id="Mpz-0f-efR"/>
+                        <segue destination="xBl-ue-jaf" kind="showDetail" identifier="showNewConfession" id="Ier-Pm-htb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,7 +291,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Mpz-0f-efR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.18039215689999999" green="0.56078431370000004" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

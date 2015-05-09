@@ -28,6 +28,10 @@ class MasterViewController: UITableViewController {
         (.Rant, UIImage(named: "icon_rant")!),
         (.Romance, UIImage(named: "icon_romance")!)
     ]
+
+    var others = [
+        (Section.NewConfession, UIImage(named: "icon_funny"))
+    ]
         
 
     override func awakeFromNib() {
@@ -61,7 +65,7 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "showWhispers" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 var section: Section? = nil
                 switch indexPath.section {
@@ -82,27 +86,40 @@ class MasterViewController: UITableViewController {
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        switch section {
+        case 0:
             return sections.count
-        } else {
+        case 1:
             return categories.count
+        case 2:
+            return others.count
+        default:
+            return 0
         }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             let sectionName = sections[indexPath.row].0.rawValue as String
             cell.textLabel!.text = sectionName.capitalizedString
             cell.imageView?.image = sections[indexPath.row].1
-        } else {
+        case 1:
             let categoryName = categories[indexPath.row].0.rawValue as String
             cell.textLabel!.text = categoryName.capitalizedString
             cell.imageView?.image = categories[indexPath.row].1
+        case 2:
+            let cellName = others[indexPath.row].0.rawValue as String
+            cell.textLabel!.text = cellName.capitalizedString
+            cell.imageView?.image = others[indexPath.row].1
+        default:
+            break
+
         }
 
         cell.textLabel?.textAlignment = NSTextAlignment.Left
@@ -114,6 +131,15 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         SVProgressHUD.show()
+        switch indexPath.section {
+        case 0, 1:
+            performSegueWithIdentifier("showWhispers", sender: self)
+        case 2:
+            performSegueWithIdentifier("showNewConfession", sender: self)
+        default:
+            assertionFailure("Invalid selection in table")
+        }
+
     }
 
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
