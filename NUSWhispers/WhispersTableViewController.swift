@@ -115,12 +115,20 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
-            let whisper = whispers[indexPath.row]
+            performSegueWithIdentifier("showWhisper", sender: self)
         }
     }
 
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showWhisper" {
+            let destinationViewController = segue.destinationViewController as! WhisperViewController
+            let selectedWhisper = whispers[tableView.indexPathForSelectedRow()!.row]
+            destinationViewController.whisper = selectedWhisper
         }
     }
 

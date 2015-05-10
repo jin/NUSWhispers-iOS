@@ -117,6 +117,7 @@ class MasterViewController: UITableViewController {
             let cellName = others[indexPath.row].0.rawValue as String
             cell.textLabel!.text = cellName.capitalizedString
             cell.imageView?.image = others[indexPath.row].1
+            cell.hidden = true // Hide the cell until new confession API is figured out
         default:
             break
 
