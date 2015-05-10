@@ -184,7 +184,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="Q3R-cg-Pml" kind="presentation" identifier="showWhisper" modalPresentationStyle="formSheet" id="0K3-Qz-aNH"/>
+                        <segue destination="Q3R-cg-Pml" kind="presentation" identifier="showWhisper" modalPresentationStyle="pageSheet" id="0K3-Qz-aNH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSe-aU-4hF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -206,15 +206,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yda-07-RUX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-AE-inC" customClass="TTTAttributedLabel">
-                                        <rect key="frame" x="40" y="63" width="520" height="302"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</mutableString>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-w8-Xcc">
-                                        <rect key="frame" x="40" y="385" width="520" height="300"/>
+                                        <rect key="frame" x="40" y="360" width="520" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="e0w-5J-iH5"/>
                                         </constraints>
@@ -222,27 +215,24 @@
                                             <segue destination="I0H-AQ-WH3" kind="embed" identifier="showCommentsTable" id="dDk-VU-rTt"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIM-Ze-5FD">
-                                        <rect key="frame" x="20" y="25" width="35" height="30"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="closeButtonWasPressed:" destination="Q3R-cg-Pml" eventType="touchUpInside" id="YsQ-mx-VxL"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-AE-inC" customClass="TTTAttributedLabel">
+                                        <rect key="frame" x="40" y="38" width="520" height="302"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</mutableString>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="0Ev-w8-Xcc" firstAttribute="top" secondItem="Mhe-AE-inC" secondAttribute="bottom" constant="20" id="9jm-Lu-Mun"/>
-                                    <constraint firstItem="dIM-Ze-5FD" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="Klv-98-nVD"/>
                                     <constraint firstAttribute="bottom" secondItem="0Ev-w8-Xcc" secondAttribute="bottom" constant="20" id="L62-Lv-fyK"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="Ruf-PY-fVL"/>
                                     <constraint firstItem="0Ev-w8-Xcc" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="ZY8-Fa-2kN"/>
-                                    <constraint firstItem="Mhe-AE-inC" firstAttribute="top" secondItem="yda-07-RUX" secondAttribute="topMargin" constant="55" id="mPG-Jg-MQZ"/>
+                                    <constraint firstItem="Mhe-AE-inC" firstAttribute="top" secondItem="yda-07-RUX" secondAttribute="topMargin" constant="30" id="mPG-Jg-MQZ"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="40" id="wJb-iq-EBr">
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                     </constraint>
-                                    <constraint firstItem="dIM-Ze-5FD" firstAttribute="top" secondItem="yda-07-RUX" secondAttribute="top" constant="25" id="xPB-Wa-HPa"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="width" secondItem="0Ev-w8-Xcc" secondAttribute="width" id="zpZ-Rf-bzv"/>
                                 </constraints>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
