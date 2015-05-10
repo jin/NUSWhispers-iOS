@@ -19,6 +19,8 @@ class Whisper {
     var category: String! = ""
     var likesCount: Int!
 
+    var comments: [Comment]! = [Comment]()
+
     init(json: JSON) {
         self.tag = json["confession_id"].int
         self.content = json["content"].string
@@ -33,5 +35,9 @@ class Whisper {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         self.createdAt = dateFormatter.dateFromString(json["created_at"].string!)
         self.updatedAt = dateFormatter.dateFromString(json["status_updated_at"].string!)
+
+        self.comments = json["facebook_information"]["comments"]["data"].array?.map({
+            Comment(json: $0)
+        })
     }
 }

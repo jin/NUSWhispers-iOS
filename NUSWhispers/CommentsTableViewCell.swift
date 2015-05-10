@@ -10,15 +10,28 @@ import UIKit
 
 class CommentsTableViewCell: UITableViewCell {
 
+    var comment: Comment? {
+        didSet {
+            fillCellContents()
+        }
+    }
+
+    @IBOutlet weak var commentAuthorNameLabel: UILabel!
+    @IBOutlet weak var commentMessageLabel: UILabel!
+    @IBOutlet weak var commentAuthorImageView: UIImageView!
+    @IBOutlet weak var commentDateLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+
+    private func fillCellContents() {
+        commentAuthorNameLabel.text = comment?.authorName
+        commentMessageLabel.text = comment?.message
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

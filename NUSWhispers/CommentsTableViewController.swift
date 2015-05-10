@@ -10,6 +10,8 @@ import UIKit
 
 class CommentsTableViewController: UITableViewController {
 
+    var comments: [Comment]! = [Comment]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +26,16 @@ class CommentsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return comments.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! CommentsTableViewCell
+        cell.comment = comments[indexPath.row]
         return cell
     }
 

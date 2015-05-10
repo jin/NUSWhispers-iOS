@@ -32,6 +32,7 @@ class WhisperViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showCommentsTable" {
             let destinationViewController = segue.destinationViewController as! CommentsTableViewController
+            destinationViewController.comments = whisper?.comments
         }
     }
 

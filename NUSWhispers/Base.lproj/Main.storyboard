@@ -321,6 +321,12 @@
                                         <constraint firstAttribute="bottom" secondItem="dCc-KW-ndd" secondAttribute="bottom" constant="20" id="nTT-k1-bsI"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentAuthorImageView" destination="140-ty-bxL" id="hnW-nb-6av"/>
+                                    <outlet property="commentAuthorNameLabel" destination="eIS-4Y-GVG" id="Ywx-EZ-C4Y"/>
+                                    <outlet property="commentDateLabel" destination="pXr-Ft-S4k" id="WWg-JI-i3g"/>
+                                    <outlet property="commentMessageLabel" destination="dCc-KW-ndd" id="vdA-Hq-Cl5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

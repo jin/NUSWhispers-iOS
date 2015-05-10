@@ -17,6 +17,7 @@
 		3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */; };
 		3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */; };
 		3C1805CE1AFF89150075783E /* WhisperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1805CD1AFF89150075783E /* WhisperViewController.swift */; };
+		3C1805D01AFF99C90075783E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1805CF1AFF99C90075783E /* Comment.swift */; };
 		3C6F67711AF2295300599CA5 /* pac_man_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3C6F67701AF2295300599CA5 /* pac_man_loading.gif */; };
 		3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A71AEFD35400F2A822 /* AppColors.swift */; };
 		3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */; };
@@ -56,6 +57,7 @@
 		3C01AC611AEFBBEE00E0C94B /* WhispersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewController.swift; sourceTree = "<group>"; };
 		3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewCell.swift; sourceTree = "<group>"; };
 		3C1805CD1AFF89150075783E /* WhisperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperViewController.swift; sourceTree = "<group>"; };
+		3C1805CF1AFF99C90075783E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		3C6F67701AF2295300599CA5 /* pac_man_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pac_man_loading.gif; sourceTree = "<group>"; };
 		3C8219A71AEFD35400F2A822 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManager.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				3CCD3AC21AEFC0800014479C /* Section.swift */,
 				3CCD3AC41AEFC0E80014479C /* Whisper.swift */,
+				3C1805CF1AFF99C90075783E /* Comment.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				3C01AC421AEFAB4500E0C94B /* MasterViewController.swift in Sources */,
 				3CCD3AC51AEFC0E80014479C /* Whisper.swift in Sources */,
 				3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */,
+				3C1805D01AFF99C90075783E /* Comment.swift in Sources */,
 				3CCD3AC31AEFC0800014479C /* Section.swift in Sources */,
 				3C01AC401AEFAB4500E0C94B /* AppDelegate.swift in Sources */,
 				3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */,
