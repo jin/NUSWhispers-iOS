@@ -16,6 +16,7 @@ class WhispersTableViewCell: UITableViewCell {
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
     @IBOutlet weak var whisperCategoryLabel: TTTAttributedLabel!
+    @IBOutlet weak var whisperCommentsCountLabel: TTTAttributedLabel!
 
     var whisper: Whisper? {
         didSet {
@@ -44,6 +45,8 @@ class WhispersTableViewCell: UITableViewCell {
             whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
 
             whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
+
+            whisperCommentsCountLabel.text = (whisper.comments.count == 1) ? "1 comment" : "\(whisper.comments.count) comments"
         }
     }
 
