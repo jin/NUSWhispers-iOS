@@ -58,7 +58,6 @@ class WhispersTableViewCell: UITableViewCell {
             }
             url = NSURL(string: "https://www.facebook.com/nuswhispers/posts/\(facebookPostId)")
             UIApplication.sharedApplication().openURL(url!)
-            println(url)
         }
     }
 }

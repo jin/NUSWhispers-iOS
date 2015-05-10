@@ -12,12 +12,17 @@ import TTTAttributedLabel
 class WhisperViewController: UIViewController {
 
     @IBOutlet weak var whisperContentAttributedLabel: TTTAttributedLabel!
+    @IBOutlet weak var commentsTableViewHeightConstraint: NSLayoutConstraint!
 
     var whisper: Whisper?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         whisperContentAttributedLabel.text = whisper?.content
+    }
+
+    override func viewDidLayoutSubviews() {
+        view.layoutIfNeeded()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +38,7 @@ class WhisperViewController: UIViewController {
         if segue.identifier == "showCommentsTable" {
             let destinationViewController = segue.destinationViewController as! CommentsTableViewController
             destinationViewController.comments = whisper?.comments
+            destinationViewController.whisperViewController = self
         }
     }
 
