@@ -26,15 +26,7 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
         super.viewDidLoad()
         whisperContentAttributedLabel.userInteractionEnabled = true
         whisperContentAttributedLabel.text = whisper?.content
-        whisperContentAttributedLabel.hashtagLinkTapHandler = { (label: KILabel, string: String, range: NSRange) in
-            WhisperRequestManager.sharedInstance.delegate = self
-            let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
-            if let tag = tag {
-                WhisperRequestManager.sharedInstance.delegate = self
-                WhisperRequestManager.sharedInstance.requestForWhisper(tag)
-                SVProgressHUD.show()
-            }
-        }
+        whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
 
         let relativeDateFormatter = NSDateFormatter()
         relativeDateFormatter.doesRelativeDateFormatting = true

@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import KILabel
+import SVProgressHUD
 
 class WhisperRequestManager {
 
@@ -37,6 +39,18 @@ class WhisperRequestManager {
     func requestForWhispers(section: Section, offset: Int = 0) {
         let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=\(whisperCountPerRequest)&offset=\(offset)"
         makeGetRequest(url)
+    }
+
+    func hashtagLinkTapHandler(delegate: WhisperRequestManagerDelegate) -> ((KILabel, String, NSRange) -> ()) {
+        let handler: ((KILabel, String, NSRange) -> ()) = { (label: KILabel, string: String, range: NSRange) in
+            let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
+            if let tag = tag {
+                WhisperRequestManager.sharedInstance.delegate = delegate
+                WhisperRequestManager.sharedInstance.requestForWhisper(tag)
+                SVProgressHUD.show()
+            }
+        }
+        return handler
     }
 
     private func makeGetRequest(urlString: String) {

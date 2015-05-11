@@ -38,16 +38,8 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
             whisperContentAttributedLabel.text = whisper.truncatedContent!
                 .stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceCharacterSet())
-            whisperContentAttributedLabel.hashtagLinkTapHandler = { (label: KILabel, string: String, range: NSRange) in
-                WhisperRequestManager.sharedInstance.delegate = self
-                let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
-                if let tag = tag {
-                    WhisperRequestManager.sharedInstance.delegate = self
-                    WhisperRequestManager.sharedInstance.requestForWhisper(tag)
-                    SVProgressHUD.show()
-                }
-            }
-            
+            whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
+
             whisperTagLabel.text = "#\(whisper.tag!)"
             
             whisperCategoryLabel.text = whisper.category.lowercaseString

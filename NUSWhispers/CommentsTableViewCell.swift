@@ -32,15 +32,7 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
     private func fillCellContents() {
         commentAuthorNameLabel.text = comment?.authorName
         commentMessageLabel.text = comment?.message
-        commentMessageLabel.hashtagLinkTapHandler = { (label: KILabel, string: String, range: NSRange) in
-            WhisperRequestManager.sharedInstance.delegate = self
-            let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
-            if let tag = tag {
-                WhisperRequestManager.sharedInstance.delegate = self
-                WhisperRequestManager.sharedInstance.requestForWhisper(tag)
-                SVProgressHUD.show()
-            }
-        }
+        commentMessageLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
