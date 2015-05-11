@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NUSWhispers-STTweetLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-NUSWhispers-SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>178302634F5A95FAEB98FC25</key>
+		<key>22A85008ABC94D6C0BCAB785</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C966D86AC81BBB50BF5FB4C</key>
+		<key>65CDA90C7B2FB9484F15CBFC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E1294D79D6A55260C126D45</key>
+		<key>77AAA2F4C2DFC01381E202AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA7DADC0AB20645C06BF277D</key>
+		<key>8FD3A0A83FEADD6E2AF6FE88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E083D16D3F02CFAE4CB2DA78</key>
+		<key>991264F20D0DDEC5A898772D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2640B78B33C71A91DCF2F53</key>
+		<key>9C9B5902F46F8CAFB4FF0B86</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7E4A89946536803DFD60AE1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

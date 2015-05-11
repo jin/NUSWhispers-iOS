@@ -21,6 +21,16 @@ class Whisper {
 
     var comments: [Comment]! = [Comment]()
 
+    var truncatedContent: String? {
+        var truncated = content as NSString
+        if truncated.length > 400 {
+            truncated = truncated.substringToIndex(400)
+            return (truncated as String).stringByAppendingString("...")
+        } else {
+            return content
+        }
+    }
+
     init(json: JSON) {
         self.tag = json["confession_id"].int
         self.content = json["content"].string

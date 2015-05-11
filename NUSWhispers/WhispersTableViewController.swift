@@ -16,19 +16,20 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     var section: Section? = .None {
         willSet {
+            WhisperRequestManager.sharedInstance.delegate = self
             WhisperRequestManager.sharedInstance.requestForWhispers(newValue!)
         }
     }
 
     var whispers: [Whisper] = [Whisper]()
 
+    var hotWhisper: Whisper?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-
-        WhisperRequestManager.sharedInstance.delegate = self
 
         tableView.addPullToRefreshWithActionHandler {
             if let section = self.section {
@@ -109,7 +110,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier",
             forIndexPath: indexPath) as! WhispersTableViewCell
         cell.whisper = whispers[indexPath.row]
-
+        cell.whispersTableViewController = self
         return cell
     }
 
@@ -127,8 +128,14 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showWhisper" {
             let destinationViewController = segue.destinationViewController as! WhisperViewController
-            let selectedWhisper = whispers[tableView.indexPathForSelectedRow()!.row]
-            destinationViewController.whisper = selectedWhisper
+            destinationViewController.whispersTableViewController = self
+            if let whisper = hotWhisper {
+                destinationViewController.whisper = whisper
+            } else {
+                let selectedWhisper = whispers[tableView.indexPathForSelectedRow()!.row]
+                destinationViewController.whisper = selectedWhisper
+            }
+            hotWhisper = nil
         }
     }
 

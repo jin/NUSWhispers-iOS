@@ -8,22 +8,42 @@
 
 import UIKit
 import TTTAttributedLabel
+import STTweetLabel
+import SVProgressHUD
 
-class WhisperViewController: UIViewController {
+class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
 
-    @IBOutlet weak var whisperContentAttributedLabel: TTTAttributedLabel!
     @IBOutlet weak var commentsTableViewHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var whisperContentAttributedLabel: FixedSTTweetLabel!
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
+
+    var whispersTableViewController: WhispersTableViewController?
 
     var whisper: Whisper?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        whisperContentAttributedLabel.enabledTextCheckingTypes = NSTextCheckingType.Link.rawValue
         whisperContentAttributedLabel.userInteractionEnabled = true
         whisperContentAttributedLabel.text = whisper?.content
+        var normalAttr: [NSObject:AnyObject] = [
+            NSFontAttributeName: UIFont(name: "Avenir-Roman", size: 16)!
+        ]
+        whisperContentAttributedLabel.setAttributes(normalAttr)
+
+        normalAttr.updateValue(UIColor.grayColor(), forKey: NSForegroundColorAttributeName)
+        whisperContentAttributedLabel.setAttributes(normalAttr, hotWord: .Hashtag)
+
+        whisperContentAttributedLabel.detectionBlock = { (hotWord: STTweetHotWord, string: String!, proto: String!, range: NSRange) in
+            if hotWord == .Hashtag {
+                WhisperRequestManager.sharedInstance.delegate = self
+                let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
+                if let tag = tag {
+                    WhisperRequestManager.sharedInstance.requestForWhisper(tag)
+                    SVProgressHUD.show()
+                }
+            }
+        }
 
 
         let relativeDateFormatter = NSDateFormatter()
@@ -34,10 +54,12 @@ class WhisperViewController: UIViewController {
             whisperTagLabel.text = "#\(whisper.tag!)"
             whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
         }
+        view.needsUpdateConstraints()
+        view.layoutIfNeeded()
     }
 
     override func viewDidAppear(animated: Bool) {
-        setUpDismissGesture()
+        view.needsUpdateConstraints()
     }
 
     override func viewDidLayoutSubviews() {
@@ -49,30 +71,18 @@ class WhisperViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    private func setUpDismissGesture() {
-        let recognizer = UITapGestureRecognizer(target: self, action: "dismissViewController:")
-        recognizer.numberOfTapsRequired = 1
-        recognizer.cancelsTouchesInView = false
-        self.view.window?.addGestureRecognizer(recognizer)
-    }
-
-    func dismissViewController(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            let location = sender.locationInView(nil)
-            if self.view.pointInside(
-                self.view.convertPoint(location, fromView: self.view.window), withEvent: nil) {
-                    self.view.window?.removeGestureRecognizer(sender)
-                    self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        }
-    }
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showCommentsTable" {
             let destinationViewController = segue.destinationViewController as! CommentsTableViewController
             destinationViewController.comments = whisper?.comments
             destinationViewController.whisperViewController = self
         }
+    }
+
+    func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers whispers: [Whisper]) {
+        SVProgressHUD.dismiss()
+        whispersTableViewController?.hotWhisper = whispers.first
+        whispersTableViewController?.performSegueWithIdentifier("showWhisper", sender: self)
     }
 
 }
