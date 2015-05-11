@@ -1,6 +1,0 @@
-framework module STTweetLabel {
-  umbrella header "Pods-NUSWhispers-STTweetLabel-umbrella.h"
-
-  export *
-  module * { export * }
-}

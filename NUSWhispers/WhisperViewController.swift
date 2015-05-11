@@ -8,15 +8,15 @@
 
 import UIKit
 import TTTAttributedLabel
-import STTweetLabel
+import KILabel
 import SVProgressHUD
 
 class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
 
     @IBOutlet weak var commentsTableViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var whisperContentAttributedLabel: FixedSTTweetLabel!
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
+    @IBOutlet weak var whisperContentAttributedLabel: KILabel!
 
     var whispersTableViewController: WhispersTableViewController?
 
@@ -26,25 +26,15 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
         super.viewDidLoad()
         whisperContentAttributedLabel.userInteractionEnabled = true
         whisperContentAttributedLabel.text = whisper?.content
-        var normalAttr: [NSObject:AnyObject] = [
-            NSFontAttributeName: UIFont(name: "Avenir-Roman", size: 16)!
-        ]
-        whisperContentAttributedLabel.setAttributes(normalAttr)
-
-        normalAttr.updateValue(UIColor.grayColor(), forKey: NSForegroundColorAttributeName)
-        whisperContentAttributedLabel.setAttributes(normalAttr, hotWord: .Hashtag)
-
-        whisperContentAttributedLabel.detectionBlock = { (hotWord: STTweetHotWord, string: String!, proto: String!, range: NSRange) in
-            if hotWord == .Hashtag {
+        whisperContentAttributedLabel.hashtagLinkTapHandler = { (label: KILabel, string: String, range: NSRange) in
+            WhisperRequestManager.sharedInstance.delegate = self
+            let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
+            if let tag = tag {
                 WhisperRequestManager.sharedInstance.delegate = self
-                let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
-                if let tag = tag {
-                    WhisperRequestManager.sharedInstance.requestForWhisper(tag)
-                    SVProgressHUD.show()
-                }
+                WhisperRequestManager.sharedInstance.requestForWhisper(tag)
+                SVProgressHUD.show()
             }
         }
-
 
         let relativeDateFormatter = NSDateFormatter()
         relativeDateFormatter.doesRelativeDateFormatting = true
@@ -79,10 +69,14 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
         }
     }
 
+    func pushAndLoadWhisper(whisper: Whisper) {
+        whispersTableViewController?.hotWhisper = whisper
+        whispersTableViewController?.performSegueWithIdentifier("showWhisper", sender: self)
+    }
+
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers whispers: [Whisper]) {
         SVProgressHUD.dismiss()
-        whispersTableViewController?.hotWhisper = whispers.first
-        whispersTableViewController?.performSegueWithIdentifier("showWhisper", sender: self)
+        pushAndLoadWhisper(whispers.first!)
     }
 
 }

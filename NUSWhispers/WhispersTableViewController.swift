@@ -93,7 +93,6 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             withRowAnimation: UITableViewRowAnimation.Fade)
         tableView.endUpdates()
 
-        self.tableView.setNeedsLayout()
         tableView.showsPullToRefresh = true
     }
 

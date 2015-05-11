@@ -1,0 +1,6 @@
+framework module KILabel {
+  umbrella header "Pods-NUSWhispers-KILabel-umbrella.h"
+
+  export *
+  module * { export * }
+}

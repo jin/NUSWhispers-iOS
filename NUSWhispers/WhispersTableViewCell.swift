@@ -8,17 +8,17 @@
 
 import UIKit
 import TTTAttributedLabel
-import STTweetLabel
+import KILabel
 import SVProgressHUD
 
 class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
     
+    @IBOutlet weak var whisperContentAttributedLabel: KILabel!
     @IBOutlet weak var whisperLikesCountLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
     @IBOutlet weak var whisperCategoryLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperCommentsCountLabel: TTTAttributedLabel!
-    @IBOutlet weak var whisperContentAttributedLabel: STTweetLabel!
     
     var whispersTableViewController: WhispersTableViewController?
     
@@ -38,21 +38,13 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
             whisperContentAttributedLabel.text = whisper.truncatedContent!
                 .stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceCharacterSet())
-            var normalAttr: [NSObject:AnyObject] = [
-                NSFontAttributeName: UIFont(name: "Avenir-Roman", size: 17)!
-            ]
-            whisperContentAttributedLabel.setAttributes(normalAttr)
-            normalAttr.updateValue(UIColor.grayColor(), forKey: NSForegroundColorAttributeName)
-            whisperContentAttributedLabel.setAttributes(normalAttr, hotWord: .Hashtag)
-
-            whisperContentAttributedLabel.detectionBlock = { (hotWord: STTweetHotWord, string: String!, proto: String!, range: NSRange) in
-                if hotWord == .Hashtag {
+            whisperContentAttributedLabel.hashtagLinkTapHandler = { (label: KILabel, string: String, range: NSRange) in
+                WhisperRequestManager.sharedInstance.delegate = self
+                let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
+                if let tag = tag {
                     WhisperRequestManager.sharedInstance.delegate = self
-                    let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
-                    if let tag = tag {
-                        WhisperRequestManager.sharedInstance.requestForWhisper(tag)
-                        SVProgressHUD.show()
-                    }
+                    WhisperRequestManager.sharedInstance.requestForWhisper(tag)
+                    SVProgressHUD.show()
                 }
             }
             

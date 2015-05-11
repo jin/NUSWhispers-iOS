@@ -8,7 +8,7 @@ target 'NUSWhispers' do
   pod 'SVProgressHUD'
   pod 'TTTAttributedLabel'
   pod 'SVPullToRefresh'
-  pod 'STTweetLabel'
+  pod 'KILabel', '1.0.0'
 end
 
 target 'NUSWhispersTests' do

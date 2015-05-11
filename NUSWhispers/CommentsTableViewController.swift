@@ -53,6 +53,7 @@ class CommentsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! CommentsTableViewCell
         cell.comment = comments[indexPath.row]
+        cell.whisperViewController = whisperViewController
         tableView.sizeToFit()
         return cell
     }
