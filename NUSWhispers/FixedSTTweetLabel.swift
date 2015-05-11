@@ -13,7 +13,7 @@ class FixedSTTweetLabel : STTweetLabel {
 
     override func intrinsicContentSize() -> CGSize {
         let size = self.suggestedFrameSizeToFitEntireStringConstrainedToWidth(self.frame.size.width)
-        return CGSizeMake(size.width, size.height)
+        return CGSizeMake(size.width, size.height + 1)
     }
 
 }
