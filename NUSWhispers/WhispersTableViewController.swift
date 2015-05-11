@@ -51,7 +51,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         }
 
         tableView.showsPullToRefresh = false
-        SVProgressHUD.show()
+        SVProgressHUD.showWithStatus("Listening for whispers..", maskType: SVProgressHUDMaskType.None)
     }
 
     override func didReceiveMemoryWarning() {

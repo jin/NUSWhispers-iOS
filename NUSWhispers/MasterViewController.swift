@@ -131,7 +131,6 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        SVProgressHUD.show()
         switch indexPath.section {
         case 0, 1:
             performSegueWithIdentifier("showWhispers", sender: self)

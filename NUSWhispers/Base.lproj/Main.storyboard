@@ -215,15 +215,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yda-07-RUX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-w8-Xcc">
-                                        <rect key="frame" x="40" y="394" width="520" height="300"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="e0w-5J-iH5"/>
-                                        </constraints>
-                                        <connections>
-                                            <segue destination="I0H-AQ-WH3" kind="embed" identifier="showCommentsTable" id="dDk-VU-rTt"/>
-                                        </connections>
-                                    </containerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-AE-inC" customClass="TTTAttributedLabel">
+                                        <rect key="frame" x="40" y="72" width="520" height="302"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</string>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-8T-ABG">
                                         <rect key="frame" x="20" y="25" width="32" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -236,24 +234,36 @@
                                         <color key="textColor" red="0.65868882279999996" green="0.65868882279999996" blue="0.65868882279999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-AE-inC" customClass="TTTAttributedLabel">
-                                        <rect key="frame" x="40" y="72" width="520" height="302"/>
-                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</string>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvp-Qe-m7m" userLabel="Divider">
+                                        <rect key="frame" x="20" y="384" width="560" height="1"/>
+                                        <color key="backgroundColor" red="0.78724371693121697" green="0.78724371693121697" blue="0.78724371693121697" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="0JQ-Mh-ztf"/>
+                                        </constraints>
+                                    </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-w8-Xcc">
+                                        <rect key="frame" x="40" y="400" width="520" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="e0w-5J-iH5"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="I0H-AQ-WH3" kind="embed" identifier="showCommentsTable" id="dDk-VU-rTt"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="RC3-8T-ABG" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="6rv-Rp-4RB"/>
-                                    <constraint firstItem="0Ev-w8-Xcc" firstAttribute="top" secondItem="Mhe-AE-inC" secondAttribute="bottom" constant="20" id="9jm-Lu-Mun"/>
+                                    <constraint firstItem="Nvp-Qe-m7m" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="CUh-tX-x2n"/>
                                     <constraint firstAttribute="bottom" secondItem="0Ev-w8-Xcc" secondAttribute="bottom" constant="20" id="L62-Lv-fyK"/>
                                     <constraint firstItem="Atv-5b-EYz" firstAttribute="top" secondItem="RC3-8T-ABG" secondAttribute="bottom" constant="3" id="NIc-ob-zeZ"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="top" secondItem="Atv-5b-EYz" secondAttribute="bottom" constant="15" id="ODU-LL-iU0"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="Ruf-PY-fVL"/>
+                                    <constraint firstItem="Nvp-Qe-m7m" firstAttribute="top" secondItem="Mhe-AE-inC" secondAttribute="bottom" constant="10" id="Wqn-So-jpU"/>
+                                    <constraint firstItem="Nvp-Qe-m7m" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="YN1-e3-UHf"/>
                                     <constraint firstItem="Atv-5b-EYz" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="ZFb-nX-mZi"/>
                                     <constraint firstItem="0Ev-w8-Xcc" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="ZY8-Fa-2kN"/>
+                                    <constraint firstItem="0Ev-w8-Xcc" firstAttribute="top" secondItem="Nvp-Qe-m7m" secondAttribute="bottom" constant="15" id="aIJ-5e-e7i"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="40" id="wJb-iq-EBr">
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                     </constraint>
@@ -282,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k33-CW-6fC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="988"/>
+            <point key="canvasLocation" x="1464" y="892"/>
         </scene>
         <!--Comments Table View Controller-->
         <scene sceneID="KfJ-eU-prn">
@@ -356,7 +366,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wS-oy-1kE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="988"/>
+            <point key="canvasLocation" x="2344" y="892"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

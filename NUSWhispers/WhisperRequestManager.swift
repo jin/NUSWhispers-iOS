@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SVProgressHUD
 import SwiftyJSON
 
 class WhisperRequestManager {
