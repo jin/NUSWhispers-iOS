@@ -37,6 +37,9 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
             whisperTagLabel.text = "#\(whisper.tag!)"
             whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
         }
+
+        self.title = "#\(whisper!.tag)"
+
         view.needsUpdateConstraints()
         view.layoutIfNeeded()
     }
