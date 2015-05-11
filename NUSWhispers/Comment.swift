@@ -26,6 +26,10 @@ class Comment {
         authorName = json["from"]["name"].string
         commentID = json["id"].string
         message = json["message"].string
+
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxx"
+        self.createdAt = dateFormatter.dateFromString(json["created_time"].string!)
     }
 
 }

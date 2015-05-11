@@ -30,6 +30,11 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
     }
 
     private func fillCellContents() {
+        let relativeDateFormatter = NSDateFormatter()
+        relativeDateFormatter.doesRelativeDateFormatting = true
+        relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        commentDateLabel.text = relativeDateFormatter.stringFromDate(comment!.createdAt)
         commentAuthorNameLabel.text = comment?.authorName
         commentMessageLabel.text = comment?.message
         commentMessageLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
