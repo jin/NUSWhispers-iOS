@@ -14,6 +14,9 @@ class WhisperViewController: UIViewController {
     @IBOutlet weak var whisperContentAttributedLabel: TTTAttributedLabel!
     @IBOutlet weak var commentsTableViewHeightConstraint: NSLayoutConstraint!
 
+    @IBOutlet weak var whisperTagLabel: UILabel!
+    @IBOutlet weak var whisperTimeLabel: UILabel!
+
     var whisper: Whisper?
 
     override func viewDidLoad() {
@@ -21,6 +24,16 @@ class WhisperViewController: UIViewController {
         whisperContentAttributedLabel.enabledTextCheckingTypes = NSTextCheckingType.Link.rawValue
         whisperContentAttributedLabel.userInteractionEnabled = true
         whisperContentAttributedLabel.text = whisper?.content
+
+
+        let relativeDateFormatter = NSDateFormatter()
+        relativeDateFormatter.doesRelativeDateFormatting = true
+        relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        if let whisper = whisper {
+            whisperTagLabel.text = "#\(whisper.tag!)"
+            whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
+        }
     }
 
     override func viewDidAppear(animated: Bool) {

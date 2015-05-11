@@ -119,7 +119,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTN-FZ-Z4x" customClass="TTTAttributedLabel">
                                             <rect key="frame" x="28" y="62" width="544" height="189"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</string>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -216,7 +216,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-w8-Xcc">
-                                        <rect key="frame" x="40" y="360" width="520" height="300"/>
+                                        <rect key="frame" x="40" y="394" width="520" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="e0w-5J-iH5"/>
                                         </constraints>
@@ -224,9 +224,21 @@
                                             <segue destination="I0H-AQ-WH3" kind="embed" identifier="showCommentsTable" id="dDk-VU-rTt"/>
                                         </connections>
                                     </containerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-8T-ABG">
+                                        <rect key="frame" x="20" y="25" width="32" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.55708498679999996" green="0.55708498679999996" blue="0.55708498679999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 hours ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-5b-EYz">
+                                        <rect key="frame" x="20" y="45" width="62" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.65868882279999996" green="0.65868882279999996" blue="0.65868882279999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-AE-inC" customClass="TTTAttributedLabel">
-                                        <rect key="frame" x="40" y="38" width="520" height="302"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</mutableString>
+                                        <rect key="frame" x="40" y="72" width="520" height="302"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</string>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -234,14 +246,18 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="RC3-8T-ABG" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="6rv-Rp-4RB"/>
                                     <constraint firstItem="0Ev-w8-Xcc" firstAttribute="top" secondItem="Mhe-AE-inC" secondAttribute="bottom" constant="20" id="9jm-Lu-Mun"/>
                                     <constraint firstAttribute="bottom" secondItem="0Ev-w8-Xcc" secondAttribute="bottom" constant="20" id="L62-Lv-fyK"/>
+                                    <constraint firstItem="Atv-5b-EYz" firstAttribute="top" secondItem="RC3-8T-ABG" secondAttribute="bottom" constant="3" id="NIc-ob-zeZ"/>
+                                    <constraint firstItem="Mhe-AE-inC" firstAttribute="top" secondItem="Atv-5b-EYz" secondAttribute="bottom" constant="15" id="ODU-LL-iU0"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="Ruf-PY-fVL"/>
+                                    <constraint firstItem="Atv-5b-EYz" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="ZFb-nX-mZi"/>
                                     <constraint firstItem="0Ev-w8-Xcc" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="ZY8-Fa-2kN"/>
-                                    <constraint firstItem="Mhe-AE-inC" firstAttribute="top" secondItem="yda-07-RUX" secondAttribute="topMargin" constant="30" id="mPG-Jg-MQZ"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="40" id="wJb-iq-EBr">
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                     </constraint>
+                                    <constraint firstItem="RC3-8T-ABG" firstAttribute="top" secondItem="yda-07-RUX" secondAttribute="top" constant="25" id="wRS-PS-MMp"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="width" secondItem="0Ev-w8-Xcc" secondAttribute="width" id="zpZ-Rf-bzv"/>
                                 </constraints>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
@@ -260,6 +276,8 @@
                     <connections>
                         <outlet property="commentsTableViewHeightConstraint" destination="e0w-5J-iH5" id="plI-25-QGU"/>
                         <outlet property="whisperContentAttributedLabel" destination="Mhe-AE-inC" id="JCI-25-2KB"/>
+                        <outlet property="whisperTagLabel" destination="RC3-8T-ABG" id="g1s-R3-bt1"/>
+                        <outlet property="whisperTimeLabel" destination="Atv-5b-EYz" id="JY7-7c-MP6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k33-CW-6fC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,7 +318,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="wordWrap" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-KW-ndd">
                                             <rect key="frame" x="10" y="35" width="500" height="75"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</string>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
