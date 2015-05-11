@@ -39,6 +39,7 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
                 .stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceCharacterSet())
             whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
+            whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
 
             whisperTagLabel.text = "#\(whisper.tag!)"
             

@@ -53,6 +53,13 @@ class WhisperRequestManager {
         return handler
     }
 
+    func urlLinkTapHandler(delegate: WhisperRequestManagerDelegate) -> ((KILabel, String, NSRange) -> ()) {
+        let handler: ((KILabel, String, NSRange) -> ()) = { (label: KILabel, string: String, range: NSRange) in
+            UIApplication.sharedApplication().openURL(NSURL(string: string)!)
+        }
+        return handler
+    }
+
     private func makeGetRequest(urlString: String) {
         let req = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         req.HTTPBody = nil

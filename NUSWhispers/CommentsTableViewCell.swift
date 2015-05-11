@@ -33,6 +33,7 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
         commentAuthorNameLabel.text = comment?.authorName
         commentMessageLabel.text = comment?.message
         commentMessageLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
+        commentMessageLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

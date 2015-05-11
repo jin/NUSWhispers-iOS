@@ -27,6 +27,7 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
         whisperContentAttributedLabel.userInteractionEnabled = true
         whisperContentAttributedLabel.text = whisper?.content
         whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
+        whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
 
         let relativeDateFormatter = NSDateFormatter()
         relativeDateFormatter.doesRelativeDateFormatting = true
