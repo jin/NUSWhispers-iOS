@@ -22,6 +22,7 @@
 		3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A71AEFD35400F2A822 /* AppColors.swift */; };
 		3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */; };
 		3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */; };
+		3C942C301B024F7C00F18B0B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C942C2F1B024F7C00F18B0B /* Utility.swift */; };
 		3CC92F861AFD147E005AC93D /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */; };
 		3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */; };
 		3CC92F8D1AFE4938005AC93D /* NewConfessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F8C1AFE4938005AC93D /* NewConfessionViewController.swift */; };
@@ -62,6 +63,7 @@
 		3C8219A71AEFD35400F2A822 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManager.swift; sourceTree = "<group>"; };
 		3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManagerDelegate.swift; sourceTree = "<group>"; };
+		3C942C2F1B024F7C00F18B0B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		3CB43E341AF24CC90005127D /* NUSWhispers_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUSWhispers_Bridging_Header.h; sourceTree = "<group>"; };
 		3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		3C01AC3C1AEFAB4500E0C94B /* NUSWhispers */ = {
 			isa = PBXGroup;
 			children = (
+				3C942C2E1B024F6D00F18B0B /* Utility */,
 				3C01AC3F1AEFAB4500E0C94B /* AppDelegate.swift */,
 				3C8219A71AEFD35400F2A822 /* AppColors.swift */,
 				3C01AC451AEFAB4500E0C94B /* Main.storyboard */,
@@ -167,6 +170,14 @@
 				3C6F67701AF2295300599CA5 /* pac_man_loading.gif */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		3C942C2E1B024F6D00F18B0B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3C942C2F1B024F7C00F18B0B /* Utility.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		3CC92F871AFD1491005AC93D /* Views+Controllers */ = {
@@ -376,6 +387,7 @@
 				3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */,
 				3C1805D01AFF99C90075783E /* Comment.swift in Sources */,
 				3CCD3AC31AEFC0800014479C /* Section.swift in Sources */,
+				3C942C301B024F7C00F18B0B /* Utility.swift in Sources */,
 				3C01AC401AEFAB4500E0C94B /* AppDelegate.swift in Sources */,
 				3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */,
 				3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */,

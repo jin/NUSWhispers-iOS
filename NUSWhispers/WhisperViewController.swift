@@ -26,24 +26,22 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         if let whisper = whisper {
             whisperContentAttributedLabel.userInteractionEnabled = true
             whisperContentAttributedLabel.text = whisper.content
             whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
             whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
             
-            let relativeDateFormatter = NSDateFormatter()
-            relativeDateFormatter.doesRelativeDateFormatting = true
-            relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-            relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+            whisperTimeLabel.text = convertUTCToLocalDateString(whisper.createdAt)
             whisperTagLabel.text = "#\(whisper.tag!)"
-            whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
+            whisperLikesCountLabel.text = (whisper.likesCount == 1) ?
+                "1 like" : "\(whisper.likesCount) likes"
+            whisperCommentsCountLabel.text = (whisper.comments.count == 1) ?
+                "1 comment" : "\(whisper.comments.count) comments"
 
             self.title = "#\(whisper.tag)"
-            
-            whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
-            whisperCommentsCountLabel.text = (whisper.comments.count == 1) ? "1 comment" : "\(whisper.comments.count) comments"
-            
+
             view.needsUpdateConstraints()
             view.layoutIfNeeded()
             

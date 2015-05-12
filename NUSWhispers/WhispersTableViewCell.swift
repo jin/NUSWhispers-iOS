@@ -42,17 +42,9 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
             whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
 
             whisperTagLabel.text = "#\(whisper.tag!)"
-            
             whisperCategoryLabel.text = whisper.category.lowercaseString
-            
-            let relativeDateFormatter = NSDateFormatter()
-            relativeDateFormatter.doesRelativeDateFormatting = true
-            relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-            relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-            whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
-            
+            whisperTimeLabel.text = convertUTCToLocalDateString(whisper.createdAt)
             whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
-            
             whisperCommentsCountLabel.text = (whisper.comments.count == 1) ? "1 comment" : "\(whisper.comments.count) comments"
 
             contentView.needsUpdateConstraints()
