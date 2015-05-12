@@ -32,16 +32,22 @@ class WhisperRequestManager {
     }
 
     func requestForWhisper(tag: Int) {
-        let url = "http://nuswhispers.com/api/confessions/\(tag)"
-        makeGetRequest(url) { (json: JSON) in
-            self.updateWhisperDataSource(json)
+        self.requestForWhisper(tag) { (json: JSON) in
+            let whispers = self.convertJSONResponseToWhispers(json)
+            self.updateWhisperDataSource(whispers)
         }
+    }
+
+    func requestForWhisper(tag: Int, completion: (json: JSON) -> ()) {
+        let url = "http://nuswhispers.com/api/confessions/\(tag)"
+        makeGetRequest(url, completion: completion)
     }
 
     func requestForWhispers(section: Section, offset: Int = 0) {
         let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=\(whisperCountPerRequest)&offset=\(offset)"
         makeGetRequest(url) { (json: JSON) in
-            self.updateWhisperDataSource(json)
+            let whispers = self.convertJSONResponseToWhispers(json)
+            self.updateWhisperDataSource(whispers)
         }
     }
 
@@ -71,7 +77,7 @@ class WhisperRequestManager {
         }
     }
 
-    private func makeGetRequest(urlString: String, completion: (json: JSON) -> ()?) {
+    private func makeGetRequest(urlString: String, completion: (json: JSON) -> ()) {
         let req = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         req.HTTPBody = nil
         req.HTTPMethod = "GET"
@@ -85,19 +91,25 @@ class WhisperRequestManager {
         }
     }
 
-    private func updateWhisperDataSource(json: JSON) {
-        var allWhispers = [Whisper]()
+    func convertJSONResponseToWhispers(json: JSON) -> [Whisper] {
         if let resp = json["data"]["confessions"].array {
+            var allWhispers = [Whisper]()
             for whisper in resp {
                 allWhispers.append(Whisper(json: whisper))
             }
-            delegate?.whisperRequestManager(self, didReceiveWhispers: allWhispers)
+            return allWhispers
         } else {
             let whisper = Whisper(json: json["data"]["confession"])
             if whisper.tag != nil {
-                delegate?.whisperRequestManager(self, didReceiveWhispers: [whisper])
+                return [whisper]
             }
+
+            return [Whisper]()
         }
+    }
+
+    private func updateWhisperDataSource(whispers: [Whisper]) {
+            delegate?.whisperRequestManager(self, didReceiveWhispers: whispers)
     }
 
 }

@@ -9,8 +9,9 @@
 import UIKit
 import KILabel
 import SVProgressHUD
+import SwiftyJSON
 
-class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
+class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIPopoverControllerDelegate {
 
     @IBOutlet weak var commentAuthorNameLabel: UILabel!
     @IBOutlet weak var commentAuthorImageView: UIImageView!
@@ -27,6 +28,11 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressOnContentLabel:")
+        commentMessageLabel.addGestureRecognizer(longPressGestureRecognizer)
     }
 
     private func fillCellContents() {
@@ -44,6 +50,30 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate {
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers whispers: [Whisper]) {
         SVProgressHUD.dismiss()
         whisperViewController?.pushAndLoadWhisper(whispers.first!)
+    }
+
+    func longPressOnContentLabel(recognizer: UILongPressGestureRecognizer) {
+        let location = recognizer.locationInView(commentMessageLabel)
+        let link = commentMessageLabel.linkAtPoint(location)
+        if let link = link where UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            let tag = extractTagFromHashtag(link["link"] as! String)
+
+            if !SVProgressHUD.isVisible() {
+                SVProgressHUD.show()
+                WhisperRequestManager.sharedInstance.requestForWhisper(tag) { (json: JSON) in
+                    SVProgressHUD.dismiss()
+                    let requestedWhisper = WhisperRequestManager.sharedInstance.convertJSONResponseToWhispers(json).first
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let contentViewController = storyboard.instantiateViewControllerWithIdentifier("whisperViewController") as! WhisperViewController
+                    contentViewController.whisper = requestedWhisper
+
+                    let popover = UIPopoverController(contentViewController: contentViewController)
+                    popover.delegate = self
+                    popover.popoverContentSize = CGSizeMake(500, 700)
+                    popover.presentPopoverFromRect(CGRectMake(location.x, location.y, 40, 40), inView: self.contentView, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+                }
+            }
+        }
     }
 
 }

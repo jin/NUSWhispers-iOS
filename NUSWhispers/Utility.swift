@@ -8,16 +8,32 @@
 
 import Foundation
 
-func convertUTCToLocalDateString(date: NSDate) -> String {
-    let timeOffset: NSTimeInterval = Double(NSTimeZone.localTimeZone().secondsFromGMT)
-    let localDate = date.dateByAddingTimeInterval(timeOffset)
-    return convertDateToString(localDate)
+func convertUTCToLocalDateString(date: NSDate?) -> String? {
+    if let date = date {
+        let timeOffset: NSTimeInterval = Double(NSTimeZone.localTimeZone().secondsFromGMT)
+        let localDate = date.dateByAddingTimeInterval(timeOffset)
+        return convertDateToString(localDate)
+    } else {
+        return .None
+    }
 }
 
-func convertDateToString(date: NSDate) -> String {
-    let relativeDateFormatter = NSDateFormatter()
-    relativeDateFormatter.doesRelativeDateFormatting = true
-    relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-    relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-    return relativeDateFormatter.stringFromDate(date)
+func convertDateToString(date: NSDate?) -> String? {
+    if let date = date {
+        let relativeDateFormatter = NSDateFormatter()
+        relativeDateFormatter.doesRelativeDateFormatting = true
+        relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        return relativeDateFormatter.stringFromDate(date)
+    } else {
+        return .None
+    }
+}
+
+func extractTagFromHashtag(hashtag: String) -> Int {
+    return hashtag
+        .componentsSeparatedByCharactersInSet(
+            NSCharacterSet.decimalDigitCharacterSet().invertedSet
+        ).last!
+        .toInt()!
 }

@@ -43,8 +43,13 @@ class Whisper {
 
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        self.createdAt = dateFormatter.dateFromString(json["created_at"].string!)
-        self.updatedAt = dateFormatter.dateFromString(json["status_updated_at"].string!)
+        if let createdAtString = json["created_at"].string {
+            self.createdAt = dateFormatter.dateFromString(createdAtString)
+        }
+
+        if let updatedAtString = json["status_updated_at"].string {
+            self.updatedAt = dateFormatter.dateFromString(updatedAtString)
+        }
 
         self.comments = json["facebook_information"]["comments"]["data"].array?.map({
             Comment(json: $0)

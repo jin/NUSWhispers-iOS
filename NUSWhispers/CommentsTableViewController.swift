@@ -10,7 +10,7 @@ import UIKit
 
 class CommentsTableViewController: UITableViewController {
 
-    var comments: [Comment]! = [Comment]()
+    var comments: [Comment]? = [Comment]()
     var whisperViewController: WhisperViewController?
 
     var actualContentSizeHeight: CGFloat! = 0
@@ -47,12 +47,16 @@ class CommentsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
+        if let comments = comments {
+            return comments.count
+        } else {
+            return 0
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! CommentsTableViewCell
-        cell.comment = comments[indexPath.row]
+        cell.comment = comments?[indexPath.row]
         cell.whisperViewController = whisperViewController
         tableView.sizeToFit()
         return cell
