@@ -17,6 +17,8 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
     @IBOutlet weak var whisperTagLabel: UILabel!
     @IBOutlet weak var whisperTimeLabel: UILabel!
     @IBOutlet weak var whisperContentAttributedLabel: KILabel!
+    @IBOutlet weak var whisperCommentsCountLabel: TTTAttributedLabel!
+    @IBOutlet weak var whisperLikesCountLabel: TTTAttributedLabel!
 
     var whispersTableViewController: WhispersTableViewController?
 
@@ -24,24 +26,28 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        whisperContentAttributedLabel.userInteractionEnabled = true
-        whisperContentAttributedLabel.text = whisper?.content
-        whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
-        whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
-
-        let relativeDateFormatter = NSDateFormatter()
-        relativeDateFormatter.doesRelativeDateFormatting = true
-        relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         if let whisper = whisper {
+            whisperContentAttributedLabel.userInteractionEnabled = true
+            whisperContentAttributedLabel.text = whisper.content
+            whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
+            whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
+            
+            let relativeDateFormatter = NSDateFormatter()
+            relativeDateFormatter.doesRelativeDateFormatting = true
+            relativeDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            relativeDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
             whisperTagLabel.text = "#\(whisper.tag!)"
             whisperTimeLabel.text = relativeDateFormatter.stringFromDate(whisper.createdAt)
+
+            self.title = "#\(whisper.tag)"
+            
+            whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
+            whisperCommentsCountLabel.text = (whisper.comments.count == 1) ? "1 comment" : "\(whisper.comments.count) comments"
+            
+            view.needsUpdateConstraints()
+            view.layoutIfNeeded()
+            
         }
-
-        self.title = "#\(whisper!.tag)"
-
-        view.needsUpdateConstraints()
-        view.layoutIfNeeded()
     }
 
     override func viewDidAppear(animated: Bool) {
