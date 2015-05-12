@@ -33,12 +33,16 @@ class WhisperRequestManager {
 
     func requestForWhisper(tag: Int) {
         let url = "http://nuswhispers.com/api/confessions/\(tag)"
-        makeGetRequest(url)
+        makeGetRequest(url) { (json: JSON) in
+            self.updateWhisperDataSource(json)
+        }
     }
 
     func requestForWhispers(section: Section, offset: Int = 0) {
         let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=\(whisperCountPerRequest)&offset=\(offset)"
-        makeGetRequest(url)
+        makeGetRequest(url) { (json: JSON) in
+            self.updateWhisperDataSource(json)
+        }
     }
 
     func hashtagLinkTapHandler(delegate: WhisperRequestManagerDelegate) -> ((KILabel, String, NSRange) -> ()) {
@@ -60,7 +64,14 @@ class WhisperRequestManager {
         return handler
     }
 
-    private func makeGetRequest(urlString: String) {
+    func requestForLeaderboard() {
+        let url = "http://yangshun.im/nuswhispers-leaderboard/leaderboard/may.json"
+        makeGetRequest(url) { (json: JSON) in
+            println(json)
+        }
+    }
+
+    private func makeGetRequest(urlString: String, completion: (json: JSON) -> ()?) {
         let req = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         req.HTTPBody = nil
         req.HTTPMethod = "GET"
@@ -69,7 +80,7 @@ class WhisperRequestManager {
             if let e = error {
                 println(e)
             } else {
-                self.updateWhisperDataSource(JSON(json!))
+                completion(json: JSON(json!))
             }
         }
     }
