@@ -22,8 +22,9 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     var whispers: [Whisper] = [Whisper]()
-
     var hotWhisper: Whisper?
+
+    var rowHeightEstimateCache = [String:CGFloat]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,8 +121,15 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         }
     }
 
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        rowHeightEstimateCache["\(indexPath.row)"] = CGRectGetHeight(cell.frame)
+    }
+
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if let height = rowHeightEstimateCache["\(indexPath.row)"] {
+            return height
+        } else {
+            return UITableViewAutomaticDimension
         }
     }
 
