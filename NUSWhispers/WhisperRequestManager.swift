@@ -27,7 +27,7 @@ class WhisperRequestManager {
 
     private init() {
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        config.timeoutIntervalForRequest = 30
+        config.timeoutIntervalForRequest = 15
         self.requestManager = Alamofire.Manager(configuration: config)
     }
 
@@ -84,7 +84,7 @@ class WhisperRequestManager {
         req.addValue("0", forHTTPHeaderField: "Content-Length")
         requestManager!.request(req).responseJSON { (req, resp, json, error) in
             if let e = error {
-                println(e)
+                SVProgressHUD.showErrorWithStatus("Request timed out.")
             } else {
                 completion(json: JSON(json!))
             }
