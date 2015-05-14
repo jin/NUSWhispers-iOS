@@ -32,7 +32,7 @@ class CommentsTableViewController: UITableViewController {
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         if keyPath == "contentSize" {
             whisperViewController?.commentsTableViewHeightConstraint.constant = tableView.contentSize.height
-            whisperViewController?.view.layoutIfNeeded()
+            whisperViewController?.view.setNeedsUpdateConstraints()
         }
     }
 
@@ -47,18 +47,13 @@ class CommentsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let comments = comments {
-            return comments.count
-        } else {
-            return 0
-        }
+        return comments?.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! CommentsTableViewCell
         cell.comment = comments?[indexPath.row]
         cell.whisperViewController = whisperViewController
-        tableView.sizeToFit()
         return cell
     }
 
