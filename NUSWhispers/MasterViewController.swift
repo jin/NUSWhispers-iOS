@@ -50,9 +50,7 @@ class MasterViewController: UITableViewController {
             self.detailViewController = controllers.last!.topViewController as? DetailViewController
         }
 
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        tableView!.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.Top)
-
+        navigationItem.leftBarButtonItem = nil
         let titleLogo = UIImage(named: "card_logo")
         navigationItem.titleView = UIImageView(image: titleLogo)
     }
