@@ -67,9 +67,11 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
         if tableView.pullToRefreshView.state == 2 {
             // PullToRefresh view is animating
-            if newWhispers.first!.tag == whispers.first!.tag {
-                tableView.pullToRefreshView.stopAnimating()
-                return
+            if let first = newWhispers.first
+                where first.tag == whispers.first!.tag &&
+                    first.comments.count == whispers.first!.comments.count {
+                        tableView.pullToRefreshView.stopAnimating()
+                        return
             } else {
                 whispers.removeAll()
                 self.tableView.reloadData()
