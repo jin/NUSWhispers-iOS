@@ -18,6 +18,8 @@ class WhisperRequestManager {
     var delegate: WhisperRequestManagerDelegate?
     let whisperCountPerRequest: Int = 25
 
+    var activeRequest: Alamofire.Request?
+
     class var sharedInstance : WhisperRequestManager {
         struct Singleton {
             static let instance = WhisperRequestManager()
@@ -78,13 +80,19 @@ class WhisperRequestManager {
     }
 
     private func makeGetRequest(urlString: String, completion: (json: JSON) -> ()) {
+        self.activeRequest?.cancel()
+
         let req = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         req.HTTPBody = nil
         req.HTTPMethod = "GET"
         req.addValue("0", forHTTPHeaderField: "Content-Length")
-        requestManager!.request(req).responseJSON { (req, resp, json, error) in
+        self.activeRequest = requestManager?.request(req).responseJSON { (req, resp, json, error) in
             if let e = error {
-                SVProgressHUD.showErrorWithStatus("Request timed out.")
+                if e.code == NSURLErrorTimedOut {
+                    SVProgressHUD.showErrorWithStatus("Request timed out.")
+                } else {
+                    println(e)
+                }
             } else {
                 completion(json: JSON(json!))
             }
