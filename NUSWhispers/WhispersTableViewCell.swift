@@ -83,21 +83,7 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
             contentView.needsUpdateConstraints()
         }
     }
-    
-    @IBAction func didTapOnViewInFacebookButton(sender: AnyObject) {
-        if let facebookPostId = whisper?.facebookId {
-            var url: NSURL? = nil
-            if UIApplication.sharedApplication().canOpenURL(NSURL(string: "fb://")!) {
-                // No URL Scheme for page's post yet
-                //                url = NSURL(string: "fb://posts/\(facebookPostId)")
-            } else {
-                //                url = NSURL(string: "https://www.facebook.com/nuswhispers/posts/\(facebookPostId)")
-            }
-            url = NSURL(string: "https://www.facebook.com/nuswhispers/posts/\(facebookPostId)")
-            UIApplication.sharedApplication().openURL(url!)
-        }
-    }
-    
+
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers whispers: [Whisper]) {
         SVProgressHUD.dismiss()
         whispersTableViewController?.hotWhisper = whispers.first
