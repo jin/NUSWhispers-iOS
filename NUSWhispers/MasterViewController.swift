@@ -32,7 +32,8 @@ class MasterViewController: UITableViewController {
     var others = [
         (Section.NewConfession, UIImage(named: "icon_funny"))
     ]
-        
+
+    var rowHeightEstimateCache = [String:CGFloat]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -192,6 +193,18 @@ class MasterViewController: UITableViewController {
             return label
         default:
             return .None
+        }
+    }
+
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        rowHeightEstimateCache["\(indexPath.row)"] = CGRectGetHeight(cell.frame)
+    }
+
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if let height = rowHeightEstimateCache["\(indexPath.row)"] {
+            return height
+        } else {
+            return UITableViewAutomaticDimension
         }
     }
 
