@@ -51,6 +51,12 @@ class MasterViewController: UITableViewController {
             self.detailViewController = controllers.last!.topViewController as? DetailViewController
         }
 
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+            tableView!.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.Top)
+            performSegueWithIdentifier("showWhispers", sender: self)
+        }
+
         navigationItem.leftBarButtonItem = nil
         let titleLogo = UIImage(named: "card_logo")
         navigationItem.titleView = UIImageView(image: titleLogo)
