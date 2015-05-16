@@ -53,7 +53,12 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         }
 
         tableView.showsPullToRefresh = false
-        SVProgressHUD.show()
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        if whispers.isEmpty {
+            SVProgressHUD.show()
+        }
     }
 
     override func didReceiveMemoryWarning() {
