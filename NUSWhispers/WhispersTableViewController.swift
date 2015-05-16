@@ -32,16 +32,6 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
 
-        tableView.addPullToRefreshWithActionHandler {
-            if let section = self.section {
-                WhisperRequestManager.sharedInstance.requestForWhispers(
-                    section,
-                    offset: 0)
-            } else {
-                self.tableView.pullToRefreshView.stopAnimating()
-            }
-        }
-
         tableView.addInfiniteScrollingWithActionHandler {
             if let section = self.section {
                 WhisperRequestManager.sharedInstance.requestForWhispers(
@@ -51,8 +41,6 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
                 self.tableView.infiniteScrollingView.stopAnimating()
             }
         }
-
-        tableView.showsPullToRefresh = false
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -70,20 +58,6 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers newWhispers: [Whisper]) {
         SVProgressHUD.dismiss()
 
-        if tableView.pullToRefreshView.state == 2 {
-            // PullToRefresh view is animating
-            if let first = newWhispers.first
-                where first.tag == whispers.first!.tag &&
-                    first.comments.count == whispers.first!.comments.count {
-                        tableView.pullToRefreshView.stopAnimating()
-                        return
-            } else {
-                whispers.removeAll()
-                self.tableView.reloadData()
-            }
-        }
-
-        tableView.pullToRefreshView.stopAnimating()
         tableView.infiniteScrollingView.stopAnimating()
 
         var indexPaths = [NSIndexPath]()
@@ -100,8 +74,6 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             indexPaths,
             withRowAnimation: UITableViewRowAnimation.Fade)
         tableView.endUpdates()
-
-        tableView.showsPullToRefresh = true
     }
 
     // MARK: - Table view data source
