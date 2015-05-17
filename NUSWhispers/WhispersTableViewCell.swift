@@ -11,6 +11,7 @@ import TTTAttributedLabel
 import KILabel
 import SVProgressHUD
 import SwiftyJSON
+import AVFoundation
 
 class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIPopoverControllerDelegate {
     
@@ -20,10 +21,11 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
     @IBOutlet weak var whisperTimeLabel: UILabel!
     @IBOutlet weak var whisperCategoryLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperCommentsCountLabel: TTTAttributedLabel!
-    
+    @IBOutlet weak var whisperImageView: UIImageView!
+
     var whispersTableViewController: WhispersTableViewController?
     var longPressGestureRecognizer: UILongPressGestureRecognizer!
-    
+
     var whisper: Whisper? {
         didSet {
             fillCellContents()
@@ -79,8 +81,20 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
             whisperTimeLabel.text = convertUTCToLocalDateString(whisper.createdAt)
             whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
             whisperCommentsCountLabel.text = (whisper.comments.count == 1) ? "1 comment" : "\(whisper.comments.count) comments"
+
+            if let image = whisper.image {
+                whisperImageView.image = image
+                whisperImageView.sizeToFit()
+                println(whisperImageView.frame)
+                println(whisperImageView.bounds)
+                contentView.setNeedsLayout()
+                contentView.layoutIfNeeded()
+            } else {
+                self.whisperImageView.image = nil
+                self.sizeToFit()
+            }
             
-            contentView.needsUpdateConstraints()
+            contentView.updateConstraints()
         }
     }
 

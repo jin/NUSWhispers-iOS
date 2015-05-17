@@ -18,6 +18,8 @@ class Whisper {
     var facebookId: String!
     var category: String! = ""
     var likesCount: Int!
+    var imageURL: NSURL!
+    var image: UIImage!
 
     var comments: [Comment]! = [Comment]()
 
@@ -54,5 +56,12 @@ class Whisper {
         self.comments = json["facebook_information"]["comments"]["data"].array?.map({
             Comment(json: $0)
         })
+
+        if let imageURL = json["images"].string {
+            self.imageURL = NSURL(string: imageURL)
+            if let data = NSData(contentsOfURL: self.imageURL) {
+                self.image = UIImage(data: data)
+            }
+        }
     }
 }
