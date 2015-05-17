@@ -112,9 +112,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? WhispersTableViewCell {
-            performSegueWithIdentifier("showWhisper", sender: self)
-        }
+        performSegueWithIdentifier("showWhisper", sender: self)
     }
 
     override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
