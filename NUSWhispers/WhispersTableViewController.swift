@@ -32,6 +32,9 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
 
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "handleRefresh", forControlEvents: UIControlEvents.ValueChanged)
+
         tableView.addInfiniteScrollingWithActionHandler {
             if let section = self.section {
                 WhisperRequestManager.sharedInstance.requestForWhispers(
@@ -53,12 +56,24 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         super.didReceiveMemoryWarning()
     }
 
+    func handleRefresh() {
+        if let section = self.section {
+            WhisperRequestManager.sharedInstance.requestForWhispers(section, offset: 0)
+        } else {
+            refreshControl?.endRefreshing()
+        }
+    }
+
     // MARK: - WhisperRequestManager delegate methods
 
     func whisperRequestManager(whisperRequestManager: WhisperRequestManager, didReceiveWhispers newWhispers: [Whisper]) {
         SVProgressHUD.dismiss()
-
         tableView.infiniteScrollingView.stopAnimating()
+
+        if let isRefreshing = refreshControl?.refreshing where isRefreshing {
+            whispers.removeAll()
+            tableView.reloadData()
+        }
 
         var indexPaths = [NSIndexPath]()
         for i in (whispers.count..<(whispers.count + newWhispers.count)) {
@@ -72,8 +87,10 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         tableView.beginUpdates()
         tableView.insertRowsAtIndexPaths(
             indexPaths,
-            withRowAnimation: UITableViewRowAnimation.Fade)
+            withRowAnimation: UITableViewRowAnimation.Automatic)
         tableView.endUpdates()
+
+        refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
