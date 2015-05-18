@@ -62,11 +62,6 @@ class MasterViewController: UITableViewController {
         navigationItem.titleView = UIImageView(image: titleLogo)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -203,11 +198,11 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        rowHeightEstimateCache["\(indexPath.row)"] = CGRectGetHeight(cell.frame)
+        rowHeightEstimateCache["\(indexPath.section):\(indexPath.row)"] = CGRectGetHeight(cell.frame)
     }
 
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if let height = rowHeightEstimateCache["\(indexPath.row)"] {
+        if let height = rowHeightEstimateCache["\(indexPath.section):\(indexPath.row)"] {
             return height
         } else {
             return UITableViewAutomaticDimension
