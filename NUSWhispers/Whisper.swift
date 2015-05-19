@@ -25,8 +25,8 @@ class Whisper {
 
     var truncatedContent: String? {
         var truncated = content as NSString
-        if truncated.length > 400 {
-            truncated = truncated.substringToIndex(400)
+        if truncated.length > 500 {
+            truncated = truncated.substringToIndex(500)
             return (truncated as String).stringByAppendingString("...")
         } else {
             return content
