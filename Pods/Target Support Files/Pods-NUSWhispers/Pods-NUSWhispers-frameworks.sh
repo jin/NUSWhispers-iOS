@@ -50,6 +50,7 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'KILabel.framework'
+  install_framework 'SDWebImage.framework'
   install_framework 'SVProgressHUD.framework'
   install_framework 'SVPullToRefresh.framework'
   install_framework 'SwiftyJSON.framework'
@@ -58,6 +59,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'KILabel.framework'
+  install_framework 'SDWebImage.framework'
   install_framework 'SVProgressHUD.framework'
   install_framework 'SVPullToRefresh.framework'
   install_framework 'SwiftyJSON.framework'

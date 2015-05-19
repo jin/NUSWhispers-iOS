@@ -57,11 +57,15 @@ class Whisper {
             Comment(json: $0)
         })
 
-        if let imageURL = json["images"].string {
-            self.imageURL = NSURL(string: imageURL)
-            if let data = NSData(contentsOfURL: self.imageURL) {
-                self.image = UIImage(data: data)
-            }
-        }
+//        if let url = json["images"].string {
+            self.imageURL = NSURL(string: "http://fakeimg.pl/650x600/")
+//        }
+
+//        if let imageURL = json["images"].string {
+//            self.imageURL = NSURL(string: imageURL)
+//            if let data = NSData(contentsOfURL: self.imageURL) {
+//                self.image = UIImage(data: data)
+//            }
+//        }
     }
 }

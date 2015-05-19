@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NUSWhispers-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-NUSWhispers-SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09D78F87E7DF56007D45265F</key>
+		<key>073D7A0EA9801565CD011BC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>38B9391BA5D918B210B2592A</key>
+		<key>25E8D7A8F44D6D42C811B428</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>731511EAD23CE796618DFE57</key>
+		<key>75D4A40427DD942A376C377D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>746B9EB5A122A0B78D7102F3</key>
+		<key>9ADE93CBBA59B0FD7C725ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>951607B91360BAE1A2D72FC4</key>
+		<key>A5AF89F5B38E6556E8D6D23B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3A7B6159E1B77FD8DAE5579</key>
+		<key>AC06F7F9703FB01860520182</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5845870EACD0A313200A926</key>
+		<key>CED59BB4B088E9B8D06DBE55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB16812A437A57C71E4FAAE3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,6 +9,7 @@ target 'NUSWhispers' do
   pod 'TTTAttributedLabel'
   pod 'SVPullToRefresh'
   pod 'KILabel', '1.0.0'
+  pod 'SDWebImage'
 end
 
 target 'NUSWhispersTests' do
