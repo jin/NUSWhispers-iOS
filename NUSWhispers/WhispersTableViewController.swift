@@ -12,7 +12,7 @@ import SwiftyJSON
 import SVProgressHUD
 import SVPullToRefresh
 
-class WhispersTableViewController: UITableViewController, WhisperRequestManagerDelegate {
+class WhispersTableViewController: UITableViewController, WhisperRequestManagerDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
 
     var section: Section? = .None {
         willSet {
@@ -22,13 +22,17 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     var whispers: [Whisper] = [Whisper]()
+    var backedUpWhispersWhileSearching: [Whisper]?
     var hotWhisper: Whisper?
 
     var rowHeightEstimateCache = [String:CGFloat]()
 
+    var searchController: UISearchController!
+    var detailViewController: DetailViewController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
 
@@ -44,6 +48,13 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
                 self.tableView.infiniteScrollingView.stopAnimating()
             }
         }
+
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.delegate = self
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        tableView.tableHeaderView = searchController.searchBar
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -54,6 +65,33 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        if whispers.isEmpty {
+            if let backedUpWhispers = backedUpWhispersWhileSearching {
+                whispers = backedUpWhispers
+                tableView.separatorStyle = .SingleLine
+                tableView.reloadData()
+            }
+        }
+    }
+
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        WhisperRequestManager.sharedInstance.delegate = self
+        let text = searchController.searchBar.text
+        if backedUpWhispersWhileSearching == nil {
+            backedUpWhispersWhileSearching = whispers
+        }
+        if count(text) > 0 {
+            tableView.separatorStyle = .None
+            whispers.removeAll()
+            tableView.reloadData()
+            if !SVProgressHUD.isVisible() {
+                SVProgressHUD.show()
+            }
+            WhisperRequestManager.sharedInstance.searchForWhispers(searchController.searchBar.text)
+        }
     }
 
     func handleRefresh() {
@@ -73,6 +111,11 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         if let isRefreshing = refreshControl?.refreshing where isRefreshing {
             whispers.removeAll()
             tableView.reloadData()
+        }
+
+        if !newWhispers.isEmpty {
+            backedUpWhispersWhileSearching = nil
+            searchController.active = false
         }
 
         var indexPaths = [NSIndexPath]()

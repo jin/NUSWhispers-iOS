@@ -24,17 +24,17 @@ class DetailViewController: UIViewController {
         }
     }
 
-    func configureView() {
-        if let name: String = self.sectionName {
-            title = name.capitalizedString
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         navigationItem.leftItemsSupplementBackButton = true
+    }
+
+    func configureView() {
+        if let name: String = self.sectionName {
+            title = name.capitalizedString
+        }
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -45,6 +45,7 @@ class DetailViewController: UIViewController {
         if segue.identifier == "showWhispers" {
             whispersTableViewController = segue.destinationViewController as? WhispersTableViewController
             whispersTableViewController!.section = section
+            whispersTableViewController!.detailViewController = self
         }
     }
 

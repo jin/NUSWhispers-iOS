@@ -40,6 +40,16 @@ class WhisperRequestManager {
         }
     }
 
+    func searchForWhispers(searchText: String) {
+        let encodedText = searchText.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+        println(encodedText)
+        let url = "http://nuswhispers.com/api/confessions/search/\(encodedText!)"
+        makeGetRequest(url) { json in
+            let whispers = self.convertJSONResponseToWhispers(json)
+            self.updateWhisperDataSource(whispers)
+        }
+    }
+
     func requestForWhisper(tag: Int, completion: (json: JSON) -> ()) {
         let url = "http://nuswhispers.com/api/confessions/\(tag)"
         makeGetRequest(url, completion: completion)
@@ -47,7 +57,7 @@ class WhisperRequestManager {
 
     func requestForWhispers(section: Section, offset: Int = 0) {
         let url = "http://nuswhispers.com/api/confessions/\(section.apiEndpoint)?count=\(whisperCountPerRequest)&offset=\(offset)"
-        makeGetRequest(url) { (json: JSON) in
+        makeGetRequest(url) { json in
             let whispers = self.convertJSONResponseToWhispers(json)
             self.updateWhisperDataSource(whispers)
         }
