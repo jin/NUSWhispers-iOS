@@ -60,6 +60,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         searchController.searchBar.searchBarStyle = UISearchBarStyle.Minimal
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
     }
