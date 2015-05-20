@@ -40,10 +40,9 @@ class WhisperRequestManager {
         }
     }
 
-    func searchForWhispers(searchText: String) {
+    func searchForWhispers(searchText: String, offset: Int = 0) {
         let encodedText = searchText.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        println(encodedText)
-        let url = "http://nuswhispers.com/api/confessions/search/\(encodedText!)"
+        let url = "http://nuswhispers.com/api/confessions/search/\(encodedText!)?offset=\(offset)"
         makeGetRequest(url) { json in
             let whispers = self.convertJSONResponseToWhispers(json)
             self.updateWhisperDataSource(whispers)

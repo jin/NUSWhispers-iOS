@@ -29,6 +29,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     var searchController: UISearchController!
     var detailViewController: DetailViewController!
+    var currentSearchText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,11 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         refreshControl?.addTarget(self, action: "handleRefresh", forControlEvents: UIControlEvents.ValueChanged)
 
         tableView.addInfiniteScrollingWithActionHandler {
-            if let section = self.section {
+            if let searchText = self.currentSearchText {
+                WhisperRequestManager.sharedInstance.searchForWhispers(
+                    searchText,
+                    offset: self.whispers.count)
+            } else if let section = self.section {
                 WhisperRequestManager.sharedInstance.requestForWhispers(
                     section,
                     offset: self.whispers.count)
@@ -52,9 +57,11 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         searchController = UISearchController(searchResultsController: nil)
         searchController.delegate = self
         searchController.searchBar.sizeToFit()
+        searchController.searchBar.searchBarStyle = UISearchBarStyle.Minimal
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -65,6 +72,10 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        tableView.tableHeaderView?.sizeToFit()
     }
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
@@ -87,15 +98,20 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             tableView.separatorStyle = .None
             whispers.removeAll()
             tableView.reloadData()
+            detailViewController.navigationItem.title = "Results for \"\(text)\""
             if !SVProgressHUD.isVisible() {
                 SVProgressHUD.show()
             }
+            currentSearchText = text
             WhisperRequestManager.sharedInstance.searchForWhispers(searchController.searchBar.text)
         }
     }
 
     func handleRefresh() {
-        if let section = self.section {
+        if let searchText = currentSearchText {
+            WhisperRequestManager.sharedInstance.searchForWhispers(searchText, offset: 0)
+        } else if let section = self.section {
+            parentViewController?.navigationItem.title = section.description.capitalizedString
             WhisperRequestManager.sharedInstance.requestForWhispers(section, offset: 0)
         } else {
             refreshControl?.endRefreshing()
