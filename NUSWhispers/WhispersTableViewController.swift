@@ -83,6 +83,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         if whispers.isEmpty {
             if let backedUpWhispers = backedUpWhispersWhileSearching {
                 whispers = backedUpWhispers
+                detailViewController.navigationItem.title = section?.description.capitalizedString
                 tableView.separatorStyle = .SingleLine
                 tableView.reloadData()
             }
