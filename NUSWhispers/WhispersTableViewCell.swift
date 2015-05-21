@@ -22,7 +22,7 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
     @IBOutlet weak var whisperCategoryLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperCommentsCountLabel: TTTAttributedLabel!
 
-    var whispersTableViewController: WhispersTableViewController?
+    weak var whispersTableViewController: WhispersTableViewController?
     var longPressGestureRecognizer: UILongPressGestureRecognizer!
 
     var whisper: Whisper? {
