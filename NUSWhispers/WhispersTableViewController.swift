@@ -83,9 +83,9 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
         if whispers.isEmpty {
             if let backedUpWhispers = backedUpWhispersWhileSearching {
                 whispers = backedUpWhispers
-                detailViewController.navigationItem.title = section?.description.capitalizedString
                 tableView.separatorStyle = .SingleLine
                 tableView.reloadData()
+                setNavigationBarTitleBasedOnCurrentContext()
             }
         }
     }
@@ -100,20 +100,18 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             tableView.separatorStyle = .None
             whispers.removeAll()
             tableView.reloadData()
-            detailViewController.navigationItem.title = "Results for \"\(text)\""
             if !SVProgressHUD.isVisible() {
                 SVProgressHUD.show()
             }
-            currentSearchText = text
             WhisperRequestManager.sharedInstance.searchForWhispers(searchController.searchBar.text)
         }
     }
 
     func handleRefresh() {
+        setNavigationBarTitleBasedOnCurrentContext()
         if let searchText = currentSearchText {
             WhisperRequestManager.sharedInstance.searchForWhispers(searchText, offset: 0)
         } else if let section = self.section {
-            parentViewController?.navigationItem.title = section.description.capitalizedString
             WhisperRequestManager.sharedInstance.requestForWhispers(section, offset: 0)
         } else {
             refreshControl?.endRefreshing()
@@ -133,7 +131,8 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
         if !newWhispers.isEmpty {
             backedUpWhispersWhileSearching = nil
-            searchController.active = false
+            let searchText = searchController.searchBar.text
+            currentSearchText = searchText.isEmpty ? nil : searchText
         }
 
         var indexPaths = [NSIndexPath]()
@@ -150,6 +149,8 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             indexPaths,
             withRowAnimation: UITableViewRowAnimation.Automatic)
         tableView.endUpdates()
+
+        setNavigationBarTitleBasedOnCurrentContext()
 
         refreshControl?.endRefreshing()
     }
@@ -199,6 +200,14 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
                 destinationViewController.whisper = selectedWhisper
             }
             hotWhisper = nil
+        }
+    }
+
+    private func setNavigationBarTitleBasedOnCurrentContext() {
+        if let searchText = currentSearchText {
+            detailViewController.navigationItem.title = "Results for \"\(searchText)\""
+        } else {
+            detailViewController.navigationItem.title = section?.description.capitalizedString
         }
     }
 
