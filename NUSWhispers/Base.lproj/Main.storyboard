@@ -127,7 +127,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTN-FZ-Z4x" customClass="KILabel">
-                                            <rect key="frame" x="28" y="82" width="544" height="159"/>
+                                            <rect key="frame" x="31" y="82" width="538" height="159"/>
                                             <string key="text">Lorem ipsum @dolor #123 sit #amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</string>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,7 +137,7 @@
                                     <constraints>
                                         <constraint firstItem="0Cv-yG-MOR" firstAttribute="leading" secondItem="zPh-WD-WXv" secondAttribute="trailing" constant="15" id="2wr-rI-AuF"/>
                                         <constraint firstAttribute="bottom" secondItem="jo9-a5-Zfw" secondAttribute="bottom" constant="10" id="8ih-r6-kNY"/>
-                                        <constraint firstItem="yTN-FZ-Z4x" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="20" id="Abb-d7-n5g"/>
+                                        <constraint firstItem="yTN-FZ-Z4x" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leadingMargin" constant="23" id="Abb-d7-n5g"/>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="DHZ-wW-Dk4"/>
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="E9f-Z8-m87"/>
                                         <constraint firstItem="yTN-FZ-Z4x" firstAttribute="top" secondItem="1ym-6P-mN9" secondAttribute="bottom" constant="25" id="GDO-an-q6v"/>
@@ -147,7 +147,7 @@
                                         <constraint firstAttribute="trailing" secondItem="fdj-Hl-ecC" secondAttribute="trailing" constant="20" id="N2K-Qv-la6"/>
                                         <constraint firstItem="zPh-WD-WXv" firstAttribute="top" secondItem="yTN-FZ-Z4x" secondAttribute="bottom" constant="25" id="WnD-co-rBU"/>
                                         <constraint firstItem="cpy-Kw-XKh" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="20" id="Wva-as-GaH"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="yTN-FZ-Z4x" secondAttribute="trailing" constant="20" id="X8c-eU-0Lm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="yTN-FZ-Z4x" secondAttribute="trailing" constant="23" id="X8c-eU-0Lm"/>
                                         <constraint firstItem="fdj-Hl-ecC" firstAttribute="top" secondItem="zPh-WD-WXv" secondAttribute="bottom" constant="10" id="ftL-hi-l5B"/>
                                         <constraint firstItem="zPh-WD-WXv" firstAttribute="leading" secondItem="Sgv-2J-rMm" secondAttribute="leading" constant="27" id="hr1-em-LW7"/>
                                         <constraint firstItem="1ym-6P-mN9" firstAttribute="top" secondItem="cpy-Kw-XKh" secondAttribute="bottom" constant="3" id="iPa-qU-88o"/>
