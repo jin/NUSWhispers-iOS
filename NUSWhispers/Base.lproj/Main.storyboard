@@ -80,8 +80,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.98096478170000001" green="0.98096478170000001" blue="0.98096478170000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.98096478170000001" green="0.98096478170000001" blue="0.98096478170000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="331" id="P4t-xo-RHY" customClass="WhispersTableViewCell" customModule="NUSWhispers" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -115,7 +115,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="romance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo9-a5-Zfw" customClass="TTTAttributedLabel">
                                             <rect key="frame" x="27" y="305" width="53" height="16"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.31402943121693117" green="0.31402943121693117" blue="0.31402943121693117" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -134,6 +133,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.98096478174603174" green="0.98096478174603174" blue="0.98096478174603174" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="0Cv-yG-MOR" firstAttribute="leading" secondItem="zPh-WD-WXv" secondAttribute="trailing" constant="15" id="2wr-rI-AuF"/>
                                         <constraint firstAttribute="bottom" secondItem="jo9-a5-Zfw" secondAttribute="bottom" constant="10" id="8ih-r6-kNY"/>
@@ -266,7 +266,7 @@
                                 </variation>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98096478170000001" green="0.98096478170000001" blue="0.98096478170000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="yda-07-RUX" secondAttribute="width" id="93C-we-GiB"/>
                             <constraint firstAttribute="height" secondItem="yda-07-RUX" secondAttribute="height" id="9gW-yL-7ai"/>
