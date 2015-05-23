@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        NSThread.sleepForTimeInterval(0.5) // extend LaunchScreen time
+        extendLaunchScreenTime(0.5)
 
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
@@ -65,5 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return false
     }
 
-}
+    private func extendLaunchScreenTime(time: NSTimeInterval) {
+        NSThread.sleepForTimeInterval(time) // extend LaunchScreen time
+    }
 
+}

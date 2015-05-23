@@ -19,7 +19,6 @@
 		3C1805CE1AFF89150075783E /* WhisperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1805CD1AFF89150075783E /* WhisperViewController.swift */; };
 		3C1805D01AFF99C90075783E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1805CF1AFF99C90075783E /* Comment.swift */; };
 		3C21554E1B08F69C00A20AA8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C21554D1B08F69C00A20AA8 /* AVFoundation.framework */; };
-		3C6F67711AF2295300599CA5 /* pac_man_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3C6F67701AF2295300599CA5 /* pac_man_loading.gif */; };
 		3C7784E31B051D1F0067FDAC /* GlobalSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7784E21B051D1F0067FDAC /* GlobalSplitViewController.swift */; };
 		3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A71AEFD35400F2A822 /* AppColors.swift */; };
 		3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */; };
@@ -316,7 +315,6 @@
 				3C01AC471AEFAB4500E0C94B /* Main.storyboard in Resources */,
 				3C01AC4C1AEFAB4500E0C94B /* LaunchScreen.xib in Resources */,
 				3C01AC491AEFAB4500E0C94B /* Images.xcassets in Resources */,
-				3C6F67711AF2295300599CA5 /* pac_man_loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

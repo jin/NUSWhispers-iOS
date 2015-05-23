@@ -33,17 +33,17 @@ class WhisperRequestManager {
         self.requestManager = Alamofire.Manager(configuration: config)
     }
 
-    func requestForWhisper(tag: Int) {
-        self.requestForWhisper(tag) { (json: JSON) in
+    func searchForWhispers(searchText: String, offset: Int = 0) {
+        let encodedText = searchText.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+        let url = "http://nuswhispers.com/api/confessions/search/\(encodedText!)?offset=\(offset)"
+        makeGetRequest(url) { json in
             let whispers = self.convertJSONResponseToWhispers(json)
             self.updateWhisperDataSource(whispers)
         }
     }
 
-    func searchForWhispers(searchText: String, offset: Int = 0) {
-        let encodedText = searchText.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        let url = "http://nuswhispers.com/api/confessions/search/\(encodedText!)?offset=\(offset)"
-        makeGetRequest(url) { json in
+    func requestForWhisper(tag: Int) {
+        self.requestForWhisper(tag) { (json: JSON) in
             let whispers = self.convertJSONResponseToWhispers(json)
             self.updateWhisperDataSource(whispers)
         }
