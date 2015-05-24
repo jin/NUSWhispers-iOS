@@ -70,8 +70,7 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
     private func fillCellContents() {
         if let whisper = whisper {
             whisperContentAttributedLabel.text = whisper.truncatedContent!
-                .stringByTrimmingCharactersInSet(
-                    NSCharacterSet.whitespaceCharacterSet())
+                .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
             whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
             
@@ -80,8 +79,6 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
             whisperTimeLabel.text = convertUTCToLocalDateString(whisper.createdAt)
             whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
             whisperCommentsCountLabel.text = (whisper.comments.count == 1) ? "1 comment" : "\(whisper.comments.count) comments"
-
-            contentView.updateConstraints()
         }
     }
 
