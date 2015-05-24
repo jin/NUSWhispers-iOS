@@ -19,7 +19,6 @@ class Whisper {
     var category: String! = ""
     var likesCount: Int!
     var imageURL: NSURL!
-    var image: UIImage!
 
     var comments: [Comment]! = [Comment]()
 

@@ -60,7 +60,6 @@
 		3C01AC631AEFBDC100E0C94B /* WhispersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhispersTableViewCell.swift; sourceTree = "<group>"; };
 		3C1805CD1AFF89150075783E /* WhisperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperViewController.swift; sourceTree = "<group>"; };
 		3C1805CF1AFF99C90075783E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		3C21554D1B08F69C00A20AA8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3C6F67701AF2295300599CA5 /* pac_man_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pac_man_loading.gif; sourceTree = "<group>"; };
 		3C7784E21B051D1F0067FDAC /* GlobalSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSplitViewController.swift; sourceTree = "<group>"; };
 		3C8219A71AEFD35400F2A822 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
@@ -81,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C21554E1B08F69C00A20AA8 /* AVFoundation.framework in Frameworks */,
 				495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,7 +97,6 @@
 		351F64D8E76979851792F9A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3C21554D1B08F69C00A20AA8 /* AVFoundation.framework */,
 				2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */,
 			);
 			name = Frameworks;

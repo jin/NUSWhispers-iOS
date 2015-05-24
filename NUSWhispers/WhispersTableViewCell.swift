@@ -24,7 +24,7 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
 
     weak var whispersTableViewController: WhispersTableViewController?
     var longPressGestureRecognizer: UILongPressGestureRecognizer!
-
+    
     var whisper: Whisper? {
         didSet {
             fillCellContents()
