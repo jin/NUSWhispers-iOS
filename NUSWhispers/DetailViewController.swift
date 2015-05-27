@@ -11,7 +11,8 @@ import SVProgressHUD
 
 class DetailViewController: UIViewController {
 
-    var whispersTableViewController: WhispersTableViewController?
+    weak var whispersTableViewController: WhispersTableViewController?
+
     var section: Section? = Section.Featured {
         didSet {
             sectionName = section!.rawValue as String
@@ -50,4 +51,3 @@ class DetailViewController: UIViewController {
     }
 
 }
-

@@ -21,7 +21,7 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate, UI
     @IBOutlet weak var whisperCommentsCountLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperLikesCountLabel: TTTAttributedLabel!
     
-    var whispersTableViewController: WhispersTableViewController?
+    weak var whispersTableViewController: WhispersTableViewController?
     
     var whisper: Whisper?
     

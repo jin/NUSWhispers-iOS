@@ -18,7 +18,7 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
     @IBOutlet weak var commentDateLabel: UILabel!
     @IBOutlet weak var commentMessageLabel: KILabel!
 
-    var whisperViewController: WhisperViewController?
+    weak var whisperViewController: WhisperViewController?
 
     var comment: Comment? {
         didSet {

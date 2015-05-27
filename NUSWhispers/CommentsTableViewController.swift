@@ -11,7 +11,7 @@ import UIKit
 class CommentsTableViewController: UITableViewController {
 
     var comments: [Comment]? = [Comment]()
-    var whisperViewController: WhisperViewController?
+    weak var whisperViewController: WhisperViewController?
 
     var actualContentSizeHeight: CGFloat! = 0
 

@@ -28,7 +28,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     var rowHeightEstimateCache = [String:CGFloat]()
 
     var searchController: UISearchController!
-    var detailViewController: DetailViewController!
+    weak var detailViewController: DetailViewController!
     var currentSearchText: String?
 
     override func viewDidLoad() {
