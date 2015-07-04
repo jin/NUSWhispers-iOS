@@ -17,10 +17,6 @@ class Comment {
     var commentID: String!
     var message: String!
 
-    init() {
-
-    }
-
     init(json: JSON) {
         authorID = json["from"]["id"].string
         authorName = json["from"]["name"].string
