@@ -40,6 +40,8 @@ class Whisper {
         self.likesCount = json["fb_like_count"].int
         if let category = json["categories"].array?.first {
             self.category = category["confession_category"].string
+        } else {
+            self.category = "no category"
         }
 
         let dateFormatter = NSDateFormatter()
