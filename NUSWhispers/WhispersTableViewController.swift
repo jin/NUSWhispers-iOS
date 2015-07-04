@@ -190,7 +190,11 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showWhisper" {
+        // Dismiss search controller before pushing new VC or the NavigationController will not appear
+        if searchController.active {
+            searchController.active = false
+            return
+        } else if segue.identifier == "showWhisper" {
             let destinationViewController = segue.destinationViewController as! WhisperViewController
             destinationViewController.whispersTableViewController = self
             if let whisper = hotWhisper {
