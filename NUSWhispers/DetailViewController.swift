@@ -30,6 +30,9 @@ class DetailViewController: UIViewController {
         self.configureView()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         navigationItem.leftItemsSupplementBackButton = true
+
+        let newWhisperButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "didTapNewWhisperButton")
+        navigationItem.rightBarButtonItem = newWhisperButton
     }
 
     func configureView() {
@@ -48,6 +51,10 @@ class DetailViewController: UIViewController {
             whispersTableViewController!.section = section
             whispersTableViewController!.detailViewController = self
         }
+    }
+
+    func didTapNewWhisperButton() {
+        performSegueWithIdentifier("newWhisper", sender: self)
     }
 
 }

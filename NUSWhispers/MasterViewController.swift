@@ -60,6 +60,9 @@ class MasterViewController: UITableViewController {
         navigationItem.leftBarButtonItem = nil
         let titleLogo = UIImage(named: "card_logo")
         navigationItem.titleView = UIImageView(image: titleLogo)
+
+        let newWhisperButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "didTapNewWhisperButton")
+        navigationItem.rightBarButtonItem = newWhisperButton
     }
 
     // MARK: - Segues
@@ -209,5 +212,8 @@ class MasterViewController: UITableViewController {
         }
     }
 
-}
+    func didTapNewWhisperButton() {
+        performSegueWithIdentifier("newWhisper", sender: self)
+    }
 
+}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +35,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-QW-Ncw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
-                                    <segue destination="WqH-Pz-G7P" kind="embed" identifier="showWhispers" id="4G9-7n-3yN"/>
+                                    <segue destination="WqH-Pz-G7P" kind="embed" identifier="showWhispers" id="l3y-q0-CvA"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -49,28 +49,13 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Featured" id="mOI-FS-AaM"/>
+                    <connections>
+                        <segue destination="prI-M0-MqV" kind="presentation" identifier="newWhisper" id="LtR-gT-ig3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="677" y="129"/>
-        </scene>
-        <!--New Confession View Controller-->
-        <scene sceneID="V4K-S9-jSv">
-            <objects>
-                <viewController id="xBl-ue-jaf" customClass="NewConfessionViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="If4-jq-KlC"/>
-                        <viewControllerLayoutGuide type="bottom" id="HWC-Hs-BRm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fkn-RF-dxE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bjF-ia-OWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1464" y="-630"/>
         </scene>
         <!--Whispers Table View Controller-->
         <scene sceneID="qfO-cV-aRI">
@@ -181,6 +166,54 @@
             </objects>
             <point key="canvasLocation" x="1464" y="129"/>
         </scene>
+        <!--New Whisper Modal View Controller-->
+        <scene sceneID="Y5Z-hj-ao1">
+            <objects>
+                <viewController id="prI-M0-MqV" customClass="NewWhisperModalViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QeZ-zF-Chh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hdm-St-Luh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yO1-Fb-CV6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKF-mJ-SsO">
+                                <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-j4-4ch">
+                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Submit" id="7ry-nH-kbh">
+                                        <barButtonItem key="leftBarButtonItem" image="icon_cross" id="pps-wr-KKu">
+                                            <connections>
+                                                <action selector="didTapCloseModalButton:" destination="prI-M0-MqV" id="Zzg-YL-bKG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bX9-j4-4ch" firstAttribute="top" secondItem="yO1-Fb-CV6" secondAttribute="topMargin" constant="22" id="JhY-t6-8fq"/>
+                            <constraint firstItem="Hdm-St-Luh" firstAttribute="top" secondItem="IKF-mJ-SsO" secondAttribute="bottom" id="LI3-QD-7GF"/>
+                            <constraint firstItem="IKF-mJ-SsO" firstAttribute="leading" secondItem="yO1-Fb-CV6" secondAttribute="leadingMargin" constant="-16" id="VfA-lY-t4i"/>
+                            <constraint firstItem="bX9-j4-4ch" firstAttribute="leading" secondItem="yO1-Fb-CV6" secondAttribute="leadingMargin" constant="-16" id="bUu-gf-xSh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bX9-j4-4ch" secondAttribute="trailing" constant="-16" id="jql-Nf-MUP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IKF-mJ-SsO" secondAttribute="trailing" constant="-16" id="rDB-Kb-LGb"/>
+                            <constraint firstItem="IKF-mJ-SsO" firstAttribute="top" secondItem="bX9-j4-4ch" secondAttribute="bottom" id="v1t-7b-Yhp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newWhisperWebView" destination="IKF-mJ-SsO" id="HXw-8P-gQb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="de1-sa-1vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="-630"/>
+        </scene>
         <!--Whisper View Controller-->
         <scene sceneID="iGP-w4-zAj">
             <objects>
@@ -193,7 +226,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yda-07-RUX">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yda-07-RUX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-8T-ABG">
@@ -243,6 +276,14 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67B-J1-1B5">
+                                        <rect key="frame" x="519" y="372" width="41" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="report">
+                                            <color key="titleColor" red="0.80701100000000003" green="0.17104506402824299" blue="0.1393782043580894" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -323,14 +364,14 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 days ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXr-Ft-S4k">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10 days ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXr-Ft-S4k">
                                             <rect key="frame" x="121" y="15" width="71" height="18"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                             <color key="textColor" red="0.31402943119999999" green="0.31402943119999999" blue="0.31402943119999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-KW-ndd" customClass="KILabel">
-                                            <rect key="frame" x="10" y="43" width="508" height="78"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="wordWrap" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-KW-ndd" customClass="KILabel">
+                                            <rect key="frame" x="10" y="43" width="520" height="78"/>
                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at mattis arcu, sollicitudin pretium metus. Duis porta sagittis ante, non auctor elit aliquet ac. In a lacinia arcu, vel sagittis diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec justo nibh. Nullam a iaculis lacus, sed sagittis sapien. Nullam porta, arcu ut feugiat accumsan, eros turpis vestibulum dui, sit amet sodales felis ex non ante. Vestibulum ut est risus. Maecenas sapien justo, sollicitudin id suscipit in, mattis nec leo. Nunc ac rhoncus neque. Suspendisse egestas id tortor ac posuere. Duis ac tristique metus, vitae tempor urna. Quisque mauris leo, tempor ac leo quis, laoreet suscipit leo. Vivamus accumsan tellus sed tortor mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut vehicula lorem, quis accumsan sapien.</string>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -424,7 +465,7 @@
                     <navigationItem key="navigationItem" title="Whispers" id="Zdf-7t-Un8"/>
                     <connections>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showWhispers" id="Mpz-0f-efR"/>
-                        <segue destination="xBl-ue-jaf" kind="showDetail" identifier="showNewConfession" id="Ier-Pm-htb"/>
+                        <segue destination="prI-M0-MqV" kind="presentation" identifier="newWhisper" id="51N-9R-W37"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -447,5 +488,11 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_cross" width="21" height="21"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="51N-9R-W37"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.18039215689999999" green="0.56078431370000004" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

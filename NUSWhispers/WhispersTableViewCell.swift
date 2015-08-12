@@ -44,25 +44,27 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
     }
     
     func longPressOnContentLabel(recognizer: UILongPressGestureRecognizer) {
+        if SVProgressHUD.isVisible() || UIDevice.currentDevice().userInterfaceIdiom != .Pad {
+            return
+        }
+
         let location = recognizer.locationInView(whisperContentAttributedLabel)
         let link = whisperContentAttributedLabel.linkAtPoint(location)
-        if let link = link where UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+
+        if let link = link {
             let tag = extractTagFromHashtag(link["link"] as! String)
-
-            if !SVProgressHUD.isVisible() {
-                SVProgressHUD.show()
-                WhisperRequestManager.sharedInstance.requestForWhisper(tag) { (json: JSON) in
-                    SVProgressHUD.dismiss()
-                    let requestedWhisper = WhisperRequestManager.sharedInstance.convertJSONResponseToWhispers(json).first
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let contentViewController = storyboard.instantiateViewControllerWithIdentifier("whisperViewController") as! WhisperViewController
-                    contentViewController.whisper = requestedWhisper
-
-                    let popover = UIPopoverController(contentViewController: contentViewController)
-                    popover.delegate = self
-                    popover.popoverContentSize = CGSizeMake(500, 700)
-                    popover.presentPopoverFromRect(CGRectMake(location.x, location.y, 40, 40), inView: self.contentView, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
-                }
+            SVProgressHUD.show()
+            WhisperRequestManager.sharedInstance.requestForWhisper(tag) { (json: JSON) in
+                SVProgressHUD.dismiss()
+                let requestedWhisper = WhisperRequestManager.sharedInstance.convertJSONResponseToWhispers(json).first
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let contentViewController = storyboard.instantiateViewControllerWithIdentifier("whisperViewController") as! WhisperViewController
+                contentViewController.whisper = requestedWhisper
+                
+                let popover = UIPopoverController(contentViewController: contentViewController)
+                popover.delegate = self
+                popover.popoverContentSize = CGSizeMake(500, 700)
+                popover.presentPopoverFromRect(CGRectMake(location.x, location.y, 40, 40), inView: self.contentView, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
             }
         }
     }
