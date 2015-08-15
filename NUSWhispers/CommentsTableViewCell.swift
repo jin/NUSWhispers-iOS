@@ -41,6 +41,25 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
         commentMessageLabel.text = comment?.message
         commentMessageLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
         commentMessageLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
+        
+        downloadImage(NSURL(string: "http://graph.facebook.com/\(comment!.authorID)/picture?"))
+
+    }
+    
+    private func downloadImage(url:NSURL?){
+        if let profileURL = url {
+            getProfilePic(profileURL) { data in
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.commentAuthorImageView.image = UIImage(data: data!)
+                }
+            }
+        }
+    }
+    
+    private func getProfilePic(url:NSURL, completion: ((data: NSData?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data)
+            }.resume()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
