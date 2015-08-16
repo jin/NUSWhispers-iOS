@@ -272,6 +272,7 @@
 		3C01AC321AEFAB4500E0C94B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = crypt;
 				TargetAttributes = {
