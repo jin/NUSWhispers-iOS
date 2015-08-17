@@ -109,17 +109,22 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         switch indexPath.section {
         case 0:
+            
+            let attributes = [
+                NSFontAttributeName : (UIFont) .typiconFontOfSize(28)]
             let sectionName = sections[indexPath.row].0.rawValue as String
-            cell.textLabel!.text = sectionName.capitalizedString
-            cell.imageView?.image = sections[indexPath.row].1
+                
+            var text: NSMutableAttributedString = NSMutableAttributedString(string: (NSString) .typiconStringForIconName(sections[indexPath.row].0.iconFont), attributes: attributes)
+            text.appendAttributedString(NSAttributedString(string: " " + sectionName.capitalizedString, attributes: [:]))
+        
+            cell.textLabel!.attributedText = text
+
         case 1:
             let categoryName = categories[indexPath.row].0.rawValue as String
             cell.textLabel!.text = categoryName.capitalizedString
-            cell.imageView?.image = categories[indexPath.row].1
         case 2:
             let cellName = others[indexPath.row].0.rawValue as String
             cell.textLabel!.text = cellName.capitalizedString
-            cell.imageView?.image = others[indexPath.row].1
             cell.hidden = true // Hide the cell until new confession API is figured out
         default:
             break

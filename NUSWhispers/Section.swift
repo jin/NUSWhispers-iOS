@@ -52,4 +52,19 @@ enum Section : String, Printable {
             assertionFailure("Invalid section")
         }
     }
+    
+    var iconFont: String {
+        switch self {
+        case .Featured:
+            return "pin-outline"
+        case .Latest:
+            return "starburst"
+        case .Popular:
+            return "chart-line"
+//        case .Favourites:
+//            return "star-full-outline"
+        default:
+            return ""
+        }
+    }
 }

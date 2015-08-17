@@ -29,6 +29,9 @@
 		3CCD3AC31AEFC0800014479C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC21AEFC0800014479C /* Section.swift */; };
 		3CCD3AC51AEFC0E80014479C /* Whisper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC41AEFC0E80014479C /* Whisper.swift */; };
 		495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		ACB6782A1B815A8200BD1362 /* NSString+Typicons.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB678271B815A8200BD1362 /* NSString+Typicons.m */; };
+		ACB6782B1B815A8200BD1362 /* UIFont+Typicons.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB678291B815A8200BD1362 /* UIFont+Typicons.m */; };
+		ACB6782D1B81686500BD1362 /* typicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB6782C1B81686500BD1362 /* typicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,11 @@
 		3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		3CCD3AC21AEFC0800014479C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3CCD3AC41AEFC0E80014479C /* Whisper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Whisper.swift; sourceTree = "<group>"; };
+		ACB678261B815A8200BD1362 /* NSString+Typicons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Typicons.h"; sourceTree = "<group>"; };
+		ACB678271B815A8200BD1362 /* NSString+Typicons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Typicons.m"; sourceTree = "<group>"; };
+		ACB678281B815A8200BD1362 /* UIFont+Typicons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Typicons.h"; sourceTree = "<group>"; };
+		ACB678291B815A8200BD1362 /* UIFont+Typicons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Typicons.m"; sourceTree = "<group>"; };
+		ACB6782C1B81686500BD1362 /* typicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = typicons.ttf; sourceTree = "<group>"; };
 		D7E8A66A2F39F73DD84C1385 /* Pods-NUSWhispers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NUSWhispers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NUSWhispers/Pods-NUSWhispers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +112,7 @@
 		3C01AC311AEFAB4500E0C94B = {
 			isa = PBXGroup;
 			children = (
+				ACB6782C1B81686500BD1362 /* typicons.ttf */,
 				3C01AC3C1AEFAB4500E0C94B /* NUSWhispers */,
 				3C01AC541AEFAB4500E0C94B /* NUSWhispersTests */,
 				3C01AC3B1AEFAB4500E0C94B /* Products */,
@@ -126,6 +135,10 @@
 			children = (
 				3C942C2E1B024F6D00F18B0B /* Utility */,
 				3C01AC3F1AEFAB4500E0C94B /* AppDelegate.swift */,
+				ACB678261B815A8200BD1362 /* NSString+Typicons.h */,
+				ACB678271B815A8200BD1362 /* NSString+Typicons.m */,
+				ACB678281B815A8200BD1362 /* UIFont+Typicons.h */,
+				ACB678291B815A8200BD1362 /* UIFont+Typicons.m */,
 				3C8219A71AEFD35400F2A822 /* AppColors.swift */,
 				3C01AC451AEFAB4500E0C94B /* Main.storyboard */,
 				3C01AC481AEFAB4500E0C94B /* Images.xcassets */,
@@ -309,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB6782D1B81686500BD1362 /* typicons.ttf in Resources */,
 				3C01AC471AEFAB4500E0C94B /* Main.storyboard in Resources */,
 				3C01AC4C1AEFAB4500E0C94B /* LaunchScreen.xib in Resources */,
 				3C01AC491AEFAB4500E0C94B /* Images.xcassets in Resources */,
@@ -381,6 +395,7 @@
 				3C7784E31B051D1F0067FDAC /* GlobalSplitViewController.swift in Sources */,
 				3CC92F861AFD147E005AC93D /* CommentsTableViewController.swift in Sources */,
 				3C01AC621AEFBBEE00E0C94B /* WhispersTableViewController.swift in Sources */,
+				ACB6782A1B815A8200BD1362 /* NSString+Typicons.m in Sources */,
 				3C8219A81AEFD35400F2A822 /* AppColors.swift in Sources */,
 				3C01AC441AEFAB4500E0C94B /* DetailViewController.swift in Sources */,
 				3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */,
@@ -391,6 +406,7 @@
 				3CCD3AC31AEFC0800014479C /* Section.swift in Sources */,
 				3C942C301B024F7C00F18B0B /* Utility.swift in Sources */,
 				3C01AC401AEFAB4500E0C94B /* AppDelegate.swift in Sources */,
+				ACB6782B1B815A8200BD1362 /* UIFont+Typicons.m in Sources */,
 				3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */,
 				3CA89C1E1B527A5000714A69 /* NewWhisperModalViewController.swift in Sources */,
 				3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */,

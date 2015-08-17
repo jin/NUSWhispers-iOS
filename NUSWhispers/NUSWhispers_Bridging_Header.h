@@ -10,3 +10,6 @@
 #define NUSWhispers_NUSWhispers_Bridging_Header_h
 
 #endif
+
+#import "NSString+Typicons.h"
+#import "UIFont+Typicons.h"
