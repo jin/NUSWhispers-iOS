@@ -46,9 +46,10 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
 
     }
     
-    private func downloadImage(url:NSURL?){
+    private func downloadImage(url: NSURL?){
         if let profileURL = url {
             getProfilePic(profileURL) { data in
+                self.commentAuthorImageView.image = nil
                 dispatch_async(dispatch_get_main_queue()) {
                     self.commentAuthorImageView.image = UIImage(data: data!)
                 }
@@ -56,10 +57,11 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
         }
     }
     
-    private func getProfilePic(url:NSURL, completion: ((data: NSData?) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            completion(data: data)
-            }.resume()
+    private func getProfilePic(url: NSURL, completion: ((data: NSData?) -> Void)) {
+        NSURLSession
+            .sharedSession()
+            .dataTaskWithURL(url) { data, response, error in completion(data: data) }
+            .resume()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
