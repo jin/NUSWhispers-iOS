@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import TTTAttributedLabel
 import KILabel
 import SVProgressHUD
 import SwiftyJSON
+import TTTAttributedLabel
 
 class WhisperViewController: UIViewController, WhisperRequestManagerDelegate, UIPopoverControllerDelegate {
     
@@ -22,7 +22,7 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate, UI
     @IBOutlet weak var whisperLikesCountLabel: TTTAttributedLabel!
     
     weak var whispersTableViewController: WhispersTableViewController?
-    
+
     var whisper: Whisper?
     
     override func viewDidLoad() {
@@ -105,6 +105,10 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate, UI
                 }
             }
         }
+    }
+
+    private func getFBURL(postID: String) -> String {
+        return "https://www.facebook.com/permalink.php?story_fbid=\(postID)&id=695707917166339"
     }
     
 }

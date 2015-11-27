@@ -14,7 +14,6 @@ import SwiftyJSON
 import SDWebImage
 
 class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIPopoverControllerDelegate {
-    
     @IBOutlet weak var whisperContentAttributedLabel: KILabel!
     @IBOutlet weak var whisperLikesCountLabel: TTTAttributedLabel!
     @IBOutlet weak var whisperTagLabel: UILabel!
@@ -71,15 +70,16 @@ class WhispersTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
     
     private func fillCellContents() {
         if let whisper = whisper {
+            whisperTagLabel.text = String(whisper.tag)
             whisperContentAttributedLabel.text = whisper.truncatedContent!
                 .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             whisperContentAttributedLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
             whisperContentAttributedLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
-            
-            whisperTagLabel.text = "#\(whisper.tag!)"
             whisperCategoryLabel.text = whisper.category.lowercaseString
             whisperTimeLabel.text = convertUTCToLocalDateString(whisper.createdAt)
-            whisperLikesCountLabel.text = (whisper.likesCount == 1) ? "1 like" : "\(whisper.likesCount) likes"
+            if let likes = whisper.likesCount {
+                whisperLikesCountLabel.text = (likes == 1) ? "1 like" : "\(likes) likes"
+            }
             whisperCommentsCountLabel.text = (whisper.comments.count == 1) ? "1 comment" : "\(whisper.comments.count) comments"
         }
     }

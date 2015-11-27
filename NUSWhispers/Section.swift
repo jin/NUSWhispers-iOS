@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Section : String, Printable {
+enum Section : String, CustomStringConvertible {
     case Featured = "featured"
     case Popular = "popular"
     case Latest = "latest"

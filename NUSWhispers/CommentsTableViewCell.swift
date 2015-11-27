@@ -42,7 +42,7 @@ class CommentsTableViewCell: UITableViewCell, WhisperRequestManagerDelegate, UIP
         commentMessageLabel.hashtagLinkTapHandler = WhisperRequestManager.sharedInstance.hashtagLinkTapHandler(self)
         commentMessageLabel.urlLinkTapHandler = WhisperRequestManager.sharedInstance.urlLinkTapHandler(self)
         
-        downloadImage(NSURL(string: "http://graph.facebook.com/\(comment!.authorID)/picture?"))
+        downloadImage(NSURL(string: "https://graph.facebook.com/\(comment!.authorID)/picture?"))
 
     }
     

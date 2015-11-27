@@ -29,7 +29,7 @@ class CommentsTableViewController: UITableViewController {
         tableView.removeObserver(self, forKeyPath: "contentSize")
     }
 
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "contentSize" {
             whisperViewController?.commentsTableViewHeightConstraint.constant = tableView.contentSize.height
             whisperViewController?.view.setNeedsUpdateConstraints()

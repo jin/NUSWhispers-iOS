@@ -64,7 +64,7 @@ class WhisperRequestManager {
 
     func hashtagLinkTapHandler(delegate: WhisperRequestManagerDelegate) -> ((KILabel, String, NSRange) -> ()) {
         let handler: ((KILabel, String, NSRange) -> ()) = { (label: KILabel, string: String, range: NSRange) in
-            let tag = string.substringWithRange(Range<String.Index>(start: advance(string.startIndex, 1), end: string.endIndex)).toInt()
+            let tag = Int(string.substringWithRange(Range<String.Index>(start: string.startIndex.advancedBy(1), end: string.endIndex)))
             if let tag = tag {
                 WhisperRequestManager.sharedInstance.delegate = delegate
                 WhisperRequestManager.sharedInstance.requestForWhisper(tag)
@@ -84,7 +84,7 @@ class WhisperRequestManager {
     func requestForLeaderboard() {
         let url = "http://yangshun.im/nuswhispers-leaderboard/leaderboard/may.json"
         makeGetRequest(url) { (json: JSON) in
-            println(json)
+            print(json)
         }
     }
 
@@ -95,15 +95,16 @@ class WhisperRequestManager {
         req.HTTPBody = nil
         req.HTTPMethod = "GET"
         req.addValue("0", forHTTPHeaderField: "Content-Length")
-        self.activeRequest = requestManager?.request(req).responseJSON { (req, resp, json, error) in
-            if let e = error {
+        self.activeRequest = requestManager?.request(req).responseJSON { (response) in
+            if let e = response.result.error {
                 if e.code == NSURLErrorTimedOut {
                     SVProgressHUD.showErrorWithStatus("Request timed out.")
                 } else {
-                    println(e)
+                    print(e)
                 }
             } else {
-                completion(json: JSON(json!))
+                let json = JSON(data: response.data!)
+                completion(json: json)
             }
         }
     }
@@ -126,7 +127,7 @@ class WhisperRequestManager {
     }
 
     private func updateWhisperDataSource(whispers: [Whisper]) {
-            delegate?.whisperRequestManager(self, didReceiveWhispers: whispers)
+        delegate?.whisperRequestManager(self, didReceiveWhispers: whispers)
     }
 
 }

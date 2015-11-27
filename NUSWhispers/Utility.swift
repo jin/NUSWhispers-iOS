@@ -31,9 +31,8 @@ func convertDateToString(date: NSDate?) -> String? {
 }
 
 func extractTagFromHashtag(hashtag: String) -> Int {
-    return hashtag
+    return Int(hashtag
         .componentsSeparatedByCharactersInSet(
             NSCharacterSet.decimalDigitCharacterSet().invertedSet
-        ).last!
-        .toInt()!
+        ).last!)!
 }

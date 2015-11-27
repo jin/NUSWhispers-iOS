@@ -48,7 +48,7 @@ class MasterViewController: UITableViewController {
 
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = controllers.last!.topViewController as? DetailViewController
+            self.detailViewController = (controllers.last as! UINavigationController).topViewController as? DetailViewController
         }
 
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -69,7 +69,7 @@ class MasterViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showWhispers" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 var section: Section? = nil
                 switch indexPath.section {
                 case 0:
@@ -180,7 +180,7 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
-            let label = TTTAttributedLabel()
+            let label = TTTAttributedLabel(frame: CGRectZero)
             label.font = UIFont(name: "Avenir-Black", size: 24)
             label.textColor = UIColor.whiteColor()
             label.textAlignment = NSTextAlignment.Center
@@ -194,7 +194,7 @@ class MasterViewController: UITableViewController {
 
             return label
         case 1:
-            let label = TTTAttributedLabel()
+            let label = TTTAttributedLabel(frame: CGRectZero)
             label.font = UIFont(name: "Avenir-Black", size: 12)
             label.textColor = AppColors.DarkBlue
             label.textAlignment = NSTextAlignment.Center

@@ -92,18 +92,17 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         WhisperRequestManager.sharedInstance.delegate = self
-        let text = searchController.searchBar.text
         if backedUpWhispersWhileSearching == nil {
             backedUpWhispersWhileSearching = whispers
         }
-        if count(text) > 0 {
+        if let text = searchController.searchBar.text where text.characters.count > 0 {
             tableView.separatorStyle = .None
             whispers.removeAll()
             tableView.reloadData()
             if !SVProgressHUD.isVisible() {
                 SVProgressHUD.show()
             }
-            WhisperRequestManager.sharedInstance.searchForWhispers(searchController.searchBar.text)
+            WhisperRequestManager.sharedInstance.searchForWhispers(searchController.searchBar.text!)
         }
     }
 
@@ -131,8 +130,9 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
 
         if !newWhispers.isEmpty {
             backedUpWhispersWhileSearching = nil
-            let searchText = searchController.searchBar.text
-            currentSearchText = searchText.isEmpty ? nil : searchText
+            if let searchText = searchController.searchBar.text {
+                currentSearchText = searchText.isEmpty ? nil : searchText
+            }
         }
 
         var indexPaths = [NSIndexPath]()
@@ -140,7 +140,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
         }
 
-        whispers.extend(newWhispers)
+        whispers.appendContentsOf(newWhispers)
 
         tableView.separatorStyle = (whispers.count > 0) ? .SingleLine : .None
 
@@ -200,7 +200,7 @@ class WhispersTableViewController: UITableViewController, WhisperRequestManagerD
             if let whisper = hotWhisper {
                 destinationViewController.whisper = whisper
             } else {
-                let selectedWhisper = whispers[tableView.indexPathForSelectedRow()!.row]
+                let selectedWhisper = whispers[tableView.indexPathForSelectedRow!.row]
                 destinationViewController.whisper = selectedWhisper
             }
             hotWhisper = nil

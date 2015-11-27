@@ -1,6 +1,0 @@
-framework module TTTAttributedLabel {
-  umbrella header "Pods-NUSWhispers-TTTAttributedLabel-umbrella.h"
-
-  export *
-  module * { export * }
-}

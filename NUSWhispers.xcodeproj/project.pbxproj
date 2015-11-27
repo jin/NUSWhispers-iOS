@@ -28,7 +28,7 @@
 		3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */; };
 		3CCD3AC31AEFC0800014479C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC21AEFC0800014479C /* Section.swift */; };
 		3CCD3AC51AEFC0E80014479C /* Whisper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC41AEFC0E80014479C /* Whisper.swift */; };
-		495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		495E5F1B50FD47F9CDA72808 /* Pods_NUSWhispers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226C8C649AB02C7132D37E2 /* Pods_NUSWhispers.framework */; };
 		ACB6782A1B815A8200BD1362 /* NSString+Typicons.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB678271B815A8200BD1362 /* NSString+Typicons.m */; };
 		ACB6782B1B815A8200BD1362 /* UIFont+Typicons.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB678291B815A8200BD1362 /* UIFont+Typicons.m */; };
 		ACB6782D1B81686500BD1362 /* typicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB6782C1B81686500BD1362 /* typicons.ttf */; };
@@ -286,7 +286,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = crypt;
 				TargetAttributes = {
 					3C01AC391AEFAB4500E0C94B = {
@@ -471,6 +471,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -538,6 +539,7 @@
 				INFOPLIST_FILE = NUSWhispers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sg.crypt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/NUSWhispers/NUSWhispers_Bridging_Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,6 +554,7 @@
 				INFOPLIST_FILE = NUSWhispers/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sg.crypt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/NUSWhispers/NUSWhispers_Bridging_Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,6 +575,7 @@
 				);
 				INFOPLIST_FILE = NUSWhispersTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sg.crypt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NUSWhispers.app/NUSWhispers";
 			};
@@ -587,6 +591,7 @@
 				);
 				INFOPLIST_FILE = NUSWhispersTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sg.crypt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NUSWhispers.app/NUSWhispers";
 			};

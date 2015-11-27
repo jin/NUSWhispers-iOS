@@ -4,37 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-NUSWhispers-Alamofire.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-NUSWhispers-KILabel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-NUSWhispers-SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-NUSWhispers-SVProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-NUSWhispers-SVPullToRefresh.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-NUSWhispers-SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-NUSWhispers-TTTAttributedLabel.xcscheme</key>
+		<key>KILabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,45 +19,70 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TTTAttributedLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>073D7A0EA9801565CD011BC6</key>
+		<key>162B59B96FF1F5B6B21CF89AC9E41170</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>25E8D7A8F44D6D42C811B428</key>
+		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75D4A40427DD942A376C377D</key>
+		<key>620C959FA3FD5687230F9E46D854AACC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9ADE93CBBA59B0FD7C725ADE</key>
+		<key>83166800BE41BD7C1F61906886B9C8CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5AF89F5B38E6556E8D6D23B</key>
+		<key>93CBFAE8A1C558CF5B9F87D8ED711BD6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC06F7F9703FB01860520182</key>
+		<key>9B0C67EB8F48A83C8C2FB0B9B945A3C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CED59BB4B088E9B8D06DBE55</key>
+		<key>AFC7E03E65DAB7C2ABE050B9279E65DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB16812A437A57C71E4FAAE3</key>
+		<key>C5465738F824A8E2C3CA0243F4940C00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
