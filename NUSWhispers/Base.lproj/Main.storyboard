@@ -53,9 +53,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Featured" id="mOI-FS-AaM"/>
-                    <connections>
-                        <segue destination="prI-M0-MqV" kind="presentation" identifier="newWhisper" id="LtR-gT-ig3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,57 +179,6 @@
             </objects>
             <point key="canvasLocation" x="1464" y="129"/>
         </scene>
-        <!--New Whisper Modal View Controller-->
-        <scene sceneID="Y5Z-hj-ao1">
-            <objects>
-                <viewController id="prI-M0-MqV" customClass="NewWhisperModalViewController" customModule="NUSWhispers" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QeZ-zF-Chh"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hdm-St-Luh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yO1-Fb-CV6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKF-mJ-SsO">
-                                <rect key="frame" x="0.0" y="66" width="600" height="534"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-j4-4ch">
-                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Submit" id="7ry-nH-kbh">
-                                        <barButtonItem key="leftBarButtonItem" image="icon_cross" id="pps-wr-KKu">
-                                            <connections>
-                                                <action selector="didTapCloseModalButton:" destination="prI-M0-MqV" id="Zzg-YL-bKG"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bX9-j4-4ch" firstAttribute="top" secondItem="yO1-Fb-CV6" secondAttribute="topMargin" constant="22" id="JhY-t6-8fq"/>
-                            <constraint firstItem="Hdm-St-Luh" firstAttribute="top" secondItem="IKF-mJ-SsO" secondAttribute="bottom" id="LI3-QD-7GF"/>
-                            <constraint firstItem="IKF-mJ-SsO" firstAttribute="leading" secondItem="yO1-Fb-CV6" secondAttribute="leadingMargin" constant="-16" id="VfA-lY-t4i"/>
-                            <constraint firstItem="bX9-j4-4ch" firstAttribute="leading" secondItem="yO1-Fb-CV6" secondAttribute="leadingMargin" constant="-16" id="bUu-gf-xSh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bX9-j4-4ch" secondAttribute="trailing" constant="-16" id="jql-Nf-MUP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IKF-mJ-SsO" secondAttribute="trailing" constant="-16" id="rDB-Kb-LGb"/>
-                            <constraint firstItem="IKF-mJ-SsO" firstAttribute="top" secondItem="bX9-j4-4ch" secondAttribute="bottom" id="v1t-7b-Yhp"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="newWhisperWebView" destination="IKF-mJ-SsO" id="HXw-8P-gQb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="de1-sa-1vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1449" y="-630"/>
-        </scene>
         <!--Whisper View Controller-->
         <scene sceneID="iGP-w4-zAj">
             <objects>
@@ -317,6 +263,21 @@
                                             <color key="titleColor" red="0.80701100000000003" green="0.17104506402824299" blue="0.1393782043580894" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapReportButton:" destination="Q3R-cg-Pml" eventType="touchUpInside" id="MAt-it-KtZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feS-4K-wUY">
+                                        <rect key="frame" x="434" y="378" width="84" height="24"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="open in facebook">
+                                            <color key="titleColor" red="0.00084720921981651376" green="0.3387085875502388" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapOpenInFacebookButton:" destination="Q3R-cg-Pml" eventType="touchUpInside" id="bDC-Z5-j65"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -333,10 +294,12 @@
                                     <constraint firstItem="Atv-5b-EYz" firstAttribute="top" secondItem="RC3-8T-ABG" secondAttribute="bottom" constant="3" id="NIc-ob-zeZ"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="top" secondItem="Atv-5b-EYz" secondAttribute="bottom" constant="30" id="ODU-LL-iU0"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="Ruf-PY-fVL"/>
+                                    <constraint firstItem="feS-4K-wUY" firstAttribute="centerY" secondItem="67B-J1-1B5" secondAttribute="centerY" id="Sd3-WG-TPH"/>
                                     <constraint firstItem="Nvp-Qe-m7m" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="YN1-e3-UHf"/>
                                     <constraint firstItem="Nvp-Qe-m7m" firstAttribute="top" secondItem="ZB7-bl-ReV" secondAttribute="bottom" constant="10" id="YVE-Eg-0cA"/>
                                     <constraint firstItem="Atv-5b-EYz" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="ZFb-nX-mZi"/>
                                     <constraint firstItem="0Ev-w8-Xcc" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="ZY8-Fa-2kN"/>
+                                    <constraint firstItem="67B-J1-1B5" firstAttribute="leading" secondItem="feS-4K-wUY" secondAttribute="trailing" constant="17" id="hHV-Ai-Rzc"/>
                                     <constraint firstItem="Spo-UI-rq1" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="knO-oN-Weo"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="trailing" secondItem="67B-J1-1B5" secondAttribute="trailing" id="oS2-Ib-LpU"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="35" id="wJb-iq-EBr"/>
@@ -529,7 +492,6 @@
                     <navigationItem key="navigationItem" title="Whispers" id="Zdf-7t-Un8"/>
                     <connections>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showWhispers" id="Mpz-0f-efR"/>
-                        <segue destination="prI-M0-MqV" kind="presentation" identifier="newWhisper" id="51N-9R-W37"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -553,11 +515,5 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="icon_cross" width="21" height="21"/>
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="LtR-gT-ig3"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.18039215689999999" green="0.56078431370000004" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

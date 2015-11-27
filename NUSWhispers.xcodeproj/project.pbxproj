@@ -23,7 +23,6 @@
 		3C8219AA1AEFE07600F2A822 /* WhisperRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */; };
 		3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */; };
 		3C942C301B024F7C00F18B0B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C942C2F1B024F7C00F18B0B /* Utility.swift */; };
-		3CA89C1E1B527A5000714A69 /* NewWhisperModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA89C1D1B527A5000714A69 /* NewWhisperModalViewController.swift */; };
 		3CC92F861AFD147E005AC93D /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */; };
 		3CC92F8B1AFD157C005AC93D /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */; };
 		3CCD3AC31AEFC0800014479C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD3AC21AEFC0800014479C /* Section.swift */; };
@@ -68,7 +67,6 @@
 		3C8219A91AEFE07600F2A822 /* WhisperRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManager.swift; sourceTree = "<group>"; };
 		3C8219AB1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperRequestManagerDelegate.swift; sourceTree = "<group>"; };
 		3C942C2F1B024F7C00F18B0B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		3CA89C1D1B527A5000714A69 /* NewWhisperModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewWhisperModalViewController.swift; sourceTree = "<group>"; };
 		3CB43E341AF24CC90005127D /* NUSWhispers_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUSWhispers_Bridging_Header.h; sourceTree = "<group>"; };
 		3CC92F851AFD147E005AC93D /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 				3CC92F8A1AFD157C005AC93D /* CommentsTableViewCell.swift */,
 				3C1805CD1AFF89150075783E /* WhisperViewController.swift */,
 				3C7784E21B051D1F0067FDAC /* GlobalSplitViewController.swift */,
-				3CA89C1D1B527A5000714A69 /* NewWhisperModalViewController.swift */,
 			);
 			name = "Views+Controllers";
 			sourceTree = "<group>";
@@ -408,7 +405,6 @@
 				3C01AC401AEFAB4500E0C94B /* AppDelegate.swift in Sources */,
 				ACB6782B1B815A8200BD1362 /* UIFont+Typicons.m in Sources */,
 				3C01AC641AEFBDC100E0C94B /* WhispersTableViewCell.swift in Sources */,
-				3CA89C1E1B527A5000714A69 /* NewWhisperModalViewController.swift in Sources */,
 				3C8219AC1AEFE1A000F2A822 /* WhisperRequestManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,7 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NUSWhispers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sg.crypt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -552,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NUSWhispers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sg.crypt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

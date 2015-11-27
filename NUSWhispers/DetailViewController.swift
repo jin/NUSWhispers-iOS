@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import SafariServices
 
 class DetailViewController: UIViewController {
 
@@ -54,7 +55,8 @@ class DetailViewController: UIViewController {
     }
 
     func didTapNewWhisperButton() {
-        performSegueWithIdentifier("newWhisper", sender: self)
+        let svc = SFSafariViewController(URL: NSURL(string: "http://nuswhispers.com/mobile_submit")!)
+        self.presentViewController(svc, animated: true, completion: nil)
     }
 
 }

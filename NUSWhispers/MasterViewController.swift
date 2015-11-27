@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import TTTAttributedLabel
+import SafariServices
 
 class MasterViewController: UITableViewController {
     
@@ -218,7 +219,8 @@ class MasterViewController: UITableViewController {
     }
 
     func didTapNewWhisperButton() {
-        performSegueWithIdentifier("newWhisper", sender: self)
+        let svc = SFSafariViewController(URL: NSURL(string: "http://nuswhispers.com/mobile_submit")!)
+        self.presentViewController(svc, animated: true, completion: nil)
     }
 
 }

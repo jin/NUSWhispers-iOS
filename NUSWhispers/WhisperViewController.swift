@@ -107,6 +107,18 @@ class WhisperViewController: UIViewController, WhisperRequestManagerDelegate, UI
         }
     }
 
+    @IBAction func didTapReportButton(sender: AnyObject) {
+        let toEmail = "support@nuswhispers.com"
+        let subject = "Reporting whisper"
+        let body = "Please take a look at whisper #" + String(whisper?.tag)
+
+        let urlString = ("mailto:\(toEmail)?subject=\(subject)&body=\(body)")
+        UIApplication.sharedApplication().openURL(NSURL(string: urlString)!)
+    }
+
+    @IBAction func didTapOpenInFacebookButton(sender: AnyObject) {
+    }
+
     private func getFBURL(postID: String) -> String {
         return "https://www.facebook.com/permalink.php?story_fbid=\(postID)&id=695707917166339"
     }
