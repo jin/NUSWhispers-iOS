@@ -195,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-8T-ABG">
-                                        <rect key="frame" x="20" y="25" width="32" height="17"/>
+                                        <rect key="frame" x="20" y="25" width="32.5" height="17"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.55708498679999996" green="0.55708498679999996" blue="0.55708498679999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,7 +268,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feS-4K-wUY">
-                                        <rect key="frame" x="434" y="378" width="84" height="24"/>
+                                        <rect key="frame" x="441" y="378" width="84" height="24"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <state key="normal" title="open in facebook">
@@ -299,7 +299,7 @@
                                     <constraint firstItem="Nvp-Qe-m7m" firstAttribute="top" secondItem="ZB7-bl-ReV" secondAttribute="bottom" constant="10" id="YVE-Eg-0cA"/>
                                     <constraint firstItem="Atv-5b-EYz" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="ZFb-nX-mZi"/>
                                     <constraint firstItem="0Ev-w8-Xcc" firstAttribute="centerX" secondItem="yda-07-RUX" secondAttribute="centerX" id="ZY8-Fa-2kN"/>
-                                    <constraint firstItem="67B-J1-1B5" firstAttribute="leading" secondItem="feS-4K-wUY" secondAttribute="trailing" constant="17" id="hHV-Ai-Rzc"/>
+                                    <constraint firstItem="67B-J1-1B5" firstAttribute="leading" secondItem="feS-4K-wUY" secondAttribute="trailing" constant="10" id="hHV-Ai-Rzc"/>
                                     <constraint firstItem="Spo-UI-rq1" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="20" id="knO-oN-Weo"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="trailing" secondItem="67B-J1-1B5" secondAttribute="trailing" id="oS2-Ib-LpU"/>
                                     <constraint firstItem="Mhe-AE-inC" firstAttribute="leading" secondItem="yda-07-RUX" secondAttribute="leading" constant="35" id="wJb-iq-EBr"/>
