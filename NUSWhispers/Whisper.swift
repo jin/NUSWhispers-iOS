@@ -33,7 +33,7 @@ class Whisper {
     }
 
     init(json: JSON) {
-        self.tag = Int(json["confession_id"].string!)
+        self.tag = json["confession_id"].int!
         self.content = json["content"].string
         self.views = json["views"].int
         self.facebookId = json["facebook_information"]["id"].string
